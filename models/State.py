@@ -1,11 +1,11 @@
-from dao.CityDAO import CityDAO
+from dao.StateDAO import StateDAO
 
-class City:
-  
-  
+class State:
+
+
   def __init__(self, name, id=None):
-      self.id = id
-      self.name = name
+    self.id = id
+    self.name = name
   
 
   def toJSON(self):
