@@ -20,10 +20,10 @@ def city_index(): return CityController.index()
 @app.route('/cities/<int:id>', methods=['GET']) 
 def city_show(id): return CityController.show(id)
 
-@app.route('/cities/state/<int:id>', methods=['GET']) 
+@app.route('/states/<int:id>/cities', methods=['GET']) 
 def city_index_by_state(id): return CityController.index_by_state(id)
 
-@app.route('/cities/biome/<int:id>', methods=['GET']) 
+@app.route('/biomes/<int:id>/cities', methods=['GET']) 
 def city_index_by_biome(id): return CityController.index_by_biome(id)
 
 @app.route('/states', methods=['GET']) 

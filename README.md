@@ -5,8 +5,8 @@
 **City**
 - /cities (GET)
 - /cities/id (GET)
-- /cities/state/id (GET)
-- /cities/biome/id (GET)
+- /states/<state-identifier>/cities (GET)
+- /biomes/<biome-identifier>/cities (GET)
 
 **State**
 - /states (GET)
@@ -85,7 +85,7 @@
 
 **Definition**
 
-`GET /cities/state/<state-identifier>`
+`GET /states/<state-identifier>/cities`
 
 **Response**
 
@@ -115,7 +115,7 @@
 
 **Definition**
 
-`GET /cities/biome/<biome-identifier>`
+`GET /biomes/<biome-identifier>/cities`
 
 **Response**
 
@@ -165,7 +165,7 @@
 
 ## Lookup state details
 
-`GET /states/<identifier>`
+`GET /states/<state-identifier>`
 
 **Response**
 
@@ -208,7 +208,7 @@
 
 ## Lookup biomes details
 
-`GET /biomes/<identifier>`
+`GET /biomes/<biome-identifier>`
 
 **Response**
 
@@ -290,7 +290,7 @@
 
 ## Lookup lands details
 
-`GET /lands/<identifier>`
+`GET /lands/<land-identifier>`
 
 **Response**
 

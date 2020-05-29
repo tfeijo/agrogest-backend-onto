@@ -1,8 +1,6 @@
 from dao.FarmDAO import FarmDAO
 
 class Farm:
-
-
   def __init__(self, hectare, city_id, licensing, id=None, installation_id=None):
     self.id = id
     self.hectare = hectare
