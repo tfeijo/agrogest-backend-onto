@@ -3,22 +3,22 @@
 ## Routes
 
 **City**
-- /cities (GET)
-- /cities/(city-identifier) (GET)
-- /states/(state-identifier)/cities (GET)
-- /biomes/(biome-identifier)/cities (GET)
+- `/cities (GET)`
+- `/cities/<city-identifier> (GET)`
+- `/states/<state-identifier>/cities (GET)`
+- `/biomes/<biome-identifier>/cities (GET)`
 
 **State**
-- /states (GET)
-- /states/(state-identifier) (GET)
+- `/states (GET)`
+- `/states/<state-identifier> (GET)`
 
 **Biome**
-- /biomes (GET)
-- /biomes/(biome-identifier) (GET)
+- `/biomes (GET)`
+- `/biomes/<biome-identifier> (GET)`
 
 **Farm**
-- /lands (GET,POST)
-- /lands/(land-identifier) (GET)
+- `/lands (GET,POST)`
+- `/lands/<land-identifier> (GET)`
 ## 
 
 ## List all cities
