@@ -4,21 +4,21 @@
 
 **City**
 - /cities (GET)
-- /cities/id (GET)
-- /states/<state-identifier>/cities (GET)
-- /biomes/<biome-identifier>/cities (GET)
+- /cities/(city-identifier) (GET)
+- /states/(state-identifier)/cities (GET)
+- /biomes/(biome-identifier)/cities (GET)
 
 **State**
 - /states (GET)
-- /states/id (GET)
+- /states/(state-identifier) (GET)
 
 **Biome**
 - /biomes (GET)
-- /biomes/id (GET)
+- /biomes/(biome-identifier) (GET)
 
 **Farm**
 - /lands (GET,POST)
-- /lands/id (GET)
+- /lands/(land-identifier) (GET)
 ## 
 
 ## List all cities
