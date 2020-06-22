@@ -1,8 +1,8 @@
 from flask import jsonify
-from models.City import City
+from src.models.Classes import *
+from src.ontology.config import onto
 
 class CityController:
-
   def index():
     city1 = City('Cidade1')
     city2 = City('Cidade2')

@@ -1,8 +1,8 @@
 from flask import jsonify
-from models.Biome import Biome
+from src.models.Classes import *
+from src.ontology.config import onto
 
 class BiomeController:
-
   def index():
     biome1 = Biome('Bioma1')
     biome2 = Biome('Bioma2')

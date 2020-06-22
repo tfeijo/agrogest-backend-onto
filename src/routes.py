@@ -1,11 +1,10 @@
 import markdown, os
 from flask import jsonify, request
 from app import app
-from controllers.CityController import *
-from controllers.StateController import *
-from controllers.BiomeController import *
-from controllers.FarmController import *
-
+from src.controllers.CityController import *
+from src.controllers.StateController import *
+from src.controllers.BiomeController import *
+from src.controllers.FarmController import *
 
 @app.route('/', methods=['GET']) 
 def readme():

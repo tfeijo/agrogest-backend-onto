@@ -1,5 +1,6 @@
 from flask import jsonify
-from models.State import State
+from src.models.Classes import *
+from src.ontology.config import onto
 
 class StateController():
   def index():

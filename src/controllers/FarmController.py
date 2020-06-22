@@ -1,5 +1,6 @@
 from flask import jsonify
-from models.Farm import Farm
+from src.models.Classes import *
+from src.ontology.config import onto
 
 class FarmController():
   def index():
