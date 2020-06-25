@@ -2,49 +2,56 @@ from flask import jsonify
 from owlready2 import *
 from src.models.Classes import *
 from src.models.Rules import *
-from src.ontology.config import onto, infered
+from src.utils.methods import *
+from src.ontology.config import onto, infered, save_onto, get_id
 
 class CityController:
-  def index():
-    state = State('MG')
-    biome1 = Biome('Caatinga')
-    biome2 = Biome('Mata_Atlantica')
-    city = City('JUIZ_DE_FORA',
-                biome = [biome2,biome1],
-                fiscal_module=[25.0],
-                state=[state])
-    farm = Farm('Farm1', city=[city], hectare=[375.1])
+  def index(state_id = '*', biome_id='*'):
+    print(state_id)
+    print(biome_id)
+    if state_id != '*': state_id = onto.search_one(is_a = onto.State, id=state_id)
+    if biome_id != '*': biome_id = onto.search_one(is_a = onto.Biome, id= biome_id)
+
+    cities_query = list(onto.search(is_a = onto.City, state=state_id, biome=biome_id))      
+    cities = []
     
+    for query in cities_query:
+      cities.append(query.to_json())
 
-    with onto:
-      sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-    
-      onto.save(file = "./src/ontology/bd_infered.owl", format = "rdfxml")
-
-
-    # print(onto.get_parents_of(farm))
-    print()
-
-    # farm_query = onto["Farm"].individuals
-    # >>> onto.search_one(is_a = onto.Pizza)
-    # >>> onto.search_one(label = "my label")
-    # >>> onto.search(is_a = onto.Pizza, has_topping = onto.search(is_a = onto.TomatoTopping))
-
-    print(f'Return: {infered.search_one(is_a  = infered["Farm"])}')
-    return jsonify({})
+    return jsonify(cities)
 
   def show(id):
-    city1 = City('Cidade1', id)
-    return jsonify(city1.toJSON())
-  
-  def index_by_state(state_id):
-    city1 = City('Cidade1')
-    city2 = City('Cidade2')
-    cities= [city1.toJSON(),city2.toJSON()]
-    return jsonify(cities)
 
-  def index_by_biome(biome_id):
-    city1 = City('Cidade1')
-    city2 = City('Cidade2')
-    cities= [city1.toJSON(),city2.toJSON()]
-    return jsonify(cities)
+    query = onto.search_one(is_a=onto.City, id=id)      
+ 
+    return jsonify(query.to_json())
+
+  def store(city):
+    
+    state = onto.search_one(
+      is_a = onto.State,
+      id=city["state"]["id"]
+    )
+    
+    biomes = []
+    for biome in city['biomes']:
+      query_biome = onto.search_one(
+        is_a = onto.Biome,
+        id=biome['id']
+      )
+      biomes.append(query_biome)
+    name = clear_string(city['name'])
+    uf = state.uf[0]
+    
+    city = City(
+        f'{name}_{uf}',
+        id = [get_id('.City')],
+        # id = [city['id']],
+        biome = biomes,
+        fiscal_module=[city['fiscal_module']],
+        state=[state]
+      )
+      
+    onto.save()
+    
+    return jsonify(city.to_json())

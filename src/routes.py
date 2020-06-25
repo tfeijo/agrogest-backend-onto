@@ -16,14 +16,15 @@ def readme():
 @app.route('/cities', methods=['GET']) 
 def city_index(): return CityController.index()
 
+
 @app.route('/cities/<int:id>', methods=['GET']) 
 def city_show(id): return CityController.show(id)
 
-@app.route('/states/<int:id>/cities', methods=['GET']) 
-def city_index_by_state(id): return CityController.index_by_state(id)
+@app.route('/states/<int:state_id>/cities', methods=['GET']) 
+def city_index_by_state(state_id): return CityController.index(state_id, '*')
 
-@app.route('/biomes/<int:id>/cities', methods=['GET']) 
-def city_index_by_biome(id): return CityController.index_by_biome(id)
+@app.route('/biomes/<int:biome_id>/cities', methods=['GET']) 
+def city_index_by_biome(biome_id): return CityController.index('*', biome_id)
 
 @app.route('/states', methods=['GET']) 
 def state_index(): return StateController.index()
@@ -37,13 +38,30 @@ def biome_index(): return BiomeController.index()
 @app.route('/biomes/<int:id>', methods=['GET']) 
 def biome_show(id): return BiomeController.show(id)
 
-@app.route('/lands', methods=['GET']) 
-def farm_index(): return FarmController.index()
+################# CORRIGIR
 
-@app.route('/lands', methods=['POST']) 
-def farm_store(): 
-  content = request.json
-  return FarmController.store(content)
+# @app.route('/lands', methods=['GET']) 
+# def farm_index(): return FarmController.index()
 
-@app.route('/lands/<int:id>', methods=['GET']) 
-def farm_show(id): return FarmController.show(id)
+# @app.route('/lands', methods=['POST']) 
+# def farm_store():
+#   content = request.json
+#   return FarmController.store(content)
+
+# @app.route('/lands/<int:id>', methods=['GET']) 
+# def farm_show(id): return FarmController.show(id)
+
+# Methods POST (store) not essencial
+
+# @app.route('/biomes', methods=['POST']) 
+# def biome_store(): return BiomeController.store(request.json)
+
+# @app.route('/cities', methods=['POST']) 
+# def city_store():
+#   content = request.json
+#   return CityController.store(content)
+
+# @app.route('/states', methods=['POST']) 
+# def state_store(): 
+#   state = request.json
+#   return StateController.store(state)

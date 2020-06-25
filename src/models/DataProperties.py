@@ -1,5 +1,6 @@
 from owlready2 import *
 from src.ontology.config import onto
+from src.models.Classes import *
 
 with onto:
 
@@ -28,6 +29,15 @@ with onto:
 
   class result_fm(DataProperty):
     range = [float]
+  
+  class id(DataProperty):
+    range = [int]
+    python_name = 'id'
+
+  class uf(DataProperty):
+    range = [int]
+    domain = [State]
+    python_name = 'uf'
 
   class hectare(DataProperty):
     range = [float]

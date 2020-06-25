@@ -41,6 +41,7 @@ with onto:
     domain = [Biome]
     range = [City]
     inverse_property = has_biome
+    python_name = 'is_biome_of'
   
   class has_farm(ObjectProperty):
     domain = [City]

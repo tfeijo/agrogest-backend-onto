@@ -4,11 +4,25 @@ from src.ontology.config import onto
 
 class BiomeController:
   def index():
-    biome1 = Biome('Bioma1')
-    biome2 = Biome('Bioma2')
-    biomes = [biome1.toJSON(),biome2.toJSON()]
+    
+    biomes_query = onto.Biome.instances()
+    
+    biomes = []
+
+    for query in biomes_query:
+      biomes.append(query.to_json())
+
     return jsonify(biomes)
   
   def show(id):
-    biome1 = Biome('Bioma1', id)
-    return jsonify(biome1.toJSON())
+    biome = onto.search_one(is_a=Biome, id=id) 
+    return jsonify(biome.to_json())
+  
+  def store(biome):
+    new = Biome(
+      clear_string(biome['name']),
+      id = [biome['id']]
+    )
+    onto.save()
+    
+    return jsonify(new.to_json())
