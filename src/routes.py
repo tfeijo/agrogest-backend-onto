@@ -43,14 +43,16 @@ def biome_show(id): return BiomeController.show(id)
 # @app.route('/lands', methods=['GET']) 
 # def farm_index(): return FarmController.index()
 
-# @app.route('/lands', methods=['POST']) 
-# def farm_store():
-#   content = request.json
-#   return FarmController.store(content)
+@app.route('/lands', methods=['POST']) 
+def farm_store():
+  farm = request.json
+  return FarmController.store(farm)
 
 # @app.route('/lands/<int:id>', methods=['GET']) 
 # def farm_show(id): return FarmController.show(id)
 
+
+####################
 # Methods POST (store) not essencial
 
 # @app.route('/biomes', methods=['POST']) 
@@ -61,7 +63,7 @@ def biome_show(id): return BiomeController.show(id)
 #   content = request.json
 #   return CityController.store(content)
 
-# @app.route('/states', methods=['POST']) 
-# def state_store(): 
-#   state = request.json
-#   return StateController.store(state)
+@app.route('/states', methods=['POST']) 
+def state_store(): 
+  state = request.json
+  return StateController.store(state)

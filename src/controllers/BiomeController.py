@@ -4,14 +4,9 @@ from src.ontology.config import onto
 
 class BiomeController:
   def index():
-    
     biomes_query = onto.Biome.instances()
-    
     biomes = []
-
-    for query in biomes_query:
-      biomes.append(query.to_json())
-
+    for query in biomes_query: biomes.append(query.to_json())
     return jsonify(biomes)
   
   def show(id):

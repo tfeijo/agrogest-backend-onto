@@ -1,4 +1,5 @@
 import unicodedata
+import uuid 
 import re
 from src.models.Classes import *
 
@@ -14,6 +15,12 @@ def normal_string(string):
 def get_name(obj):
   return normal_string(str(obj).split('.',1)[1])
 
+def get_name_to_onto(obj):
+  return str(obj).split('.',1)[1]
+
+
 def state_to_JSON(state):
-  
   return obj
+
+def UUID():
+  return uuid.uuid1()

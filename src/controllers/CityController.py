@@ -23,7 +23,7 @@ class CityController:
   def show(id):
 
     query = onto.search_one(is_a=onto.City, id=id)      
- 
+
     return jsonify(query.to_json())
 
   def store(city):
@@ -40,6 +40,7 @@ class CityController:
         id=biome['id']
       )
       biomes.append(query_biome)
+    
     name = clear_string(city['name'])
     uf = state.uf[0]
     

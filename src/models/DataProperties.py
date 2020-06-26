@@ -35,7 +35,7 @@ with onto:
     python_name = 'id'
 
   class uf(DataProperty):
-    range = [int]
+    range = [str]
     domain = [State]
     python_name = 'uf'
 
@@ -66,3 +66,4 @@ with onto:
 
   class licensing(DataProperty):
     range = [bool]
+    python_name = 'licensing'

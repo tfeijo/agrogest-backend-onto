@@ -55,6 +55,7 @@ with onto:
   class has_size(ObjectProperty):
     # domain = [Farm, Factor, Production]
     range = [Size]
+    python_name = 'size'
 
   class is_size_of(ObjectProperty):
     domain = [Size]
@@ -114,6 +115,16 @@ with onto:
     domain = [ProductionHandling]
     range = [ProductionSystem]
     inverse_property = has_production_handling
+
+  class is_created_by(ObjectProperty):
+    domain = [Farm]
+    range = [Device]
+    python_name = 'device'
+
+  class has_farm_created(ObjectProperty):
+    domain = [Device]
+    range = [Farm]
+    inverse_property = is_created_by
   
   class has_biome_associated(ObjectProperty):
     pass
