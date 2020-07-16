@@ -12,7 +12,7 @@ def clear_string(string):
 def normal_string(string):
   return string.replace("_", " ")
 
-def get_name(obj):
+def get_name_to_api(obj):
   return normal_string(str(obj).split('.',1)[1])
 
 def get_name_to_onto(obj):
@@ -24,3 +24,12 @@ def state_to_JSON(state):
 
 def UUID():
   return uuid.uuid1()
+def size_to_id(obj):
+  json = {
+    "Minimum": 4,
+    "Small": 1,
+    "Medium": 2,
+    "Large": 3,
+    "Exceptional": 5,
+  }
+  return int(json[get_name_to_onto(obj)])

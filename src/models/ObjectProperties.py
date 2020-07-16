@@ -92,7 +92,7 @@ with onto:
   class has_production(ObjectProperty):
     domain = [Farm]
     range = [Production]
-
+  
   class is_production_of(ObjectProperty):
     domain = [Production]
     range = [Farm]
@@ -129,6 +129,10 @@ with onto:
   class has_biome_associated(ObjectProperty):
     pass
   class has_state_associated(ObjectProperty):
+    pass
+  class has_document_associated(ObjectProperty):
+    pass
+  class has_production_associated(ObjectProperty):
     pass
 
   

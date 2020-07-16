@@ -14,8 +14,8 @@ def readme():
     return markdown.markdown(content), 200
 
 @app.route('/cities', methods=['GET']) 
-def city_index(): return CityController.index()
 
+def city_index(): return CityController.index()
 
 @app.route('/cities/<int:id>', methods=['GET']) 
 def city_show(id): return CityController.show(id)
@@ -40,28 +40,28 @@ def biome_show(id): return BiomeController.show(id)
 
 ################# CORRIGIR
 
-# @app.route('/lands', methods=['GET']) 
-# def farm_index(): return FarmController.index()
+@app.route('/farms', methods=['GET']) 
+def farm_index(): return FarmController.index()
 
-@app.route('/lands', methods=['POST']) 
+@app.route('/farms', methods=['POST']) 
 def farm_store():
   farm = request.json
   return FarmController.store(farm)
 
-# @app.route('/lands/<int:id>', methods=['GET']) 
-# def farm_show(id): return FarmController.show(id)
+@app.route('/farms/<int:id>', methods=['GET']) 
+def farm_show(id): return FarmController.show(id)
 
 
 ####################
 # Methods POST (store) not essencial
 
-# @app.route('/biomes', methods=['POST']) 
-# def biome_store(): return BiomeController.store(request.json)
+@app.route('/biomes', methods=['POST']) 
+def biome_store(): return BiomeController.store(request.json)
 
-# @app.route('/cities', methods=['POST']) 
-# def city_store():
-#   content = request.json
-#   return CityController.store(content)
+@app.route('/cities', methods=['POST']) 
+def city_store():
+  content = request.json
+  return CityController.store(content)
 
 @app.route('/states', methods=['POST']) 
 def state_store(): 

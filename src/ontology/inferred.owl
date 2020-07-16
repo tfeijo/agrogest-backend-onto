@@ -302,6 +302,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdfs:subClassOf rdf:resource="#Size"/>
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <is_size_of rdf:resource="#afe171a6-c77a-11ea-871f-bf58a8c59942_1"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Medium">
@@ -46144,11 +46145,16 @@
 
 <Farm rdf:about="#afe171a6-c77a-11ea-871f-bf58a8c59942_1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_biome_associated rdf:resource="#Cerrado"/>
   <has_city rdf:resource="#ARAGUACU_TO"/>
   <is_created_by rdf:resource="#afe171a6-c77a-11ea-871f-bf58a8c59942"/>
+  <has_size rdf:resource="#Large"/>
+  <has_state_associated rdf:resource="#Tocantins"/>
+  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</fiscal_module>
   <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8658.0</hectare>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
   <licensing rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</licensing>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">123.68571428571428</result_fm>
 </Farm>
 
 <swrl:Imp>

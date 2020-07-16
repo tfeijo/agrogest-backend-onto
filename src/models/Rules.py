@@ -100,6 +100,16 @@ with onto:
                 result_fm(?f, ?r),
                 greaterThan(?r, 15.0)
                   -> has_size(?f, Large)"""
+    },
+    {
+      'name': 'Farm has_document_associated',
+      'desc': """
+                Farm(?f),
+                Document(?d),
+                ProductionActivity(?pa),
+                has_production_associated(?d,?pa),
+                has_production(?f,?pa),
+                  -> has_document_associated(?f, ?d)"""
     }
   ]
 
