@@ -7,7 +7,6 @@ class FarmController():
   def index():
     with onto: sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
     query_farm = onto.Farm.instances()
-    print(query_farm)
     farms = []
     for farm in query_farm:
       farms.append(farm.show_json())

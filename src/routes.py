@@ -8,8 +8,7 @@ from src.controllers.FarmController import *
 
 @app.route('/', methods=['GET']) 
 def readme():
-  with open(os.path.dirname(app.root_path) + '\
-/backend-onto/README.md', 'r') as readme_file:
+  with open(os.path.dirname(app.root_path) + 'app/README.md', 'r') as readme_file:
     content = readme_file.read()
     return markdown.markdown(content), 200
 
