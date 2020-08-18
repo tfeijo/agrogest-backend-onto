@@ -51,11 +51,7 @@ with onto:
         "installation_id": get_name_to_api(self.device[0]),
         "hectare": self.hectare[0],
         "city_id": self.city[0].id[0],
-        "licensing": self.licensing[0],
-        "size": {
-          "id": size_to_id(self.size[0]),
-          "name": get_name_to_onto(self.size[0])
-        } 
+        "licensing": self.licensing[0] 
       }
 
     def show_json(self):

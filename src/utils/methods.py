@@ -2,6 +2,16 @@ import unicodedata
 import uuid 
 import re
 from src.models.Classes import *
+from threading import Thread
+
+class Reasoner(Thread):
+    def __init__(self):
+      threading.Thread.__init__(self)
+      Thread.__init__(self)
+
+    def run(self):
+      with onto: sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
+      onto.save()
 
 def clear_string(string):
   nfkd = unicodedata.normalize('NFKD', string)
