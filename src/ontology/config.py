@@ -3,7 +3,6 @@ import json
 
 onto_path.append("src/ontology/")
 onto = get_ontology("bd.owl").load()
-inferred = get_ontology("bd.owl").load()
 
 def get_id(obj):
   

@@ -5,7 +5,7 @@ from src.utils.methods import *
 with onto:
   class Device(Thing): pass
   
-  class Documents(Thing): pass
+  class Document(Thing): pass
 
   class State(Thing):
     def to_json(self):
@@ -18,20 +18,13 @@ with onto:
   class City(Thing):
     def to_json(self):
       biomes = []
-      for biome in self.biome:
-        biomes.append({
-          "id": biome.id[0],
-          "name": get_name_to_api(biome)
-        })
+      for biome in self.has_biome:
+        biomes.append(biome.to_json())
       
       return {
         "id": self.id[0],
         "name": get_name_to_api(self)[:-3],
-        "state": {
-          "id": self.state[0].id[0],
-          "name": get_name_to_api(self.state[0]),
-          "uf": self.state[0].uf[0],
-        },
+        "state": self.has_state[0].to_json(),
         "biomes": biomes,
         "fiscal_module": self.fiscal_module[0],
       }
@@ -44,58 +37,30 @@ with onto:
       }
 
   class Farm(Thing):
-    def store_json(self):
-
-      return {
-        "id": self.id[0],
-        "installation_id": get_name_to_api(self.device[0]),
-        "hectare": self.hectare[0],
-        "city_id": self.city[0].id[0],
-        "licensing": self.licensing[0] 
-      }
-
-    def show_json(self):
-      query_city = onto.search_one(is_a=City, id=self.city[0].id[0])
+    
+    def to_json(self):
+      # query_city = onto.search_one(is_a=City, id=self.city[0].id[0])
       biomes = []
-      for biome in query_city.biome:
+      for biome in self.has_city[0].has_biome:
         biomes.append({
               "id": biome.id[0],
               "name": get_name_to_api(biome)
             })
       return {
         "id": self.id[0],
-        "installation_id": get_name_to_api(self.device[0]),
+        "installation_id": get_name_to_api(self.is_created_by[0]),
         "hectare": self.hectare[0],
         "licensing": self.licensing[0],
-        "city": {
-          "id": query_city.id[0],
-          "name": get_name_to_api(query_city)[:-3],
-          "state": {
-            "id": query_city.state[0].id[0],
-            "name": get_name_to_api(query_city.state[0]),
-            "uf": query_city.state[0].uf[0]
-          },
-          "biomes": biomes,
-        },
+        "city": self.has_city[0].to_json(),
         "size": {
-          "id": size_to_id(self.size[0]),
-          "name": get_name_to_onto(self.size[0])
+          "id": size_to_id(self.has_size[0]),
+          "name": get_name_to_onto(self.has_size[0])
         } 
       }
 
   class Parameter(Thing): pass
 
   class Size(Thing): pass
-
-  class Minimum(Size): pass
-  
-  class Small(Size): pass
-
-  class Medium(Size): pass
-  
-  class Large(Size): pass
-  
-  class Exceptional(Size): pass
 
   class Factor(Thing): pass
 
@@ -109,4 +74,8 @@ with onto:
 
   class ProductionHandling(Thing): pass
 
-  
+  Size('Minumum')
+  Size('Small')
+  Size('Medium')
+  Size('Large')
+  Size('Exceptional')

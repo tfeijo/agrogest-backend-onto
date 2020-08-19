@@ -6,7 +6,7 @@ with onto:
   class has_state(ObjectProperty):
     domain = [City]
     range = [State]
-    python_name = 'state'
+    python_name = 'has_state'
 
   class is_state_of(ObjectProperty):
     domain = [State]
@@ -16,7 +16,7 @@ with onto:
   class has_city(ObjectProperty):
     domain = [Farm]
     range = [City]
-    python_name = 'city'
+    python_name = 'has_city'
 
   class is_city_of(ObjectProperty):
     domain = [City]
@@ -35,7 +35,7 @@ with onto:
   class has_biome(ObjectProperty):
     domain = [City]
     range = [Biome]
-    python_name = 'biome'
+    python_name = 'has_biome'
  
   class is_biome_of(ObjectProperty):
     domain = [Biome]
@@ -55,7 +55,7 @@ with onto:
   class has_size(ObjectProperty):
     # domain = [Farm, Factor, Production]
     range = [Size]
-    python_name = 'size'
+    python_name = 'has_size'
 
   class is_size_of(ObjectProperty):
     domain = [Size]
@@ -119,7 +119,7 @@ with onto:
   class is_created_by(ObjectProperty):
     domain = [Farm]
     range = [Device]
-    python_name = 'device'
+    python_name = 'is_created_by'
 
   class has_farm_created(ObjectProperty):
     domain = [Device]

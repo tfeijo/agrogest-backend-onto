@@ -13,8 +13,8 @@ class CityController:
       biome_id = onto.search_one(is_a=onto.Biome, id=biome_id)
  
     cities_query = list(onto.search(
-      is_a=onto.City, state=state_id,
-      biome=biome_id)
+      is_a=onto.City, has_state=state_id,
+      has_biome=biome_id)
     )      
     
     cities = []
@@ -50,9 +50,9 @@ class CityController:
         f'{name}_{uf}',
         # id = [id],
         id = [city['id']],
-        biome = biomes,
+        has_biome = biomes,
         fiscal_module=[city['fiscal_module']],
-        state=[state]
+        has_state=[state]
       )
       
     onto.save()
