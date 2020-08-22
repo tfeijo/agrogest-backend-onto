@@ -43,3 +43,13 @@ def size_to_id(obj):
     "Exceptional": 5,
   }
   return int(json[get_name_to_onto(obj)])
+
+def size_to_portuguese(obj):
+  json = {
+    "Minimum": "Mínimo",
+    "Small": "Pequeno",
+    "Medium": "Médio",
+    "Large": "Grande",
+    "Exceptional": "Excepcional",
+  }
+  return str(json[get_name_to_onto(obj)])

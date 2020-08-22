@@ -39,13 +39,7 @@ with onto:
   class Farm(Thing):
     
     def to_json(self):
-      # query_city = onto.search_one(is_a=City, id=self.city[0].id[0])
-      biomes = []
-      for biome in self.has_city[0].has_biome:
-        biomes.append({
-              "id": biome.id[0],
-              "name": get_name_to_api(biome)
-            })
+
       return {
         "id": self.id[0],
         "installation_id": get_name_to_api(self.is_created_by[0]),
@@ -54,7 +48,7 @@ with onto:
         "city": self.has_city[0].to_json(),
         "size": {
           "id": size_to_id(self.has_size[0]),
-          "name": get_name_to_onto(self.has_size[0])
+          "name": size_to_portuguese(self.has_size[0])
         } 
       }
 
