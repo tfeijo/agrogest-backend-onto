@@ -49,21 +49,39 @@ with onto:
   class hectare(DataProperty):
     range = [float]
 
-  class prod_milk(DataProperty):
-    range = [bool]
-
-  class prod_beef(DataProperty):
-    range = [bool]
-
-  class prod_aviculture(DataProperty):
-    range = [bool]
-
-  class prod_pig(DataProperty):
-    range = [bool]
-
-  class prod_agriculture(DataProperty):
-    range = [bool]
-
   class licensing(DataProperty):
     range = [bool]
     python_name = 'licensing'
+  
+  class base(DataProperty):
+    range = [float]
+    python_name = 'base'
+  
+  class min(DataProperty):
+    range = [float]
+    python_name = 'min'
+  
+  class sma(DataProperty):
+    range = [float]
+    python_name = 'sma'
+  
+  class medi(DataProperty):
+    range = [float]
+    python_name = 'medi'
+
+  class larg(DataProperty):
+    range = [float]
+    python_name = 'larg'
+
+  class excep(DataProperty):
+    range = [float]
+    python_name = 'excep'
+
+  class num_animals(DataProperty):
+    range = [int]
+    python_name = 'num_animals'
+
+  class num_area(DataProperty):
+    range = [float]
+    python_name = 'num_area'
+  

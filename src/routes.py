@@ -5,6 +5,8 @@ from src.controllers.CityController import *
 from src.controllers.StateController import *
 from src.controllers.BiomeController import *
 from src.controllers.FarmController import *
+from src.controllers.ParameterController import *
+from src.controllers.ProductionController import *
 
 @app.route('/', methods=['GET']) 
 def readme():
@@ -37,8 +39,6 @@ def biome_index(): return BiomeController.index()
 @app.route('/biomes/<int:id>', methods=['GET']) 
 def biome_show(id): return BiomeController.show(id)
 
-################# CORRIGIR
-
 @app.route('/farms', methods=['GET']) 
 def farm_index(): return FarmController.index()
 
@@ -49,6 +49,20 @@ def farm_store():
 
 @app.route('/farms/<int:id>', methods=['GET']) 
 def farm_show(id): return FarmController.show(id)
+
+@app.route('/parameters', methods=['POST']) 
+def parameter_store():
+  parameter = request.json
+  return ParameterController.store(parameter)
+@app.route('/parameters', methods=['GET']) 
+def parameters_index(): return ParameterController.index()
+
+@app.route('/productions', methods=['POST']) 
+def production_store():
+  productions = request.json
+  return ProductionController.store(productions)
+@app.route('/productions', methods=['GET']) 
+def productions_index(): return ProductionController.index()
 
 
 ####################

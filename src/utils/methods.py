@@ -1,5 +1,6 @@
 import unicodedata
-import uuid 
+import uuid
+import string as st
 import re
 from src.models.Classes import *
 from threading import Thread
@@ -23,7 +24,7 @@ def normal_string(string):
   return string.replace("_", " ")
 
 def get_name_to_api(obj):
-  return normal_string(str(obj).split('.',1)[1])
+  return st.capwords(normal_string(str(obj).split('.',1)[1]))
 
 def get_name_to_onto(obj):
   return str(obj).split('.',1)[1]

@@ -53,68 +53,39 @@ with onto:
     inverse_property = has_farm
   
   class has_size(ObjectProperty):
-    # domain = [Farm, Factor, Production]
     range = [Size]
     python_name = 'has_size'
 
   class is_size_of(ObjectProperty):
     domain = [Size]
-    # range = [Farm, Factor,Production]
     inverse_property = has_size
   
-  class has_activity(ObjectProperty):
-    # domain = [Farm, Parameter, Production]
-    range = [ProductionActivity]
+  class has_activity(ObjectProperty): pass
 
   class is_activity_of(ObjectProperty):
-    domain = [ProductionActivity]
-    # range = [Farm, Parameter, Production]
     inverse_property = has_activity
   
-  class has_measurement(ObjectProperty):
-    domain = [Parameter]
-    range = [Measurement]
+  class has_measurement(ObjectProperty): pass
 
   class is_measurement_of(ObjectProperty):
-    domain = [Measurement]
-    range = [Parameter]
     inverse_property = has_measurement
   
-  class has_factor(ObjectProperty):
-    domain = [Parameter]
-    range = [Factor]
+  class has_factor(ObjectProperty): pass
 
   class is_factor_of(ObjectProperty):
-    domain = [Factor]
-    range = [Parameter]
     inverse_property = has_factor
   
-  class has_production(ObjectProperty):
-    domain = [Farm]
-    range = [Production]
-  
-  class is_production_of(ObjectProperty):
-    domain = [Production]
-    range = [Farm]
-    inverse_property = has_production
-  
-  class has_production_system(ObjectProperty):
-    domain = [ProductionActivity]
-    range = [ProductionSystem]
 
-  class is_production_system_of(ObjectProperty):
-    domain = [ProductionSystem]
-    range = [ProductionActivity]
-    inverse_property = has_production_system
+  class is_production_of(ObjectProperty): pass
   
-  class has_production_handling(ObjectProperty):
-    domain = [ProductionSystem]
-    range = [ProductionHandling]
+  class has_production(ObjectProperty): 
+    inverse_property = is_production_of
+   
+  class has_handling(ObjectProperty):
+    python_name = 'has_handling'
 
-  class is_production_handling_of(ObjectProperty):
-    domain = [ProductionHandling]
-    range = [ProductionSystem]
-    inverse_property = has_production_handling
+  class is_handling_of(ObjectProperty):
+    inverse_property = has_handling
 
   class is_created_by(ObjectProperty):
     domain = [Farm]
@@ -126,6 +97,12 @@ with onto:
     range = [Farm]
     inverse_property = is_created_by
   
+  class has_cultivation(ObjectProperty):
+    pass
+    
+  class is_cultivation_of(ObjectProperty):
+    inverse_property = has_cultivation
+
   class has_biome_associated(ObjectProperty):
     pass
   class has_state_associated(ObjectProperty):
