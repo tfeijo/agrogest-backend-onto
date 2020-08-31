@@ -68,32 +68,19 @@ with onto:
                   -> result_fm(?f, ?r)
               """
     },{
-      'name': 'result_fm < 4 -> Size = Small',
+      'name': 'result_fm <= 4 -> Size = Small',
       'desc': """
                 result_fm(?f, ?r),
-                lessThan(?r, 4.0)
+                lessThanOrEqual(?r, 4.0)
                   -> has_size(?f, Small)
               """
     },{
-      'name': 'result_fm == 4 -> Size = Small',
+      'name': 'result_fm > 4 || <= 15 -> Size = Medium',
       'desc': """
                 result_fm(?f, ?r),
-                equal(?r, 4.0)
-                  -> has_size(?f, Small)
-              """
-    },{
-      'name': 'result_fm > 4 || < 15 -> Size = Medium',
-      'desc': """
-                result_fm(?f, ?r),
-                greaterThan(?r, 4.0), lessThan(?r, 15.0)
+                greaterThan(?r, 4.0), lessThanOrEqual(?r, 15.0)
                   -> has_size(?f, Medium)
               """
-    },{ 
-      'name': 'result_fm == 15 -> Size = Medium',
-      'desc': """
-                result_fm(?f, ?r),
-                equal(?r, 15.0)
-                  -> has_size(?f, Medium)"""
     },{
       'name': 'result_fm == 15 -> Size = Medium',
       'desc': """
@@ -110,7 +97,171 @@ with onto:
                 has_production_associated(?d,?pa),
                 has_production(?f,?pa),
                   -> has_document_associated(?f, ?d)"""
-    }
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Production(?prod),
+      has_measurement(?prod, modulo_fiscal),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?fm)
+        -> result_prod(?prod,?fm)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Production(?prod),
+      has_measurement(?prod, area),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?fm)
+        -> result_prod(?prod,?fm)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Production(?prod),
+      has_measurement(?prod, n_de_cabecas),
+      num_animals(?prod,?fm)
+        -> result_prod(?prod,?fm)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Production(?prod),
+      has_measurement(?prod, area_de_pastagem),
+      num_area(?prod,?fm)
+        -> result_prod(?prod,?fm)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Production(?prod),
+      has_measurement(?prod, vacas_em_lactacao),
+      num_animals(?prod,?fm),
+      multiply(?r, 0.7, ?fm)
+        -> result_prod(?prod,?r)"""
+    },
+    {
+      'name': 'Parameter association',
+      'desc': """
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+      has_handling(?prod, ?hand),
+      
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,false),
+
+      Parameter(?param),
+      has_state_associated(?param, ?st),
+      has_activity(?param, ?act),
+      has_handling(?param, ?hand)
+      
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    {
+      'name': 'Parameter association',
+      'desc': """
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,false),
+      
+      Parameter(?param),
+      has_state_associated(?param, ?st),
+      has_activity(?param, ?act),
+
+      has_handling(?param, sem_especificacao),
+      
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    {
+      'name': 'Parameter association - agriculture',
+      'desc': """
+      Parameter(?param),
+      has_state_associated(?param, ?st),
+      has_activity(?param, ?act),
+      
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+      
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,true),
+
+      has_handling(?prod, ?hand),
+      has_cultivation(?prod, ?cult),
+      has_handling(?param, ?hand),
+      has_cultivation(?param, ?cult),
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    {
+      'name': 'Parameter association - agriculture',
+      'desc': """
+      Parameter(?param),
+      has_state_associated(?param, ?st),
+      has_activity(?param, ?act),
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+      
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,true),
+
+      has_cultivation(?prod, ?cult),
+      has_handling(?param, sem_especificacao),
+      has_cultivation(?param, ?cult),
+
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    {
+      'name': 'Parameter association - agriculture',
+      'desc': """
+      Parameter(?param),
+      has_activity(?param, ?act),
+      has_state_associated(?param, ?st),
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,true),
+      
+      has_handling(?prod, ?hand),
+      has_handling(?param, ?hand),
+      has_cultivation(?param, sem_especificacao),
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    {
+      'name': 'Parameter association - agriculture',
+      'desc': """
+      Parameter(?param),
+      has_activity(?param, ?act),
+      has_state_associated(?param, ?st),
+      Production(?prod),
+      has_state_associated(?prod, ?st),
+      has_activity(?prod, ?act),
+
+      is_agricultura(?prod,?isAg),
+      equal(?isAg,true),
+      
+      has_handling(?param,  sem_especificacao),
+      has_cultivation(?param, sem_especificacao),
+      
+        -> has_parameter_associated(?prod, ?param)"""
+    },
+    
+    {
+      'name':'Factor association',
+      'desc': """
+      Production(?prod),
+      has_parameter_associated(?prod,?param),
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+
   ]
 
   for rule in rules:

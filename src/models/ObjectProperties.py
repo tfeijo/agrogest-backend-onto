@@ -111,6 +111,10 @@ with onto:
     pass
   class has_production_associated(ObjectProperty):
     pass
+  class has_parameter_associated(ObjectProperty):
+    pass
+  class has_factor_associated(ObjectProperty):
+    pass
 
   
   AllDisjoint([City, Farm, State, Biome, Size])

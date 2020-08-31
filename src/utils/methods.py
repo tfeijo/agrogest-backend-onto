@@ -17,7 +17,7 @@ class Reasoner(Thread):
 def clear_string(string):
   nfkd = unicodedata.normalize('NFKD', string)
   cleanedString = "".join([c for c in nfkd if not unicodedata.combining(c)])
-  string = re.sub('[^a-zA-Z0-9 \\\]', '', cleanedString).strip().replace(" ", "_")
+  string = re.sub('[^a-zA-Z0-9 \\\]', '', cleanedString).strip().replace(" ", "_").lower()
   return unicodedata.normalize('NFKD', string).encode('ASCII', 'ignore').decode('ASCII')
 
 def normal_string(string):

@@ -52,6 +52,10 @@ with onto:
   class licensing(DataProperty):
     range = [bool]
     python_name = 'licensing'
+
+  class is_agricultura(DataProperty):
+    range = [bool]
+    python_name = 'is_agricultura'
   
   class base(DataProperty):
     range = [float]
@@ -84,4 +88,8 @@ with onto:
   class num_area(DataProperty):
     range = [float]
     python_name = 'num_area'
+
+  class result_prod(DataProperty):
+    range = [float]
+    python_name = 'result_prod'
   

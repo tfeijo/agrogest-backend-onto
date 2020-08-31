@@ -1,6 +1,8 @@
 from owlready2 import *
 import json
 
+# reasoning.JAVA_MEMORY = 15000  
+
 onto_path.append("src/ontology/")
 onto = get_ontology("bd.owl").load()
 

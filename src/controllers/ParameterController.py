@@ -18,7 +18,13 @@ class ParameterController:
       uf_name = str(uf).split('.',1)[1]
       if uf_name.upper() == parameter['state']: state = uf
     
-    name = f'{state.uf[0]}_{parameter["activity"]}_{parameter["handling"]}_{parameter["measurement"]}'
+    if parameter['activity'] != 'agricultura':
+      name = f'{state.uf[0]}_{parameter["activity"]}_{parameter["handling"]}\
+_{parameter["measurement"]}_{id}'
+    else:
+      name = f'{state.uf[0]}_{parameter["activity"]}_{parameter["cultura"]}\
+_{parameter["handling"]}_{parameter["measurement"]}_{id}'
+
     activity = onto.ProductionActivity(parameter['activity'])
     handling = onto.ProductionHandling(parameter['handling'])
     measurement = onto.Measurement(parameter['measurement'])
