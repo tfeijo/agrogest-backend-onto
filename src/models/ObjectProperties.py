@@ -105,16 +105,32 @@ with onto:
 
   class has_biome_associated(ObjectProperty):
     pass
+  class is_biome_associated_of(ObjectProperty):
+    inverse_property = has_biome_associated
+
   class has_state_associated(ObjectProperty):
     pass
+  class is_state_associated_of(ObjectProperty):
+    inverse_property = has_state_associated
+
   class has_document_associated(ObjectProperty):
     pass
+  class is_document_associated_of(ObjectProperty):
+    inverse_property = has_document_associated
+
   class has_production_associated(ObjectProperty):
     pass
-  class has_parameter_associated(ObjectProperty):
-    pass
+  class is_production_associated_of(ObjectProperty):
+    inverse_property = has_production_associated
+  
+  class has_parameter_associated(ObjectProperty): pass
+  
+  class is_parameter_associated_of(ObjectProperty):
+    inverse_property = has_parameter_associated
+
   class has_factor_associated(ObjectProperty):
     pass
-
+  class is_factor_associated_of(ObjectProperty):
+    inverse_property = has_factor_associated
   
   AllDisjoint([City, Farm, State, Biome, Size])

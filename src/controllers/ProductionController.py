@@ -23,8 +23,6 @@ class ProductionController:
           )
           farm.has_production.append(new)
           
-          
-
           if 'cultivation' in production:
             new.is_agricultura = [True]
             new.has_cultivation = [ProductionCultivation(clear_string(production["cultivation"]))]
