@@ -1,6 +1,6 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, get_id
+from src.ontology.config import onto, increase_id
 
 class BiomeController:
   def index():
@@ -14,7 +14,7 @@ class BiomeController:
     return jsonify(biome.to_json())
   
   def store(biome):
-    id = get_id('Biome')
+    id = increase_id('Biome')
     new = Biome(
       clear_string(biome['name']),
       id = [biome['id']],

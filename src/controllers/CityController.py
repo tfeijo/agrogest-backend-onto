@@ -3,7 +3,7 @@ from owlready2 import *
 from src.models.Classes import *
 from src.models.Rules import *
 from src.utils.methods import *
-from src.ontology.config import onto, get_id
+from src.ontology.config import onto, increase_id
 
 class CityController:
   def index(state_id = '*', biome_id='*'):
@@ -44,7 +44,7 @@ class CityController:
     
     name = clear_string(city['name'])
     uf = state.uf[0]
-    id = get_id('City')
+    id = increase_id('City')
 
     city = City(
         f'{name}_{uf}',

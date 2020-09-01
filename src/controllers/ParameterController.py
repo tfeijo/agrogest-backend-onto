@@ -1,6 +1,6 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, get_id
+from src.ontology.config import onto, increase_id
 
 class ParameterController:
   def index():
@@ -11,7 +11,7 @@ class ParameterController:
 
   def store(parameter):
 
-    id = get_id('Parameter')
+    id = increase_id('Parameter')
     state = None
     states = onto.State.instances()
     for uf in states:

@@ -1,6 +1,6 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, get_id
+from src.ontology.config import onto, increase_id
 from src.utils.methods import *
 
 class StateController():
@@ -18,7 +18,7 @@ class StateController():
   
   def store(state):
     name = clear_string(state['name'])
-    id = get_id('State')
+    id = increase_id('State')
     new = State(
       name,
       # id = [id],

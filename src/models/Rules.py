@@ -210,15 +210,6 @@ with onto:
       
         -> has_parameter_associated(?prod, ?param)"""
     },
-    ################  FACTOR ASSOCIATION
-    {
-      'name':'Factor association',
-      'desc': """
-      Production(?prod),
-      has_parameter_associated(?prod,?param),
-      has_factor(?param,?factor)
-       -> has_factor_associated(?prod,?factor)"""
-    },
     ################ SIZE BASED ON MODULE_FISCAL 
     {
       'name': 'Production measurement',
@@ -236,7 +227,7 @@ with onto:
       lessThanOrEqual(?result,?baseMax),
       greaterThanOrEqual(?result,?floor),
 
-        -> has_size(?prod,Minimum)"""
+      -> has_size(?prod,Minimum)"""
     },
     {
       'name': 'Production measurement',
@@ -715,7 +706,586 @@ with onto:
       Production(?prod),
         -> has_size(?prod,sem_especificacao)"""
     },
+    ################## SIZE SEM_ESPECIFICACAO
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
 
+      min(?param, ?mn),
+      sma(?param, ?sm),
+      medi(?param, ?me),
+      larg(?param, ?la),
+      excep(?param, ?ex),
+      
+      lessThan(?mn, 0),
+      lessThan(?sm, 0),
+      lessThan(?me, 0),
+      lessThan(?la, 0),
+      lessThan(?ex, 0),
+
+        -> has_size(?prod,sem_especificacao)"""
+    },
+    ############
+    ############ SAME RULES TO FACTOR ####
+    ############
+    ################  FACTOR ASSOCIATION
+    # {
+    #   'name':'Factor association',
+    #   'desc': """
+    #   Production(?prod),
+    #   has_parameter_associated(?prod,?param),
+    #   has_factor(?param,?factor)
+    #    -> has_factor_associated(?prod,?factor)"""
+    # },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      base(?param,?floor),
+      min(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      base(?param,?floor),
+      min(?param,?baseMin),
+      sma(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      base(?param,?floor),
+      sma(?param,?baseMin),
+      medi(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      base(?param,?floor),
+      medi(?param,?baseMin),
+      larg(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      base(?param,?floor),
+      larg(?param,?baseMin),
+      excep(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################ SIZE BASED ON AREA
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+
+      base(?param,?floor),
+      min(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      base(?param,?floor),
+      min(?param,?baseMin),
+      sma(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      base(?param,?floor),
+      sma(?param,?baseMin),
+      medi(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      base(?param,?floor),
+      medi(?param,?baseMin),
+      larg(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      base(?param,?floor),
+      larg(?param,?baseMin),
+      excep(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################ SIZE BASED ON N_DE_CABECAS
+    {
+      'name': 'Production measurement',
+      'desc': """
+      
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+
+      base(?param,?floor),
+      min(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      base(?param,?floor),
+      min(?param,?baseMin),
+      sma(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      base(?param,?floor),
+      sma(?param,?baseMin),
+      medi(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      base(?param,?floor),
+      medi(?param,?baseMin),
+      larg(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      base(?param,?floor),
+      larg(?param,?baseMin),
+      excep(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################ SIZE BASED ON N_DE_AREA
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_pastagem),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+
+      base(?param,?floor),
+      min(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_pastagem),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+      
+      base(?param,?floor),
+      min(?param,?baseMin),
+      sma(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_pastagem),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+
+      base(?param,?floor),
+      sma(?param,?baseMin),
+      medi(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_pastagem),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+      
+      base(?param,?floor),
+      medi(?param,?baseMin),
+      larg(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_pastagem),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+
+      base(?param,?floor),
+      larg(?param,?baseMin),
+      excep(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################ SIZE BASED ON VACAS_EM_LACTACAO
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+
+      base(?param,?floor),
+      min(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+      
+      base(?param,?floor),
+      min(?param,?baseMin),
+      sma(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+      
+      base(?param,?floor),
+      sma(?param,?baseMin),
+      medi(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+      
+      base(?param,?floor),
+      medi(?param,?baseMin),
+      larg(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+      
+      base(?param,?floor),
+      larg(?param,?baseMin),
+      excep(?param,?baseMax),
+
+      lessThanOrEqual(?result,?baseMax),
+      greaterThan(?result,?baseMin),
+      greaterThanOrEqual(?result,?floor),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################## MEASUREMENT SEM_ESPECIFICACAO
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, sem_especificacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+
+    ########################## has_factor_associated
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+
+      min(?param, ?mn),
+      sma(?param, ?sm),
+      medi(?param, ?me),
+      larg(?param, ?la),
+      excep(?param, ?ex),
+      
+      equal(?mn, -1),
+      equal(?sm, -1),
+      equal(?me, -1),
+      equal(?la, -1),
+      equal(?ex, -1),
+
+      has_factor(?param,?factor)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    ################## OUTSIDE ANY PARAMETER    
   ]
 
   for rule in rules:

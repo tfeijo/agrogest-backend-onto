@@ -52,5 +52,10 @@ def size_to_portuguese(obj):
     "Medium": "Médio",
     "Large": "Grande",
     "Exceptional": "Excepcional",
+    "baixo": "Baixo",
+    "alto": "Alto",
+    "medio": "Médio",
+    "sem_especificacao": "Sem Especificação",
   }
   return str(json[get_name_to_onto(obj)])
+

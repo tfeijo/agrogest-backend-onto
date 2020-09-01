@@ -80,17 +80,21 @@ with onto:
   class Factor(Thing): pass
 
   class Production(Thing):
-     def to_json(self):
-      return {
+    def to_json(self):
+      response = {
         "id": self.id[0],
-        "has_activity": get_name_to_api(self.has_activity[0]),
+        "activity": get_name_to_api(self.has_activity[0]),
         "num_area": self.num_area[0],
-        "num_animals": self.num_animals[0],
-        "has_handling": get_name_to_api(self.has_handling[0]),
-        "is_production_of": str(self.is_production_of[0]),
-        "has_measurement": get_name_to_api(self.has_measurement[0]),
-        "has_state_associated": get_name_to_api(self.has_state_associated[0]),
+        "handling": get_name_to_api(self.has_handling[0]),
+        "farm": self.is_production_of[0].to_json(),
+        "size": size_to_portuguese(self.has_size[0]),
+        "factor": size_to_portuguese(self.has_factor_associated[0])
       }
+      
+      if str(self.has_activity[0]) != "bd.agricultura":
+        response["num_animals"] = self.num_animals[0]
+        
+      return response
 
   class ProductionActivity(Thing): pass
 
