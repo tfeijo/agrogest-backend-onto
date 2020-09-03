@@ -64,6 +64,9 @@ def production_store():
 @app.route('/productions', methods=['GET']) 
 def productions_index(): return ProductionController.index()
 
+@app.route('/productions/<int:id>', methods=['DELETE']) 
+def productions_delete(id): return ProductionController.delete(id)
+
 
 ####################
 # Methods POST (store) not essencial

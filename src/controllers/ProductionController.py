@@ -11,8 +11,10 @@ class ProductionController:
         farm = onto.search_one(is_a=Farm, id=productions['farm_id'])
         for production in productions['productions']: 
           id = increase_id('Production')
+          name = f'farm-{farm.id[0]}_{clear_string(production["activity"])}_{id}'
+          # destroy_entity(Production(name))
           new = Production(
-            f'farm-{farm.id[0]}_{id}',
+            name,
             id = [id],
             num_area=[float(production["num_area"])],
             has_activity=[ProductionActivity(clear_string(production["activity"]))],
@@ -32,19 +34,9 @@ class ProductionController:
           new_list.append(new)
       
       with onto: sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-      onto.save()
       
-    except Exception as e:
-      decrease_id('Production')
-      return jsonify({
-        "Error": "Something went wrong in inserting",
-        "msg": e
-      }), 400
-    else:
-      try:
-        list_retorned = []
-        param = Parameter("sem_especificacao")
-        for item in new_list:
+      param = Parameter("sem_especificacao")
+      for item in new_list:
           if item.has_parameter_associated == []:
             item.has_parameter_associated = [param]
             item.has_size = [param]
@@ -58,8 +50,23 @@ class ProductionController:
           if item.has_parameter_associated[0] != param and item.has_factor_associated == [] :
             item.has_factor_associated = [param]
             onto.save()
+      
+      onto.save()
+      
+    except Exception as e:
+      decrease_id('Production')
+      return jsonify({
+        "Error": "Something went wrong in inserting",
+        "msg": e
+      }), 400
+    else:
+      try:
 
-          list_retorned.append(item.to_json())
+        list_retorned = []
+        query_prod = onto.search(is_a=Production, is_production_of=farm)
+
+        for prod in query_prod:
+          list_retorned.append(prod.to_json())
         
         return jsonify(list_retorned),200
       except Exception as e:
@@ -74,3 +81,19 @@ class ProductionController:
     for production in query:
       productions.append(production.to_json())
     return jsonify(productions)
+
+  def delete(id):
+    query_prod = onto.search_one(is_a=Production, id=id)
+    try:
+      destroy_entity(query_prod)
+      onto.save()
+      return jsonify({
+       "msg": "Successfull"
+      }), 200
+
+    except Exception as e:
+      return jsonify({
+        "Error": "Something went wrong in deleting",
+        "msg": e
+      }), 400
+      

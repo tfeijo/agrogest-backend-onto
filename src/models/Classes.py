@@ -93,6 +93,8 @@ with onto:
       
       if str(self.has_activity[0]) != "bd.agricultura":
         response["num_animals"] = self.num_animals[0]
+      else: 
+        response["cultivation"] = get_name_to_api(self.has_cultivation[0])
         
       return response
 
