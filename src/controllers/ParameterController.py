@@ -33,14 +33,15 @@ _{parameter["handling"]}_{parameter["measurement"]}_{id}'
     new.id = [id]
     if parameter['cultura'] != None:
       new.has_cultivation=[ProductionCultivation(parameter['cultura'])]
-    new.has_state_associated=[state]
     if parameter['factor'] != None:
       new.has_factor=[Factor(parameter['factor'])]
+    
     new.has_state_associated=[state]
     new.has_activity=[activity]
     new.has_handling=[handling]
     new.has_measurement=[measurement]
     new.base=[int(parameter['base'])]
+    new.top=[int(parameter['top'])]
     new.min=[int(parameter['min'])]
     new.sma=[int(parameter['sma'])]
     new.medi=[int(parameter['medi'])]

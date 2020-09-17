@@ -210,6 +210,7 @@ with onto:
       
         -> has_parameter_associated(?prod, ?param)"""
     },
+
     ################ SIZE BASED ON MODULE_FISCAL 
     {
       'name': 'Production measurement',
@@ -314,7 +315,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -332,7 +333,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -352,7 +353,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -372,7 +373,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -392,7 +393,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -508,7 +509,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -525,7 +526,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -544,7 +545,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -563,7 +564,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -582,7 +583,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -848,7 +849,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -867,7 +868,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -888,7 +889,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -909,7 +910,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -930,7 +931,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area),
+      has_measurement(?param, area_da_propriedade),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       is_production_of(?prod,?fa),
@@ -1052,7 +1053,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -1070,7 +1071,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -1090,7 +1091,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -1110,7 +1111,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -1130,7 +1131,7 @@ with onto:
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, area_de_pastagem),
+      has_measurement(?param, area_de_producao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       num_area(?prod,?result),
@@ -1285,7 +1286,29 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################## OUTSIDE ANY PARAMETER    
+    ################## Factor without size    
+
+    {
+      'name': 'Factor',
+      'desc': """
+      Parameter(?param),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      has_factor(?param,?factor),
+      top(?param, ?t),
+      equal(?t,-1.0)
+       -> has_factor_associated(?prod,?factor)"""
+    },
+    {
+      'name': 'Size',
+      'desc': """
+      Parameter(?param),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      top(?param, ?t),
+      equal(?t,-1.0)
+       -> has_size(?prod,sem_especificacao)"""
+    },
   ]
 
   for rule in rules:
