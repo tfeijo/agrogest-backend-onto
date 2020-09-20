@@ -88,16 +88,7 @@ with onto:
                 greaterThan(?r, 15.0)
                   -> has_size(?f, Large)"""
     },
-    {
-      'name': 'Farm has_document_associated',
-      'desc': """
-                Farm(?f),
-                Document(?d),
-                ProductionActivity(?pa),
-                has_production_associated(?d,?pa),
-                has_production(?f,?pa),
-                  -> has_document_associated(?f, ?d)"""
-    },
+
     ################ PARAMETER ASSOCIATION
     {
       'name': 'Parameter association',
@@ -117,6 +108,8 @@ with onto:
       
         -> has_parameter_associated(?prod, ?param)"""
     },
+
+    #####################################
     {
       'name': 'Parameter association',
       'desc': """
@@ -310,6 +303,22 @@ with onto:
 
         -> has_size(?prod,Exceptional)"""
     },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      top(?param,?t),
+      
+      greaterThan(?result,?t),
+      
+        -> has_size(?prod,sem_especificacao)"""
+    },
     ################ SIZE BASED ON AREA
     {
       'name': 'Production measurement',
@@ -409,6 +418,22 @@ with onto:
 
         -> has_size(?prod,Exceptional)"""
     },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_da_propriedade),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      top(?param,?t),
+      
+      greaterThan(?result,?t),
+      
+        -> has_size(?prod,sem_especificacao)"""
+    },
     ################ SIZE BASED ON N_DE_CABECAS
     {
       'name': 'Production measurement',
@@ -504,6 +529,21 @@ with onto:
 
         -> has_size(?prod,Exceptional)"""
     },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      top(?param,?t),
+      
+      greaterThan(?result,?t),
+        -> has_size(?prod,sem_especificacao)"""
+    },
+    
     ################ SIZE BASED ON N_DE_AREA
     {
       'name': 'Production measurement',
@@ -597,6 +637,20 @@ with onto:
       greaterThanOrEqual(?result,?floor),
 
         -> has_size(?prod,Exceptional)"""
+    },
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_producao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+      
+      top(?param,?t),
+      
+      greaterThan(?result,?t),
+        -> has_size(?prod,sem_especificacao)"""
     },
     ################ SIZE BASED ON VACAS_EM_LACTACAO
     {
@@ -697,50 +751,27 @@ with onto:
 
         -> has_size(?prod,Exceptional)"""
     },
-    ################## MEASUREMENT SEM_ESPECIFICACAO
     {
       'name': 'Production measurement',
       'desc': """
       Parameter(?param),
-      has_measurement(?param, sem_especificacao),
+      has_measurement(?param, vacas_em_lactacao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
-        -> has_size(?prod,sem_especificacao)"""
-    },
-    ################## SIZE SEM_ESPECIFICACAO
-    {
-      'name': 'Production measurement',
-      'desc': """
-      Parameter(?param),
-      is_parameter_associated_of(?param,?prod),
-      Production(?prod),
-
-      min(?param, ?mn),
-      sma(?param, ?sm),
-      medi(?param, ?me),
-      larg(?param, ?la),
-      excep(?param, ?ex),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
       
-      lessThan(?mn, 0),
-      lessThan(?sm, 0),
-      lessThan(?me, 0),
-      lessThan(?la, 0),
-      lessThan(?ex, 0),
-
+      top(?param,?t),
+      greaterThan(?result,?t),
+      
         -> has_size(?prod,sem_especificacao)"""
     },
+    
     ############
     ############ SAME RULES TO FACTOR ####
     ############
-    ################  FACTOR ASSOCIATION
-    # {
-    #   'name':'Factor association',
-    #   'desc': """
-    #   Production(?prod),
-    #   has_parameter_associated(?prod,?param),
-    #   has_factor(?param,?factor)
-    #    -> has_factor_associated(?prod,?factor)"""
-    # },
+    ################  FACTOR BASED ON MODULO FISCAL
+
     {
       'name': 'Production measurement',
       'desc': """
@@ -844,7 +875,23 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################ SIZE BASED ON AREA
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, modulo_fiscal),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      result_fm(?fa,?result),
+      
+      top(?param,?t),
+      
+      has_factor(?param,?fac),
+      greaterThan(?result,?t)
+        -> has_factor_associated(?prod,?fac)"""
+    },
+    ################ FACTOR BASED ON AREA
     {
       'name': 'Production measurement',
       'desc': """
@@ -948,7 +995,23 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################ SIZE BASED ON N_DE_CABECAS
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_da_propriedade),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      is_production_of(?prod,?fa),
+      hectare(?fa,?result),
+      
+      top(?param,?t),
+      
+      has_factor(?param,?fac),
+      greaterThan(?result,?t)
+        -> has_factor_associated(?prod,?fac)"""
+    },
+    ################ FACTOR BASED ON N_DE_CABECAS
     {
       'name': 'Production measurement',
       'desc': """
@@ -1048,7 +1111,22 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################ SIZE BASED ON N_DE_AREA
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, n_de_cabecas),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?result),
+      
+      top(?param,?t),
+      
+      has_factor(?param,?fac),
+      greaterThan(?result,?t)
+        -> has_factor_associated(?prod,?fac)"""
+    },
+    ################ FACTOR BASED ON N_DE_AREA
     {
       'name': 'Production measurement',
       'desc': """
@@ -1147,7 +1225,22 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################ SIZE BASED ON VACAS_EM_LACTACAO
+    {
+      'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, area_de_producao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_area(?prod,?result),
+      
+      top(?param,?t),
+      
+      has_factor(?param,?fac),
+      greaterThan(?result,?t)
+        -> has_factor_associated(?prod,?fac)"""
+    },
+    ################ FACTOR BASED ON VACAS_EM_LACTACAO
     {
       'name': 'Production measurement',
       'desc': """
@@ -1251,64 +1344,47 @@ with onto:
       has_factor(?param,?factor)
        -> has_factor_associated(?prod,?factor)"""
     },
-    ################## MEASUREMENT SEM_ESPECIFICACAO
     {
       'name': 'Production measurement',
+      'desc': """
+      Parameter(?param),
+      has_measurement(?param, vacas_em_lactacao),
+      is_parameter_associated_of(?param,?prod),
+      Production(?prod),
+      num_animals(?prod,?fm),
+      multiply(?result, 0.7, ?fm),
+      
+      top(?param,?t),
+      
+      has_factor(?param,?fac),
+      greaterThan(?result,?t)
+        -> has_factor_associated(?prod,?fac)"""
+    },
+    ### MEASUREMENT SEM_ESPECIFICACAO
+    ### SIZE SEM_ESPECIFICACAO
+    ### FACTOR ASSOCIATION
+    {
+      'name': 'FACTOR ASSOCIATION',
       'desc': """
       Parameter(?param),
       has_measurement(?param, sem_especificacao),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
-      has_factor(?param,?factor)
+      has_factor(?param,?factor),
        -> has_factor_associated(?prod,?factor)"""
     },
-
-    ########################## has_factor_associated
     {
-      'name': 'Production measurement',
-      'desc': """
-      Parameter(?param),
-      is_parameter_associated_of(?param,?prod),
-      Production(?prod),
-
-      min(?param, ?mn),
-      sma(?param, ?sm),
-      medi(?param, ?me),
-      larg(?param, ?la),
-      excep(?param, ?ex),
-      
-      equal(?mn, -1),
-      equal(?sm, -1),
-      equal(?me, -1),
-      equal(?la, -1),
-      equal(?ex, -1),
-
-      has_factor(?param,?factor)
-       -> has_factor_associated(?prod,?factor)"""
-    },
-    ################## Factor without size    
-
-    {
-      'name': 'Factor',
+      'name': 'FACTOR ASSOCIATION',
       'desc': """
       Parameter(?param),
       is_parameter_associated_of(?param,?prod),
       Production(?prod),
       has_factor(?param,?factor),
-      top(?param, ?t),
-      equal(?t,-1.0)
+      top(?param,?t),
+      
        -> has_factor_associated(?prod,?factor)"""
     },
-    {
-      'name': 'Size',
-      'desc': """
-      Parameter(?param),
-      is_parameter_associated_of(?param,?prod),
-      Production(?prod),
-      top(?param, ?t),
-      equal(?t,-1.0)
-       -> has_size(?prod,sem_especificacao)"""
-    },
+
   ]
 
   for rule in rules:

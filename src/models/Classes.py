@@ -64,6 +64,7 @@ with onto:
         "small": self.sma[0],
         "medium": self.medi[0],
         "large": self.larg[0],
+        "top": self.top[0],
         "exceptional": self.excep[0],
         "base": self.base[0],
       }
@@ -111,3 +112,10 @@ with onto:
   Size('Medium')
   Size('Large')
   Size('Exceptional')
+  Factor('sem_especificacao')
+  Factor('sem_especificacao')
+  Measurement('area_da_propriedade')
+  Measurement('modulo_fiscal')
+  Measurement('n_de_cabecas')
+  Measurement('area_de_producao')
+  Measurement('vacas_em_lactacao')

@@ -61,6 +61,10 @@ with onto:
     range = [float]
     python_name = 'base'
   
+  class top(DataProperty):
+    range = [float]
+    python_name = 'top'
+  
   class min(DataProperty):
     range = [float]
     python_name = 'min'
