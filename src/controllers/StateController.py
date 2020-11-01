@@ -7,7 +7,6 @@ class StateController():
 
   def index():
     states_query = onto.State.instances()
-    
     states = []
     for query in states_query: states.append(query.to_json())
     return jsonify(sorted(states, key = lambda i: (i['name'])))

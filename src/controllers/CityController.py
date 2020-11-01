@@ -7,19 +7,21 @@ from src.ontology.config import onto, increase_id
 
 class CityController:
   def index(state_id = '*', biome_id='*'):
+
     if state_id != '*':
       state_id = onto.search_one(is_a=onto.State, id=state_id)
     if biome_id != '*':
       biome_id = onto.search_one(is_a=onto.Biome, id=biome_id)
- 
+
     cities_query = list(onto.search(
       is_a=onto.City, has_state=state_id,
       has_biome=biome_id)
-    )      
+    ) 
     
     cities = []
+
     for query in cities_query:
-      cities.append(query.to_json())
+      cities.append(query.to_json()) 
     
     return jsonify(sorted(cities, key = lambda i: (i['name'])))
 

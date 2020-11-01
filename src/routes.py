@@ -7,6 +7,7 @@ from src.controllers.BiomeController import *
 from src.controllers.FarmController import *
 from src.controllers.ParameterController import *
 from src.controllers.ProductionController import *
+from src.controllers.QuestionController import *
 
 @app.route('/', methods=['GET']) 
 def readme():
@@ -61,6 +62,12 @@ def parameters_index(): return ParameterController.index()
 def production_store():
   productions = request.json
   return ProductionController.store(productions)
+
+@app.route('/questions', methods=['POST']) 
+def question_store():
+  questions = request.json
+  return QuestionController.store(questions)
+
 @app.route('/productions', methods=['GET']) 
 def productions_index(): return ProductionController.index()
 

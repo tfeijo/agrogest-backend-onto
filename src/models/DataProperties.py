@@ -39,6 +39,10 @@ with onto:
     domain = [State]
     python_name = 'uf'
 
+  class url(DataProperty):
+    range = [str]
+    python_name = 'url'
+
   class hectare(DataProperty):
     range = [float]
     python_name = 'hectare'

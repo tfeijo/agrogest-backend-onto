@@ -21,12 +21,13 @@ with onto:
       for biome in self.has_biome:
         biomes.append(biome.to_json())
       
+      fm = int(self.fiscal_module[0])
       return {
         "id": self.id[0],
         "name": get_name_to_api(self)[:-3],
         "state": self.has_state[0].to_json(),
         "biomes": biomes,
-        "fiscal_module": self.fiscal_module[0],
+        "fiscal_module": fm,
       }
 
   class Biome(Thing):
@@ -107,12 +108,16 @@ with onto:
 
   class ProductionCultivation(Thing): pass
 
+  class Category(Thing): pass
+  class Attribute(Thing): pass
+  class Question(Thing): pass
+
+
   Size('Minimum')
   Size('Small')
   Size('Medium')
   Size('Large')
   Size('Exceptional')
-  Factor('sem_especificacao')
   Factor('sem_especificacao')
   Measurement('area_da_propriedade')
   Measurement('modulo_fiscal')

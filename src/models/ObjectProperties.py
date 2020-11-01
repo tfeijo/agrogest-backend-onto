@@ -132,5 +132,35 @@ with onto:
     pass
   class is_factor_associated_of(ObjectProperty):
     inverse_property = has_factor_associated
+
+  class has_attended_document(ObjectProperty):
+    pass
+  class is_attended_document_by (ObjectProperty):
+    inverse_property = has_attended_document
+
+  class has_attribute(ObjectProperty):
+    pass
+  class is_attribute_of(ObjectProperty):
+    inverse_property = has_attribute
+
+  class has_recommended_document(ObjectProperty):
+    pass
+  class is_document_recommended_of(ObjectProperty):
+    inverse_property = has_recommended_document
+
+  class has_question(ObjectProperty):
+    pass
+  class is_question_of(ObjectProperty):
+    inverse_property = has_question
+
+  class has_category(ObjectProperty):
+    pass
+  class is_category_of(ObjectProperty):
+    inverse_property = has_category
+
+  class has_missing_attribute(ObjectProperty):
+    pass
+  class is_missing_attribute_of(ObjectProperty):
+    inverse_property = has_missing_attribute
   
   AllDisjoint([City, Farm, State, Biome, Size])
