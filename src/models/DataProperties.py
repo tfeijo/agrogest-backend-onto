@@ -42,6 +42,10 @@ with onto:
   class url(DataProperty):
     range = [str]
     python_name = 'url'
+  
+  class question_title(DataProperty):
+    range = [str]
+    python_name = 'question_title'
 
   class hectare(DataProperty):
     range = [float]
@@ -56,6 +60,10 @@ with onto:
   class licensing(DataProperty):
     range = [bool]
     python_name = 'licensing'
+  
+  class answer(DataProperty):
+    range = [bool]
+    python_name = 'answer'
 
   class is_agricultura(DataProperty):
     range = [bool]

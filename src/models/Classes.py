@@ -124,3 +124,9 @@ with onto:
   Measurement('n_de_cabecas')
   Measurement('area_de_producao')
   Measurement('vacas_em_lactacao')
+ 
+  Category('WasteManagement')
+  Category('SoilVegetation')
+  Category('Legislation')
+  Category('WaterResources')
+  Category('EnvironmentalManagement')

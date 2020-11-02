@@ -17,7 +17,6 @@ class FarmController():
   def store(farm):
     query_city = onto.search_one(is_a=onto.City, id=farm['city_id'])
 
-
     if 'id' in farm:
       farm_id = farm['id']
     else:

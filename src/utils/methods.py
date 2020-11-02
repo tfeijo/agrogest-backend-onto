@@ -21,10 +21,10 @@ def clear_string(string):
   return unicodedata.normalize('NFKD', string).encode('ASCII', 'ignore').decode('ASCII')
 
 def normal_string(string):
-  return string.replace("_", " ")
+  return st.capwords(string.replace("_", " "))
 
 def get_name_to_api(obj):
-  return st.capwords(normal_string(str(obj).split('.',1)[1]))
+  return normal_string(str(obj).split('.',1)[1])
 
 def get_name_to_onto(obj):
   return str(obj).split('.',1)[1]

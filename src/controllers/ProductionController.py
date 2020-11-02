@@ -54,6 +54,7 @@ class ProductionController:
       onto.save()
       
     except Exception as e:
+      print(e)
       decrease_id('Production')
       return jsonify({
         "Error": "Something went wrong in inserting",
