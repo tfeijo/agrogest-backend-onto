@@ -8,7 +8,10 @@ class StateController():
   def index():
     states_query = onto.State.instances()
     states = []
-    for query in states_query: states.append(query.to_json())
+    for query in states_query: 
+      if (query!=State("any")): 
+        states.append(query.to_json())
+
     return jsonify(sorted(states, key = lambda i: (i['name'])))
   
   def show(id):
@@ -20,7 +23,6 @@ class StateController():
     id = increase_id('State')
     new = State(
       name,
-      # id = [id],
       id = [state['id']],
       uf = [state['uf']]
     )

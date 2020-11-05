@@ -19,10 +19,11 @@ class CityController:
     ) 
     
     cities = []
-
+    
     for query in cities_query:
       cities.append(query.to_json()) 
     
+
     return jsonify(sorted(cities, key = lambda i: (i['name'])))
 
   def show(id):

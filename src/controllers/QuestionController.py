@@ -17,15 +17,39 @@ class QuestionController:
     category = Category(question['category'])
     url = str(question['url'])
     answer = question['answer']
-    question['question_title'] = clear_string(question['question_title'])
-    question_title = question['question_title']
-    
+    question_title = str(question['question_title'])
+    question_activity= question['activity']
+
     new_question = Question(
         name_question,
         id = [id_question],
         question_title = [question_title],
     )
 
+    activities = []
+    
+    if question_activity == 'pecuaria':
+      activities.append(ProductionActivity('bovinocultura_de_corte'))
+      activities.append(ProductionActivity('bovinocultura_de_leite'))
+      activities.append(ProductionActivity('suinocultura'))
+      activities.append(ProductionActivity('avicultura'))
+    
+    if question_activity == 'bovino':
+      activities.append(ProductionActivity('bovinocultura_de_corte'))
+      activities.append(ProductionActivity('bovinocultura_de_leite'))
+    
+    if question_activity == 'suino':
+      activities.append(ProductionActivity('suinocultura'))
+        
+    if question_activity == 'avicultura':
+      activities.append(ProductionActivity('avicultura'))
+    
+    if question_activity == 'agricultura':
+      activities.append(ProductionActivity('agricultura'))
+        
+    if question_activity == 'any':
+      activities.append(ProductionActivity('any'))
+    
     if uf != '':  
       state = onto.search_one(
         is_a = onto.State,
@@ -39,7 +63,8 @@ class QuestionController:
         has_category = [category],
         has_attribute = [attribute],
         has_question = [new_question],
-        has_state_associated = [state]
+        has_state_associated = [state],
+        has_activity = activities
       )
     else:
       new_document = Document(
@@ -49,7 +74,9 @@ class QuestionController:
         answer = [answer],
         has_category = [category],
         has_attribute = [attribute],
-        has_question = [new_question]
+        has_question = [new_question],
+        has_activity = activities,
+        has_state_associated = [State('any')]
       )
       
     question['question_title'] = normal_string(question['question_title'])

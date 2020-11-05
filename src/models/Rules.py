@@ -1384,7 +1384,62 @@ with onto:
       
        -> has_factor_associated(?prod,?factor)"""
     },
+    ##########################
+    ########################## Document recomendation
+    ##########################
+    {
+      'name': 'Document Association',
+      'desc': """
+      Farm(?farm),
+      has_attribute(?farm,?attrib),
+      
+      Document(?doc),
+      has_attribute(?doc,?attrib),
+      has_state_associated(?doc,any),
+      has_activity(?doc,any),
+      answer(?doc,true)
+       -> has_recommended_document(?farm,?doc)"""
+    },
+    {
+      'name': 'Document Association',
+      'desc': """
+      Farm(?farm),
+      has_missing_attribute(?farm,?attrib),
+      
+      Document(?doc),
+      has_attribute(?doc,?attrib),
+      has_state_associated(?doc,any),
+      has_activity(?doc,any),
+      answer(?doc,false)
+       -> has_recommended_document(?farm,?doc)"""
+    },
+    {
+      'name': 'Document Association',
+      'desc': """
+      Farm(?farm),
+      has_state_associated(?farm,?state),
+      has_missing_attribute(?farm,?attrib),
 
+      Document(?doc),
+      has_attribute(?doc,?attrib),
+      has_state_associated(?doc,?state),
+      answer(?doc,false)
+       -> has_recommended_document(?farm,?doc)"""
+    },
+    {
+      'name': 'Document Association',
+      'desc': """
+      Farm(?farm),
+      has_production(?farm,?prod),
+      has_activity(?prod,?act),
+      has_missing_attribute(?farm,?attrib),
+
+      Document(?doc),
+      has_attribute(?doc,?attrib),
+      has_activity(?doc,?act),
+      answer(?doc,false)
+       -> has_recommended_document(?farm,?doc)"""
+    }
   ]
 
   for rule in rules:
