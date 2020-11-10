@@ -7,11 +7,14 @@ with onto:
   
   class Document(Thing):
     def to_json(self):
+      
       return {
         "id": self.id[0],
         "url": self.url[0],
         "question": self.has_question[0].question_title[0],
-        "category": get_name_to_api(self.has_category[0])
+        "category": get_name_to_api(self.has_category[0]),
+        "description": self.description[0],
+        "is_file": self.is_file[0]
       }
 
   class State(Thing):

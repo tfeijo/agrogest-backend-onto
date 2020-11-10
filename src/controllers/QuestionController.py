@@ -17,9 +17,10 @@ class QuestionController:
     category = Category(question['category'])
     url = str(question['url'])
     answer = question['answer']
+    description_name = str(question['name'])
     question_title = str(question['question_title'])
     question_activity= question['activity']
-
+    is_file = question['is_file']
     new_question = Question(
         name_question,
         id = [id_question],
@@ -64,7 +65,9 @@ class QuestionController:
         has_attribute = [attribute],
         has_question = [new_question],
         has_state_associated = [state],
-        has_activity = activities
+        has_activity = activities,
+        description = [description_name],
+        is_file = [is_file]
       )
     else:
       new_document = Document(
@@ -76,11 +79,11 @@ class QuestionController:
         has_attribute = [attribute],
         has_question = [new_question],
         has_activity = activities,
-        has_state_associated = [State('any')]
+        has_state_associated = [State('any')],
+        description = [description_name],
+        is_file = [is_file]
       )
       
-    question['question_title'] = normal_string(question['question_title'])
-
     onto.save()
 
     return jsonify(question)

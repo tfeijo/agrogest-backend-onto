@@ -58,7 +58,7 @@ class ProductionController:
       decrease_id('Production')
       return jsonify({
         "Error": "Something went wrong in inserting",
-        "msg": e
+        "msg": str(e)
       }), 400
     else:
       try:

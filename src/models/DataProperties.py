@@ -39,6 +39,10 @@ with onto:
     domain = [State]
     python_name = 'uf'
 
+  class description(DataProperty):
+    range = [str]
+    python_name = 'description'
+
   class url(DataProperty):
     range = [str]
     python_name = 'url'
@@ -60,6 +64,10 @@ with onto:
   class licensing(DataProperty):
     range = [bool]
     python_name = 'licensing'
+  
+  class is_file(DataProperty):
+    range = [bool]
+    python_name = 'is_file'
   
   class answer(DataProperty):
     range = [bool]

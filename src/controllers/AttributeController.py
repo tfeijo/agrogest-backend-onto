@@ -49,12 +49,19 @@ class AttributeController:
           'category': [
             str(document['category'])
           ],
+          'description': str(document['description']),
+          'is_file': str(document['is_file']),
         }
       else:
+        
+        list_documents[url]['description'] = str(document['description'])
+        list_documents[url]['is_file'] = str(document['is_file'])
+        
         if not str(document['question']) in list_documents[url]['questions']:
           list_documents[url]['questions'].append(str(document['question']))
         
         if not str(document['category']) in list_documents[url]['category']:
           list_documents[url]['category'].append(str(document.category))
+
     print(list_documents)
     return jsonify(list_documents) 
