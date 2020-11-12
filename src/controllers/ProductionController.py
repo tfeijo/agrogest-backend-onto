@@ -9,6 +9,7 @@ class ProductionController:
       new_list = []
       with onto:
         farm = onto.search_one(is_a=Farm, id=productions['farm_id'])
+        print(productions['farm_id'])
         for production in productions['productions']: 
           id = increase_id('Production')
           name = f'farm-{farm.id[0]}_{clear_string(production["activity"])}_{id}'

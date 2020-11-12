@@ -8,20 +8,21 @@ from src.ontology.config import onto, increase_id
 
 class AttributeController:
   def store(attributes):
-    farm = onto.search_one(is_a=Farm, id=attributes['farm_id'])
-    print(f'ID: {attributes["farm_id"]}')
     
-    new_attributes = []
-    new_missing_attributes = []
+    farm = onto.search_one(is_a=Farm, id=attributes['farm_id'])
+    
+    
+    farm.has_attribute = []
+    farm.has_missing_attribute = []
 
     for key in attributes:
-      if (attributes[key]):
-        new_attributes.append(Attribute(key))
-      else:
-        new_missing_attributes.append(Attribute(key))
+      if key!="farm_id":
+
+        if (attributes[key]):
+          farm.has_attribute.append(Attribute(key))
+        else:
+          farm.has_missing_attribute.append(Attribute(key))
     
-    farm.has_attribute = new_attributes
-    farm.has_missing_attribute = new_missing_attributes
     with onto: 
       sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
     onto.save()
@@ -63,5 +64,5 @@ class AttributeController:
         if not str(document['category']) in list_documents[url]['category']:
           list_documents[url]['category'].append(str(document.category))
 
-    print(list_documents)
+    
     return jsonify(list_documents) 

@@ -1390,56 +1390,56 @@ with onto:
     {
       'name': 'Document Association',
       'desc': """
-      Farm(?farm),
-      has_attribute(?farm,?attrib),
+      Farm(?f),
+      has_attribute(?f,?attrib),
       
       Document(?doc),
       has_attribute(?doc,?attrib),
       has_state_associated(?doc,any),
       has_activity(?doc,any),
       answer(?doc,true)
-       -> has_recommended_document(?farm,?doc)"""
+       -> has_recommended_document(?f,?doc)"""
     },
     {
       'name': 'Document Association',
       'desc': """
-      Farm(?farm),
-      has_missing_attribute(?farm,?attrib),
+      Farm(?f),
+      has_missing_attribute(?f,?attrib),
       
       Document(?doc),
       has_attribute(?doc,?attrib),
       has_state_associated(?doc,any),
       has_activity(?doc,any),
       answer(?doc,false)
-       -> has_recommended_document(?farm,?doc)"""
+       -> has_recommended_document(?f,?doc)"""
     },
     {
       'name': 'Document Association',
       'desc': """
-      Farm(?farm),
-      has_state_associated(?farm,?state),
-      has_missing_attribute(?farm,?attrib),
+      Farm(?f),
+      has_state_associated(?f,?sta),
+      has_missing_attribute(?f,?attrib),
 
       Document(?doc),
       has_attribute(?doc,?attrib),
-      has_state_associated(?doc,?state),
+      has_state_associated(?doc,?sta),
       answer(?doc,false)
-       -> has_recommended_document(?farm,?doc)"""
+       -> has_recommended_document(?f,?doc)"""
     },
-    {
-      'name': 'Document Association',
-      'desc': """
-      Farm(?farm),
-      has_production(?farm,?prod),
-      has_activity(?prod,?act),
-      has_missing_attribute(?farm,?attrib),
+    #  {
+    #    'name': 'Document Association',
+    #    'desc': """
+    #    Farm(?f),
+    #    has_production(?f,?prod),
+    #    has_missing_attribute(?f,?attrib),
+    #    has_activity(?prod,?act),
 
-      Document(?doc),
-      has_attribute(?doc,?attrib),
-      has_activity(?doc,?act),
-      answer(?doc,false)
-       -> has_recommended_document(?farm,?doc)"""
-    }
+    #    Document(?doc),
+    #    has_attribute(?doc,?attrib),
+    #    has_activity(?doc,?act),
+    #    answer(?doc,false)
+    #     -> has_recommended_document(?f,?doc)"""
+    # }
   ]
 
   for rule in rules:
