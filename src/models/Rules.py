@@ -60,9 +60,8 @@ with onto:
     },{ 
       'name': 'Divide fm by Farm Size and insert result_fm',
       'desc': """
-                City(?c),
-                has_city(?f, ?c),
-                fiscal_module(?c, ?fm),
+                Farm(?f),
+                fiscal_module(?f, ?fm),
                 hectare(?f, ?hec),
                 divide(?r, ?hec, ?fm)
                   -> result_fm(?f, ?r)
@@ -70,6 +69,7 @@ with onto:
     },{
       'name': 'result_fm <= 4 -> Size = Small',
       'desc': """
+                Farm(?f),
                 result_fm(?f, ?r),
                 lessThanOrEqual(?r, 4.0)
                   -> has_size(?f, Small)
@@ -77,6 +77,7 @@ with onto:
     },{
       'name': 'result_fm > 4 || <= 15 -> Size = Medium',
       'desc': """
+                Farm(?f),
                 result_fm(?f, ?r),
                 greaterThan(?r, 4.0), lessThanOrEqual(?r, 15.0)
                   -> has_size(?f, Medium)
@@ -84,6 +85,7 @@ with onto:
     },{
       'name': 'result_fm == 15 -> Size = Medium',
       'desc': """
+                Farm(?f),
                 result_fm(?f, ?r),
                 greaterThan(?r, 15.0)
                   -> has_size(?f, Large)"""
@@ -1397,7 +1399,10 @@ with onto:
       has_attribute(?doc,?attrib),
       has_state_associated(?doc,any),
       has_activity(?doc,any),
-      answer(?doc,true)
+      
+      answer(?doc,?asw),
+      equal(?asw,true)
+      
        -> has_recommended_document(?f,?doc)"""
     },
     {
@@ -1410,7 +1415,10 @@ with onto:
       has_attribute(?doc,?attrib),
       has_state_associated(?doc,any),
       has_activity(?doc,any),
-      answer(?doc,false)
+      
+      answer(?doc,?asw),
+      equal(?asw,false)
+      
        -> has_recommended_document(?f,?doc)"""
     },
     {
@@ -1423,23 +1431,30 @@ with onto:
       Document(?doc),
       has_attribute(?doc,?attrib),
       has_state_associated(?doc,?sta),
-      answer(?doc,false)
+      
+      answer(?doc,?asw),
+      equal(?asw,false)
+      
        -> has_recommended_document(?f,?doc)"""
     },
-    #  {
-    #    'name': 'Document Association',
-    #    'desc': """
-    #    Farm(?f),
-    #    has_production(?f,?prod),
-    #    has_missing_attribute(?f,?attrib),
-    #    has_activity(?prod,?act),
+     {
+       'name': 'Document Association',
+       'desc': """
+       Farm(?f),
+       has_production(?f,?prod),
+       has_missing_attribute(?f,?attrib),
+       has_activity(?prod,?act),
 
-    #    Document(?doc),
-    #    has_attribute(?doc,?attrib),
-    #    has_activity(?doc,?act),
-    #    answer(?doc,false)
-    #     -> has_recommended_document(?f,?doc)"""
-    # }
+       Document(?doc),
+       has_attribute(?doc,?attrib),
+       has_activity(?doc,?act),
+       has_state_associated(?doc,any),
+       
+       answer(?doc,?asw),
+       equal(?asw,false)
+      
+        -> has_recommended_document(?f,?doc)"""
+    }
   ]
 
   for rule in rules:

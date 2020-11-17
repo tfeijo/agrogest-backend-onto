@@ -50,7 +50,9 @@ with onto:
   class Farm(Thing):
     
     def to_json(self):
-
+      documents = []
+      for document in self.has_recommended_document:
+        documents.append(document.to_json())
       return {
         "id": self.id[0],
         "installation_id": get_name_to_api(self.is_created_by[0]),
@@ -60,7 +62,8 @@ with onto:
         "size": {
           "id": size_to_id(self.has_size[0]),
           "name": size_to_portuguese(self.has_size[0])
-        } 
+        },
+        "documents": documents
       }
 
   class Parameter(Thing):

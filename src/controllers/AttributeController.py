@@ -11,13 +11,12 @@ class AttributeController:
     
     farm = onto.search_one(is_a=Farm, id=attributes['farm_id'])
     
-    
     farm.has_attribute = []
     farm.has_missing_attribute = []
-
+    farm.has_recommended_document = []
+          
     for key in attributes:
       if key!="farm_id":
-
         if (attributes[key]):
           farm.has_attribute.append(Attribute(key))
         else:
@@ -27,21 +26,16 @@ class AttributeController:
       sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
     onto.save()
 
-
     document_query = list(onto.search(
       is_a=onto.Document, is_document_recommended_of=farm
     )) 
 
-    documents_JSON = []
-    
-    for document in document_query:
-      documents_JSON.append(document.to_json())
-
     list_documents = {}
     
-    for document in documents_JSON:
-      url = str(document['url'])
+    for document in document_query:
+      document = document.to_json()
 
+      url = str(document['url'])
       if not url in list_documents:
         list_documents[url] = {
           'questions': [
@@ -54,7 +48,6 @@ class AttributeController:
           'is_file': str(document['is_file']),
         }
       else:
-        
         list_documents[url]['description'] = str(document['description'])
         list_documents[url]['is_file'] = str(document['is_file'])
         
@@ -63,6 +56,5 @@ class AttributeController:
         
         if not str(document['category']) in list_documents[url]['category']:
           list_documents[url]['category'].append(str(document.category))
-
-    
+   
     return jsonify(list_documents) 
