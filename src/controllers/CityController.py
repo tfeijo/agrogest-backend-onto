@@ -3,9 +3,11 @@ from owlready2 import *
 from src.models.Classes import *
 from src.models.Rules import *
 from src.utils.methods import *
-from src.ontology.config import onto, increase_id
+from src.ontology.config import increase_id
+
 
 class CityController:
+  onto = get_ontology(f'./src/ontology/db.owl').load()
   def index(state_id = '*', biome_id='*'):
     if state_id != '*':
       state_id = onto.search_one(is_a=onto.State, id=state_id)

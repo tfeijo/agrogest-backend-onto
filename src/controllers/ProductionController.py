@@ -5,17 +5,16 @@ from src.ontology.config import increase_id, decrease_id
 class ProductionController: 
  
   def store(productions):
+    onto = get_ontology(f'./src/ontology/temp/{productions["farm_id"]}.owl').load()
     try:
-      onto = get_ontology(f'./src/ontology/temp/{productions["farm_id"]}.owl').load()
       new_list = []
 
       with onto:
         farm = onto.search_one(is_a=Farm, id=productions['farm_id'])
-        print(productions['farm_id'])
         for production in productions['productions']: 
           id = increase_id('Production')
           name = f'farm-{farm.id[0]}_{clear_string(production["activity"])}_{id}'
-          # destroy_entity(Production(name))
+
           new = Production(
             name,
             id = [id],
@@ -50,10 +49,11 @@ class ProductionController:
 
           if item.has_parameter_associated[0] != param and item.has_factor_associated == [] :
             item.has_factor_associated = [param]
+
       onto.save(file=f'./src/ontology/temp/{productions["farm_id"]}.owl')
       
     except Exception as e:
-      print(e)
+      
       decrease_id('Production')
       
       return jsonify({
@@ -83,11 +83,14 @@ class ProductionController:
       productions.append(production.to_json())
     return jsonify(productions)
 
-  def delete(id):
-    query_prod = onto.search_one(is_a=Production, id=id)
+  def delete(farm_id, id):
+    onto = get_ontology(f'./src/ontology/temp/{farm_id}.owl').load()
     try:
-      destroy_entity(query_prod)
-      onto.save()
+      with onto: 
+        query_prod = onto.search_one(is_a=Production, id=id)
+        destroy_entity(query_prod)
+      
+      onto.save(file=f'./src/ontology/temp/{farm_id}.owl')
       return jsonify({
        "msg": "Successfull"
       }), 200

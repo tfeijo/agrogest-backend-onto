@@ -7,6 +7,7 @@ from src.utils.methods import *
 class FarmController():
   
   def index():
+    onto = get_ontology("./src/ontology/db.owl").load()
     query_farm = onto.Farm.instances()
     farms = []
     for farm in query_farm:
@@ -45,13 +46,13 @@ class FarmController():
       return jsonify({"Error": "Something went wrong in inserting"}), 400
     else:
       try:
-        print(new.to_json())
-        return jsonify(new.to_json()),200
+        json = new.to_json()
+        return jsonify(json),200
       except:
-        
         return jsonify({'Error':'Inserted but not queried'}),400
 
   def show(id):
     farm = onto.search_one(is_a=Farm, id=id)
     if farm == None: return jsonify({ 'error': 'Not found'}), 404
-    return jsonify(farm.to_json())
+    json = farm.to_json()
+    return jsonify(json)

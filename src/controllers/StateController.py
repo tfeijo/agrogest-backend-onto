@@ -1,10 +1,10 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, increase_id
+from src.ontology.config import increase_id
 from src.utils.methods import *
 
 class StateController():
-
+  onto = get_ontology(f'./src/ontology/db.owl').load()
   def index():
     states_query = onto.State.instances()
     states = []
