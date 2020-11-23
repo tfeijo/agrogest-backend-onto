@@ -4,11 +4,12 @@ import json
 from src.models.Classes import *
 from src.models.Rules import *
 from src.utils.methods import *
-from src.ontology.config import onto, increase_id
+from src.ontology.config import increase_id
 
 class AttributeController:
   def store(attributes):
-    
+    onto = get_ontology(f'./src/ontology/temp/{attributes["farm_id"]}.owl').load()
+
     farm = onto.search_one(is_a=Farm, id=attributes['farm_id'])
     
     farm.has_attribute = []
@@ -24,7 +25,7 @@ class AttributeController:
     
     with onto: 
       sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-    onto.save()
+    onto.save(f'./src/ontology/temp/{attributes["farm_id"]}.owl')
 
     document_query = list(onto.search(
       is_a=onto.Document, is_document_recommended_of=farm
@@ -56,5 +57,5 @@ class AttributeController:
         
         if not str(document['category']) in list_documents[url]['category']:
           list_documents[url]['category'].append(str(document.category))
-   
+    
     return jsonify(list_documents) 

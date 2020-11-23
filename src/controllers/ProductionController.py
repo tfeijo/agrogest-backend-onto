@@ -1,12 +1,14 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, increase_id, decrease_id
+from src.ontology.config import increase_id, decrease_id
 
 class ProductionController: 
  
   def store(productions):
     try:
+      onto = get_ontology(f'./src/ontology/temp/{productions["farm_id"]}.owl').load()
       new_list = []
+
       with onto:
         farm = onto.search_one(is_a=Farm, id=productions['farm_id'])
         print(productions['farm_id'])
@@ -42,28 +44,24 @@ class ProductionController:
             item.has_parameter_associated = [param]
             item.has_size = [param]
             item.has_factor_associated = [param]
-            onto.save()
           
           if item.has_parameter_associated[0] != param and item.has_size == [] :
             item.has_size = [param]
-            onto.save()
 
           if item.has_parameter_associated[0] != param and item.has_factor_associated == [] :
             item.has_factor_associated = [param]
-            onto.save()
-      
-      onto.save()
+      onto.save(file=f'./src/ontology/temp/{productions["farm_id"]}.owl')
       
     except Exception as e:
       print(e)
       decrease_id('Production')
+      
       return jsonify({
         "Error": "Something went wrong in inserting",
         "msg": str(e)
       }), 400
     else:
       try:
-
         list_retorned = []
         query_prod = onto.search(is_a=Production, is_production_of=farm)
 
@@ -72,6 +70,7 @@ class ProductionController:
         
         return jsonify(list_retorned),200
       except Exception as e:
+        
         return jsonify({
           'Error':'Inserted but not queried',
           "msg": e
