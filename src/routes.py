@@ -77,8 +77,8 @@ def attribute_store():
 @app.route('/productions', methods=['GET']) 
 def productions_index(): return ProductionController.index()
 
-@app.route('/productions/<int:id>', methods=['DELETE']) 
-def productions_delete(id): return ProductionController.delete(id)
+@app.route('/farms/<int:farm_id>/productions/<int:id>', methods=['DELETE']) 
+def productions_delete(farm_id, id): return ProductionController.delete(farm_id, id)
 
 
 ####################

@@ -1,9 +1,11 @@
 from flask import jsonify
 from src.models.Classes import *
-from src.ontology.config import onto, increase_id
+from src.ontology.config import increase_id
 
 class BiomeController:
   def index():
+    onto = get_ontology(f'./src/ontology/temp/{productions["farm_id"]}.owl').load()
+
     biomes_query = onto.Biome.instances()
     biomes = []
     for query in biomes_query: biomes.append(query.to_json())
