@@ -3,8 +3,8 @@ import json
 
 reasoning.JAVA_MEMORY = 15000  
 
-# onto_path.append("src/ontology/")
-# onto = get_ontology("db.owl").load()
+onto_path.append("src/ontology/")
+onto = get_ontology("db.owl").load()
 
 def increase_id(obj):
   
