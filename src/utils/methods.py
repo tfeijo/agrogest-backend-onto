@@ -2,8 +2,24 @@ import unicodedata
 import uuid
 import string as st
 import re
-from src.models.Classes import *
 from threading import Thread
+from owlready2 import World
+
+class Ontology():
+  def __init__(self, path):
+    self.path = path
+  
+  def load(self):
+      self.world = World(filename=f'{self.path}.sqlite3', exclusive=False)
+      self.onto = self.world.get_ontology(f'{self.path}.owl').load()
+
+  def save(self):
+      self.onto.save(file = f'{self.path}.owl')
+      self.world.save(file = f'{self.path}.owl')
+
+  def close(self):
+      self.onto.destroy()
+      self.world.close()
 
 class Reasoner(Thread):
     def __init__(self):

@@ -3,59 +3,65 @@ from owlready2 import *
 import json
 from src.models.Classes import *
 from src.models.Rules import *
-from src.utils.methods import *
+from src.utils.methods import Ontology
 from src.ontology.config import increase_id
 
 class AttributeController:
   def store(attributes):
-    onto = get_ontology(f'./src/ontology/temp/{attributes["farm_id"]}.owl').load()
+    try:
+      db = Ontology(f'./src/ontology/temp/{attributes["farm_id"]}')
+      db.load()
 
-    farm = onto.search_one(is_a=Farm, id=attributes['farm_id'])
-    
-    farm.has_attribute = []
-    farm.has_missing_attribute = []
-    farm.has_recommended_document = []
-          
-    for key in attributes:
-      if key!="farm_id":
-        if (attributes[key]):
-          farm.has_attribute.append(Attribute(key))
+      with db.onto:
+        farm = db.onto.search_one(is_a=db.onto.Farm, id=attributes['farm_id'])
+        
+        farm.has_attribute = []
+        farm.has_missing_attribute = []
+        farm.has_recommended_document = []
+              
+        for key in attributes:
+          if key!="farm_id":
+            if (attributes[key]):
+              farm.has_attribute.append(db.onto.Attribute(key))
+            else:
+              farm.has_missing_attribute.append(db.onto.Attribute(key))
+        
+        sync_reasoner_pellet(db.world, infer_property_values = True, infer_data_property_values = True)
+      db.save()
+
+      document_query = list(db.onto.search(
+        is_a=db.onto.Document, is_document_recommended_of=farm
+      )) 
+      
+      list_documents = {}
+      
+      for document in document_query:
+        document = document_to_json(document)
+
+        url = str(document['url'])
+        if not url in list_documents:
+          list_documents[url] = {
+            'questions': [
+              str(document['question'])
+            ],
+            'category': [
+              str(document['category'])
+            ],
+            'description': str(document['description']),
+            'is_file': str(document['is_file']),
+          }
         else:
-          farm.has_missing_attribute.append(Attribute(key))
-    
-    with onto: 
-      sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-    onto.save(f'./src/ontology/temp/{attributes["farm_id"]}.owl')
+          list_documents[url]['description'] = str(document['description'])
+          list_documents[url]['is_file'] = str(document['is_file'])
+          
+          if not str(document['question']) in list_documents[url]['questions']:
+            list_documents[url]['questions'].append(str(document['question']))
+          
+          if not str(document['category']) in list_documents[url]['category']:
+            list_documents[url]['category'].append(str(document.category))
 
-    document_query = list(onto.search(
-      is_a=onto.Document, is_document_recommended_of=farm
-    )) 
+      return jsonify(list_documents) 
 
-    list_documents = {}
-    
-    for document in document_query:
-      document = document.to_json()
-
-      url = str(document['url'])
-      if not url in list_documents:
-        list_documents[url] = {
-          'questions': [
-            str(document['question'])
-          ],
-          'category': [
-            str(document['category'])
-          ],
-          'description': str(document['description']),
-          'is_file': str(document['is_file']),
-        }
-      else:
-        list_documents[url]['description'] = str(document['description'])
-        list_documents[url]['is_file'] = str(document['is_file'])
-        
-        if not str(document['question']) in list_documents[url]['questions']:
-          list_documents[url]['questions'].append(str(document['question']))
-        
-        if not str(document['category']) in list_documents[url]['category']:
-          list_documents[url]['category'].append(str(document.category))
-    
-    return jsonify(list_documents) 
+    finally:
+      db.save()
+      db.close()

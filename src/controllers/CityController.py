@@ -1,29 +1,37 @@
 from flask import jsonify
 from owlready2 import *
-from src.models.Classes import *
-from src.models.Rules import *
+import json
 from src.utils.methods import *
-from src.ontology.config import increase_id
+from src.ontology.config import increase_id, onto
 
-
+r = open('./src/ontology/static_cities.json', "r")
+data = json.load(r)
 class CityController:
-  onto = get_ontology(f'./src/ontology/db.owl').load()
+  
   def index(state_id = '*', biome_id='*'):
     if state_id != '*':
       state_id = onto.search_one(is_a=onto.State, id=state_id)
     if biome_id != '*':
       biome_id = onto.search_one(is_a=onto.Biome, id=biome_id)
 
-    cities_query = list(onto.search(
-      is_a=onto.City, has_state=state_id,
-      has_biome=biome_id)
-    ) 
+    # cities_query = list(onto.search(
+    #   is_a=onto.City, has_state=state_id,
+    #   has_biome=biome_id)
+    # ) 
     
-    cities = []
-    for query in cities_query:
-      cities.append(query.to_json())     
+    # cities = []
+    # for query in cities_query:
+    #   cities.append(query.to_json())     
+    # feedback = sorted(cities, key = lambda i: (i['name']))
+    
+    # data = {}
+  
+    # data[str(state_id)] = feedback 
+    
+    # w = open('./src/ontology/static_cities.json', "w")
+    # json.dump(data, w)
 
-    return jsonify(sorted(cities, key = lambda i: (i['name'])))
+    return jsonify(data[str(state_id)])
 
   def show(id):
     query = onto.search_one(is_a=onto.City, id=id)

@@ -1,4 +1,5 @@
 from owlready2 import *
+from src.utils.methods import Ontology
 import json
 
 reasoning.JAVA_MEMORY = 15000  

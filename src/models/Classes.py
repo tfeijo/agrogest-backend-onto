@@ -1,6 +1,6 @@
 from owlready2 import *
 from src.ontology.config import onto
-from src.utils.methods import *
+from src.utils.methods import get_name_to_api, size_to_portuguese, size_to_id
 
 with onto:
   class Device(Thing): pass
@@ -143,3 +143,76 @@ with onto:
   Category('Legislation')
   Category('WaterResources')
   Category('EnvironmentalManagement')
+
+def farm_to_json(instance):
+  documents = []
+  for document in instance.has_recommended_document:
+    documents.append(document_to_json(document))
+  return {
+    "id": instance.id[0],
+    "installation_id": get_name_to_api(instance.is_created_by[0]),
+    "hectare": instance.hectare[0],
+    "licensing": instance.licensing[0],
+    "city": city_to_json(instance.has_city[0]),
+    "size": {
+      "id": size_to_id(instance.has_size[0]),
+      "name": size_to_portuguese(instance.has_size[0])
+    },
+    "documents": documents
+  }
+
+def state_to_json(instance):
+  return {
+    "id": instance.id[0],
+    "name": get_name_to_api(instance),
+    "uf": instance.uf[0]
+  }
+
+def city_to_json(instance):
+  biomes = []
+  for biome in instance.has_biome:
+    biomes.append(biome_to_json(biome))
+  
+  fm = int(instance.fiscal_module[0])
+  return {
+    "id": instance.id[0],
+    "name": get_name_to_api(instance)[:-3],
+    "state": state_to_json(instance.has_state[0]),
+    "biomes": biomes,
+    "fiscal_module": fm,
+  }
+
+def biome_to_json(instance):
+  return {
+    "id": instance.id[0],
+    "name": get_name_to_api(instance),
+  }
+
+def production_to_json(instance):
+  response = {
+    "id": instance.id[0],
+    "activity": get_name_to_api(instance.has_activity[0]),
+    "num_area": instance.num_area[0],
+    "handling": get_name_to_api(instance.has_handling[0]),
+    "farm": farm_to_json(instance.is_production_of[0]),
+    "size": size_to_portuguese(instance.has_size[0]),
+    "factor": size_to_portuguese(instance.has_factor_associated[0])
+  }
+  
+  if str(instance.has_activity[0]).split('.',1)[1] != "agricultura":
+    response["num_animals"] = instance.num_animals[0]
+  else: 
+    response["cultivation"] = get_name_to_api(instance.has_cultivation[0])
+    
+  return response
+
+def document_to_json(instance):
+  return {
+    "id": instance.id[0],
+    "url": instance.url[0],
+    "question": instance.has_question[0].question_title[0],
+    "category": get_name_to_api(instance.has_category[0]),
+    "description": instance.description[0],
+    "is_file": instance.is_file[0]
+  }
+  

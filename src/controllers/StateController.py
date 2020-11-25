@@ -1,21 +1,35 @@
 from flask import jsonify
-from src.models.Classes import *
-from src.ontology.config import increase_id
-from src.utils.methods import *
+import json
+from owlready2 import OwlReadyError
+from src.ontology.config import increase_id, onto
+from src.models.Classes import state_to_json
 
+
+r = open('./src/ontology/static_states.json', "r")
+data = json.load(r)
 class StateController():
-  onto = get_ontology(f'./src/ontology/db.owl').load()
+  
   def index():
-    states_query = onto.State.instances()
-    states = []
-    for query in states_query: 
-      if (query!=State("any")): 
-        states.append(query.to_json())
 
-    return jsonify(sorted(states, key = lambda i: (i['name'])))
+    try:
+      # states_query = onto.State.instances()
+      # states = []
+      # for query in states_query: 
+      #   if (query!=onto.State("any")): 
+      #     states.append(state_to_json(query))
+      # feedback = sorted(states, key = lambda i: (i['name']))
+      # w = open('./src/ontology/static_states.json', "w")
+      # json.dump(feedback, w)
+
+      return jsonify(data)
+    except OwlReadyError as e:
+      print(e)
+      return jsonify({"Error": str(e)}), 500
+    
+
   
   def show(id):
-    state = onto.search_one(is_a=onto.State, id=id)
+    state = onto.search_one(is_a=State, id=id)
     return jsonify(state.to_json())
   
   def store(state):
