@@ -24,7 +24,7 @@ class AttributeController:
         for key in attributes:
           if key!="farm_id":
             farm_json['attributes'][key] = attributes[key]
-            print(farm_json['attributes'][key])
+            print(f'{key}={attributes[key]}')
             if (attributes[key]):
               farm.has_attribute.append(db.onto.Attribute(key))
             else:
@@ -69,8 +69,8 @@ class AttributeController:
       return jsonify(list_documents) 
 
     finally:
-      import requests
-      url = 'http://200.131.17.17:11042/farms'
-      x = requests.post(url, json = farm_json)
+      # import requests
+      # url = 'http://200.131.17.17:11042/farms'
+      # x = requests.post(url, json = farm_json)
       db.save()
       db.close()
