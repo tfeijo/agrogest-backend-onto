@@ -148,17 +148,24 @@ def farm_to_json(instance):
   documents = []
   for document in instance.has_recommended_document:
     documents.append(document_to_json(document))
+  
+  productions = []
+  for production in instance.has_production:
+    productions.append(production_to_json(production))
+
   return {
     "id": instance.id[0],
     "installation_id": get_name_to_api(instance.is_created_by[0]),
     "hectare": instance.hectare[0],
     "licensing": instance.licensing[0],
+    "result_fm": instance.result_fm[0],
     "city": city_to_json(instance.has_city[0]),
     "size": {
       "id": size_to_id(instance.has_size[0]),
       "name": size_to_portuguese(instance.has_size[0])
     },
-    "documents": documents
+    "documents": documents,
+    "productions": productions
   }
 
 def state_to_json(instance):
@@ -194,7 +201,7 @@ def production_to_json(instance):
     "activity": get_name_to_api(instance.has_activity[0]),
     "num_area": instance.num_area[0],
     "handling": get_name_to_api(instance.has_handling[0]),
-    "farm": farm_to_json(instance.is_production_of[0]),
+    # "farm": farm_to_json(instance.is_production_of[0]),
     "size": size_to_portuguese(instance.has_size[0]),
     "factor": size_to_portuguese(instance.has_factor_associated[0])
   }

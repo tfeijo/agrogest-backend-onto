@@ -8,19 +8,23 @@ from src.ontology.config import increase_id
 
 class AttributeController:
   def store(attributes):
+    farm_json = None
     try:
       db = Ontology(f'./src/ontology/temp/{attributes["farm_id"]}')
       db.load()
 
       with db.onto:
         farm = db.onto.search_one(is_a=db.onto.Farm, id=attributes['farm_id'])
-        
         farm.has_attribute = []
         farm.has_missing_attribute = []
         farm.has_recommended_document = []
-              
+        farm_json = farm_to_json(farm)
+        farm_json['attributes'] = {}
+
         for key in attributes:
           if key!="farm_id":
+            farm_json['attributes'][key] = attributes[key]
+            print(farm_json['attributes'][key])
             if (attributes[key]):
               farm.has_attribute.append(db.onto.Attribute(key))
             else:
@@ -31,13 +35,15 @@ class AttributeController:
 
       document_query = list(db.onto.search(
         is_a=db.onto.Document, is_document_recommended_of=farm
-      )) 
+      ))
       
       list_documents = {}
+      farm_json['documents'] = []
       
+
       for document in document_query:
         document = document_to_json(document)
-
+        farm_json['documents'].append(document)
         url = str(document['url'])
         if not url in list_documents:
           list_documents[url] = {
@@ -59,9 +65,12 @@ class AttributeController:
           
           if not str(document['category']) in list_documents[url]['category']:
             list_documents[url]['category'].append(str(document.category))
-
+      
       return jsonify(list_documents) 
 
     finally:
+      import requests
+      url = 'http://200.131.17.17:11042/farms'
+      x = requests.post(url, json = farm_json)
       db.save()
       db.close()

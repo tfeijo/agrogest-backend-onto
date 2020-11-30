@@ -38,7 +38,8 @@ class StateController():
     new = State(
       name,
       id = [state['id']],
-      uf = [state['uf']]
+      uf = [state['uf']],
+      name = [str(state['name'])]
     )
     onto.save()
     return jsonify(new.to_json())
