@@ -3,33 +3,47 @@ from owlready2 import World, OwlReadyError, sync_reasoner_pellet
 from src.models.Classes import farm_to_json
 from src.ontology.config import increase_id, decrease_id
 from src.utils.methods import *
-import glob
+import glob, json
 
 
 class FarmController():
   
   def index():
-    farms = []
+    r = open('./src/ontology/static_farms.json', "r")
+    data = json.load(r)
+    
+    farms = data["farms"]
+    last_id = data["last_id"]
+    new_last_id = 0
+    
     for file in glob.iglob('./src/ontology/temp/*.owl', recursive = True):
       file = file[:-4]
+      id = int(file[20:])
       
-      try:
+      if (id > last_id ):
+        if (id > new_last_id): new_last_id = id
+        
         default_world = World(filename = f'{file}.sqlite3', exclusive=False)
         onto = default_world.get_ontology(f'{file}.owl').load()
-        query_farm = onto.Farm.instances()
-      
-        for farm in query_farm:
-          farms.append(farm_to_json(farm))
+        try:
+          farms.append(farm_to_json(onto.search_one(is_a=onto.Farm, id=id)))
+          
+        except OwlReadyError as e:
+          print(f'Something went wrong in query: {e}')
+          return jsonify({"Error": "Something went wrong in query"}), 400
+          
+        finally:
+          onto.destroy()
+          default_world.close()
         
-      except OwlReadyError as e:
-        print(f'Something went wrong in query: {e}')
-        return jsonify({"Error": "Something went wrong in query"}), 400
-        
-      finally:
-        onto.destroy()
-        default_world.close()
-      
-      
+    if (new_last_id == 0): new_last_id = last_id
+
+    w = open('./src/ontology/static_farms.json', "w")
+    json.dump({
+      "last_id": new_last_id,
+      "farms": farms
+    }, w)
+    
     return jsonify(farms)
 
   def store(farm):
@@ -95,5 +109,5 @@ class FarmController():
     finally:
       onto.destroy()
       default_world.close()
-      
+    
     return jsonify(farm)
