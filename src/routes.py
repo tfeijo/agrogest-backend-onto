@@ -82,8 +82,8 @@ def productions_index(): return ProductionController.index()
 @app.route('/farms/<int:farm_id>/productions/<int:id>', methods=['DELETE']) 
 def productions_delete(farm_id, id): return ProductionController.delete(farm_id, id)
 
-@app.route('/sustainability', methods=['GET']) 
-def sustainability_index(): return SustainabilityController.index()
+@app.route('/fullontology', methods=['GET']) 
+def fullontology_index(): return FullontoController.index()
 
 ####################
 # Methods POST (store) not essencial

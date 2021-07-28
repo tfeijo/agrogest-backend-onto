@@ -1,5 +1,5 @@
 import string
-from flask import jsonify
+from flask import json, jsonify
 from owlready2 import World, OwlReadyError, sync_reasoner_pellet
 from src.models.Classes import farm_to_json
 from src.utils.methods import Ontology, get_name_to_onto,\
@@ -10,15 +10,19 @@ class FullontoController():
   def index():
     default_world = World(filename = "./src/ontology/interlink.sqlite3", exclusive=False)
     interlink = default_world.get_ontology("./src/ontology/interlink.owl").load()
-    sustainability = list(interlink.imported_ontologies)[0]
-    ontogest = list(interlink.imported_ontologies)[1]
+    sustainability = None
+    ontogest = None
 
+    for ontology in interlink.imported_ontologies:
+      if "ontogest" in str(ontology): ontogest = ontology
+      if "sustainability" in str(ontology): sustainability = ontology
+    
     farms_json = []
     try:
-      farms = ontogest.search(is_a=ontogest.Farm)
-      for farm in farms:
-        farms_json.append(farm_to_json(farm))
-      return jsonify(farms_json)
+      with ontogest:
+        for farm in ontogest.Farm.instances():
+          farms_json.append(farm_to_json(farm))
+        return jsonify(farms_json)
 
     except OwlReadyError as e:
       print(f'Something went wrong in query: {e}')
