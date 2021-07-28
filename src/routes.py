@@ -9,6 +9,8 @@ from src.controllers.ParameterController import *
 from src.controllers.ProductionController import *
 from src.controllers.QuestionController import *
 from src.controllers.AttributeController import *
+from src.controllers.SustainabilityController import *
+
 
 @app.route('/', methods=['GET']) 
 def readme():
@@ -80,6 +82,8 @@ def productions_index(): return ProductionController.index()
 @app.route('/farms/<int:farm_id>/productions/<int:id>', methods=['DELETE']) 
 def productions_delete(farm_id, id): return ProductionController.delete(farm_id, id)
 
+@app.route('/sustainability', methods=['GET']) 
+def sustainability_index(): return SustainabilityController.index()
 
 ####################
 # Methods POST (store) not essencial

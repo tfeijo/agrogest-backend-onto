@@ -1,11 +1,12 @@
 from owlready2 import *
 from src.utils.methods import Ontology
 import json
-
-reasoning.JAVA_MEMORY = 15000  
+# To change memory on reasoning
+#reasoning.JAVA_MEMORY = 15000  
 
 onto_path.append("src/ontology/")
 onto = get_ontology("db.owl").load()
+sustainability = get_ontology("sustainability.owl").load()
 
 def increase_id(obj):
   
@@ -24,7 +25,7 @@ def increase_id(obj):
 
 def decrease_id(obj):
   data = {}
-  
+
   r = open('./src/ontology/id.json', "r")
   data = json.load(r)
 

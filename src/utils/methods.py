@@ -21,14 +21,7 @@ class Ontology():
       self.onto.destroy()
       self.world.close()
 
-class Reasoner(Thread):
-    def __init__(self):
-      threading.Thread.__init__(self)
-      Thread.__init__(self)
-
-    def run(self):
-      with onto: sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-      onto.save()
+# Auxiliary methods 
 
 def clear_string(string):
   nfkd = unicodedata.normalize('NFKD', string)
@@ -44,10 +37,6 @@ def get_name_to_api(obj):
 
 def get_name_to_onto(obj):
   return str(obj).split('.',1)[1]
-
-
-def state_to_JSON(state):
-  return obj
 
 def UUID():
   return uuid.uuid1()
@@ -74,5 +63,64 @@ def size_to_portuguese(obj):
     "medio": "Médio",
     "sem_especificacao": "Sem Especificação",
   }
+  print(obj)
+  print(get_name_to_onto(obj))
   return str(json[get_name_to_onto(obj)])
-
+  
+def size_to_name_onto(obj):
+  json = {
+    "Mínimo": "Minimum",
+    "Pequeno" : "Small",
+    "Médio" : "Medium",
+    "Grande" : "Large",
+    "Excepcional": "Exceptional",
+    "Baixo": "baixo",
+    "Alto": "alto",
+    "Sem Especificação": "sem_especificacao",
+  }
+  
+  return str(json[obj])
+  
+def all_attributes():
+  return [
+   "BovineCattle",
+   "ResidueComposting",
+   "BovineDung",
+   "BovineFertigation",
+   "SwineCattle",
+   "SwineDung",
+   "SwineFertigation",
+   "WaterControlProgram",
+   "AviaryWastinAgriculture",
+   "ReuseAgriculturalResidue",
+   "DeadCompostAnimals",
+   "SourceProtectedWaterMine",
+   "DomesticSewageTreatment",
+   "WaterConsuptionTreatment",
+   "EarthwormInsects",
+   "DiversifiedProduction",
+   "CompactedArea",
+   "Erosion",
+   "SoilAnalysisCorrection",
+   "NoTill",
+   "MinimumCultivation",
+   "ControlledBurning",
+   "RegenerationArea",
+   "NaturalRegeneration",
+   "RegenerationWithHandling",
+   "RegenerationWithPlanting",
+   "AgroforestrySystems",
+   "RotatedHandling",
+   "ConsortiumHandling",
+   "EnvironmentalLicensing",
+   "CAR",
+   "PresenceMaintenanceVegetation",
+   "NativeVegetationLegalReserve",
+   "AppAroundWaterCoursesWaterReservoirs",
+   "IntegralVegetation",
+   "AppAroundSpringsWaterEyes",
+   "AppHillside",
+   "AppHillTop",
+   "EnvironmentalRegularizationPlan",
+   "WaterGrant"
+  ]

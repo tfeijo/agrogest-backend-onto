@@ -9,10 +9,10 @@ from src.ontology.config import increase_id
 class AttributeController:
   def store(attributes):
     farm_json = None
+    db = Ontology(f'./src/ontology/temp/{attributes["farm_id"]}')
+    db.load()
+    
     try:
-      db = Ontology(f'./src/ontology/temp/{attributes["farm_id"]}')
-      db.load()
-
       with db.onto:
         farm = db.onto.search_one(is_a=db.onto.Farm, id=attributes['farm_id'])
         farm.has_attribute = []
@@ -65,12 +65,9 @@ class AttributeController:
           
           if not str(document['category']) in list_documents[url]['category']:
             list_documents[url]['category'].append(str(document.category))
-      
-      return jsonify(list_documents) 
 
+      return jsonify(list_documents)
+      
     finally:
-      # import requests
-      # url = 'http://200.131.17.17:11042/farms'
-      # x = requests.post(url, json = farm_json)
       db.save()
       db.close()

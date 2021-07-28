@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability"
+         xmlns="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability"/>
+
+<owl:Class rdf:about="#A_framework_determining_governmental_progress_in_SD">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Name_of_approach">
+  <rdfs:subClassOf rdf:resource="#Approaches"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Approaches"/>
+
+<owl:Class rdf:about="#A_framework_for_Social_Life_Cycle_Impact_Assessment">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#A_framework_of_sustainable_SCM">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#A_proposed_research_model_of_SE">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#A_taxonomy_of_sustainable_purchasing_and_supply_measures">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#An_Integrative_Framework_for_the_Selection_of_Relevant_Behaviors">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Basic_dimensions">
+  <rdfs:subClassOf rdf:resource="#Dimensions_of_sustainability"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dimensions_of_sustainability">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Criteria"/>
+
+<owl:Class rdf:about="#Best_Performance_Value_Indicators">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Complexity">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Comprehensive_sustainability_index_GSF">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DPSIR_Framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Domain_of_usage">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Eco_Efficiency_Analysis_EEA">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ecological_footprint_method">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Environmental_sustainability_measures">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#European_Conceptual_Framework_for_Social_Indicators">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Factors_Influencing_Sustainable_Entrepreneurship_in_SMEs">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Framework">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Type_of_approach">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Framework_assesing_the_social_sustainability_of_engineering_projects_and_technologies">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Global_Reporting_Initiative_GRI_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Hierarchical_metrics_system">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Impact-based_assessment_instruments">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#In-house">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Indicator">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Input-Output-Outcome-Impact">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Integrated_sustainability_assessment_indicator_system">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Intent-based_measurement_instruments_from_consumer_behavior_research">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Intent-based_measurement_instruments_from_environmental_psychology">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Issues">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Life_Cycle_Assessment_LCA">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Life_Cycle_Costing_LCC">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Measure">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Method">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Methodological_Framework_for_Sustainability_Assessment">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Metrics_assessing_chemical_processes">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Operational_sustainability_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Other">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Other_dimensions">
+  <rdfs:subClassOf rdf:resource="#Dimensions_of_sustainability"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quality_of_Life">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Receivers">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SME">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Scope">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Set_of_different_types_of_indicators">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Social_Sustainability_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Social_sustainability_measures">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sustainability_Metrics_of_the_Institution_of_Chemical_Engineers">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sustainability_Performance_Management_System">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sustainable_Entrepreneurship_knowledge_based_model">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sustainable_Society_Index_SSI">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Taxonomy">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Taxonomy_of_SME_strategies">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#The_Sustainability_Reporting_Guidelines">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tool">
+  <rdfs:subClassOf rdf:resource="#Type_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Type_of_gathering_knowledge_data">
+  <rdfs:subClassOf rdf:resource="#Criteria"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UNCSD_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#US_Interagency_Working_Party_on_Sustainability">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Wuppertal_Sustainability_Indicators">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#air_quality">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#all_consumption_areas">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#analysis">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#assessment">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#chemical_processes">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#clothing">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#community_relations">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#company">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#company_strategies">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#comparative_analysis">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#competitive_advantage">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#consumer_behaviour">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#cultural_dimension">
+  <rdfs:subClassOf rdf:resource="#Other_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#cultural_factors">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#dedicated_to_one_group">
+  <rdfs:subClassOf rdf:resource="#Complexity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#discourse_analysis">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ecological_dimension">
+  <rdfs:subClassOf rdf:resource="#Other_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ecological_ecosystem_health">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#economic_dimension">
+  <rdfs:subClassOf rdf:resource="#Basic_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#economic_impact">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#efficiency">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#employee_performance">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#employment_practices">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#energy_resources">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#environmental_dimension">
+  <rdfs:subClassOf rdf:resource="#Basic_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#environmental_impact">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#evaluation">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#financial_performance">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#flexibility">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#food">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#government">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#green_policy">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#greenhouse_gas_emission">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#housing_energy_and_water">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#improvements">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#industrial_ecology">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#industry">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#infrastructure">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#innovation">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#institution">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#institutional_dimension">
+  <rdfs:subClassOf rdf:resource="#Other_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#knowledge_systematization">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#literature_review">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#management">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#management_performance">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#manufacturing_sector">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#material_use">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#measurement_of_sustaiability_development">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#mobility">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#multiple_data_sets">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#natural_resources">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#none_of_above">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#organization">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#organization_context">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#petrochemical_sector">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#policies_organisation_and_management_systems">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#pollutant_dispersion">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#production">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#purchasing">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#qualitative_assessment">
+  <rdfs:subClassOf rdf:resource="#assessment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#quality_of_service">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#quantitative_assessment">
+  <rdfs:subClassOf rdf:resource="#assessment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#real_estates">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#report">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#research_model">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#resource_utilisation">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#services">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#single_solution">
+  <rdfs:subClassOf rdf:resource="#Complexity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#social_aspects">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#social_dimension">
+  <rdfs:subClassOf rdf:resource="#Basic_dimensions"/>
+</owl:Class>
+
+<owl:Class rdf:about="#social_impact">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#stakeholder">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#stakeholder_relationships">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#stimulating_and_assisting_societies">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#supplier_and_customer_relations">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#supplier_performance">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#suppliers">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#supply_chain">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#support_in_evaluation">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#sustaiable_consumption">
+  <rdfs:subClassOf rdf:resource="#Issues"/>
+</owl:Class>
+
+<owl:Class rdf:about="#tourism_sector">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#toxics">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#transport">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#unspecifed_products">
+  <rdfs:subClassOf rdf:resource="#none_of_above"/>
+</owl:Class>
+
+<owl:Class rdf:about="#unspecified_domain">
+  <rdfs:subClassOf rdf:resource="#none_of_above"/>
+</owl:Class>
+
+<owl:Class rdf:about="#waste_production_disposal">
+  <rdfs:subClassOf rdf:resource="#Domain_of_usage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DESIRE's_conceptual_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fundamental,_general_and_leading_indicators">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Hofstede's_cultural_framework">
+  <rdfs:subClassOf rdf:resource="#Name_of_approach"/>
+</owl:Class>
+
+<owl:Class rdf:about="#classification/categorization">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+<owl:Class rdf:about="#customers/consumers">
+  <rdfs:subClassOf rdf:resource="#Receivers"/>
+</owl:Class>
+
+<owl:Class rdf:about="#expert_participation/knowledge">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#questionnaires/interview">
+  <rdfs:subClassOf rdf:resource="#Type_of_gathering_knowledge_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#waste_production_reduction/diposal">
+  <rdfs:subClassOf rdf:resource="#Scope"/>
+</owl:Class>
+
+
+</rdf:RDF>

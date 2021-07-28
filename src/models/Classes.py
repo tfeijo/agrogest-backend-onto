@@ -3,8 +3,18 @@ from src.ontology.config import onto
 from src.utils.methods import get_name_to_api, size_to_portuguese, size_to_id
 
 with onto:
+  # Classes
   class Device(Thing): pass
-  
+  class ProductionActivity(Thing): pass
+  class Measurement(Thing): pass
+  class ProductionHandling(Thing): pass
+  class ProductionCultivation(Thing): pass
+  class Category(Thing): pass
+  class Attribute(Thing): pass
+  class Question(Thing): pass
+  class Size(Thing): pass
+  class Factor(Thing): pass
+
   class Document(Thing):
     def to_json(self):
       
@@ -48,22 +58,32 @@ with onto:
       }
 
   class Farm(Thing):
-    
     def to_json(self):
+      attributes = []
+      for attribute in self.has_attribute:
+        attributes.append(attribute_to_json(attribute)["name"])
+
       documents = []
       for document in self.has_recommended_document:
-        documents.append(document.to_json())
+        documents.append(document_to_json(document))
+      
+      productions = []
+      for production in self.has_production:
+        productions.append(production_to_json(production))
+
       return {
         "id": self.id[0],
         "installation_id": get_name_to_api(self.is_created_by[0]),
         "hectare": self.hectare[0],
-        "licensing": self.licensing[0],
-        "city": self.has_city[0].to_json(),
+        "result_fm": self.result_fm[0],
+        "city": city_to_json(self.has_city[0]),
         "size": {
           "id": size_to_id(self.has_size[0]),
           "name": size_to_portuguese(self.has_size[0])
         },
-        "documents": documents
+        "documents": documents,
+        "productions": productions,
+        "attributes": attributes
       }
 
   class Parameter(Thing):
@@ -89,11 +109,6 @@ with onto:
       
       return (obj)
       
-
-  class Size(Thing): pass
-
-  class Factor(Thing): pass
-
   class Production(Thing):
     def to_json(self):
       response = {
@@ -113,19 +128,7 @@ with onto:
         
       return response
 
-  class ProductionActivity(Thing): pass
-
-  class Measurement(Thing): pass
-
-  class ProductionHandling(Thing): pass
-
-  class ProductionCultivation(Thing): pass
-
-  class Category(Thing): pass
-  class Attribute(Thing): pass
-  class Question(Thing): pass
-
-
+# Required instances
   Size('Minimum')
   Size('Small')
   Size('Medium')
@@ -136,15 +139,20 @@ with onto:
   Measurement('modulo_fiscal')
   Measurement('n_de_cabecas')
   Measurement('area_de_producao')
-  Measurement('vacas_em_lactacao')
- 
+  Measurement('vacas_em_lactacao') 
   Category('WasteManagement')
   Category('SoilVegetation')
   Category('Legislation')
   Category('WaterResources')
   Category('EnvironmentalManagement')
 
+# Convertions to json
 def farm_to_json(instance):
+
+  # attributes = []
+  # for attribute in instance.has_attribute:
+  #   attributes.append(attribute_to_json(attribute)["name"])
+
   documents = []
   for document in instance.has_recommended_document:
     documents.append(document_to_json(document))
@@ -157,7 +165,6 @@ def farm_to_json(instance):
     "id": instance.id[0],
     "installation_id": get_name_to_api(instance.is_created_by[0]),
     "hectare": instance.hectare[0],
-    "licensing": instance.licensing[0],
     "result_fm": instance.result_fm[0],
     "city": city_to_json(instance.has_city[0]),
     "size": {
@@ -165,7 +172,8 @@ def farm_to_json(instance):
       "name": size_to_portuguese(instance.has_size[0])
     },
     "documents": documents,
-    "productions": productions
+    "productions": productions,
+    # "attributes": attributes
   }
 
 def state_to_json(instance):
@@ -197,19 +205,18 @@ def biome_to_json(instance):
 
 def production_to_json(instance):
   response = {
-    "id": instance.id[0],
+    "id": str(instance.id[0]),
     "activity": get_name_to_api(instance.has_activity[0]),
     "num_area": instance.num_area[0],
     "handling": get_name_to_api(instance.has_handling[0]),
-    # "farm": farm_to_json(instance.is_production_of[0]),
     "size": size_to_portuguese(instance.has_size[0]),
     "factor": size_to_portuguese(instance.has_factor_associated[0])
   }
+
+  is_agriculture = str(instance.has_activity[0]).split('.',1)[1] != "agricultura"
   
-  if str(instance.has_activity[0]).split('.',1)[1] != "agricultura":
-    response["num_animals"] = instance.num_animals[0]
-  else: 
-    response["cultivation"] = get_name_to_api(instance.has_cultivation[0])
+  if is_agriculture: response["num_animals"] = instance.num_animals[0]
+  else: response["cultivation"] = get_name_to_api(instance.has_cultivation[0])
     
   return response
 
@@ -222,4 +229,9 @@ def document_to_json(instance):
     "description": instance.description[0],
     "is_file": instance.is_file[0]
   }
-  
+
+def attribute_to_json(instance):
+  name = str(instance).split('.',1)[1]
+  return {
+    "name": name,
+  }

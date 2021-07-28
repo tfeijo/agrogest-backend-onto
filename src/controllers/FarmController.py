@@ -5,24 +5,21 @@ from src.ontology.config import increase_id, decrease_id
 from src.utils.methods import *
 import glob, json
 
-
 class FarmController():
-  
   def index():
     r = open('./src/ontology/static_farms.json', "r")
     data = json.load(r)
     
     farms = data["farms"]
     last_id = data["last_id"]
-    new_last_id = 0
     
     for file in glob.iglob('./src/ontology/temp/*.owl', recursive = True):
       file = file[:-4]
       id = int(file[20:])
       
       if (id > last_id ):
-        if (id > new_last_id): new_last_id = id
-        
+        last_id = id
+
         default_world = World(filename = f'{file}.sqlite3', exclusive=False)
         onto = default_world.get_ontology(f'{file}.owl').load()
         try:
@@ -36,11 +33,9 @@ class FarmController():
           onto.destroy()
           default_world.close()
         
-    if (new_last_id == 0): new_last_id = last_id
-
     w = open('./src/ontology/static_farms.json', "w")
     json.dump({
-      "last_id": new_last_id,
+      "last_id": last_id,
       "farms": farms
     }, w)
     
@@ -87,12 +82,12 @@ class FarmController():
       except OwlReadyError as e:
         print(f'Inserted but not queried: {e}')
         return jsonify({'Error':'Inserted but not queried'}),400
+    
     finally:
       onto.destroy()
       default_world.save()
       default_world.close()
       
-
   def show(id):
     
     file = f'./src/ontology/temp/{id}'
