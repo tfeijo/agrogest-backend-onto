@@ -1,10 +1,9 @@
 from flask import jsonify
 from owlready2 import *
-import json
 from src.models.Classes import *
 from src.models.Rules import *
 from src.utils.methods import Ontology
-from src.ontology.config import increase_id
+from src.controllers.FullontoController import FullontoController
 
 class AttributeController:
   def store(attributes):
@@ -69,5 +68,6 @@ class AttributeController:
       return jsonify(list_documents)
       
     finally:
+      FullontoController.store(farm_json)
       db.save()
       db.close()

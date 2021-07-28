@@ -97,7 +97,7 @@ class FullontoController():
         print("Empty production")
         new.has_production = []
       
-      return jsonify({"Farm inserted": new.to_json()}), 200
+      return jsonify({"Farm inserted": str(new)}), 200
     
     except OwlReadyError as e:
       print(f'Something went wrong in inserting: {e}')
