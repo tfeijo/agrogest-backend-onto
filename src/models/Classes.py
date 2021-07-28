@@ -149,9 +149,11 @@ with onto:
 # Convertions to json
 def farm_to_json(instance):
 
-  # attributes = []
-  # for attribute in instance.has_attribute:
-  #   attributes.append(attribute_to_json(attribute)["name"])
+  attributes = {}
+  for attribute in instance.has_attribute:
+    attributes[attribute_to_json(attribute)["name"]] = True
+  for attribute in instance.has_missing_attribute:
+    attributes[attribute_to_json(attribute)["name"]] = False
 
   documents = []
   for document in instance.has_recommended_document:
