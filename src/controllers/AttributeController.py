@@ -24,7 +24,6 @@ class AttributeController:
         for key in attributes:
           if key!="farm_id":
             farm_json['attributes'][key] = attributes[key]
-            print(f'{key}={attributes[key]}')
             if (attributes[key]):
               farm.has_attribute.append(db.onto.Attribute(key))
             else:

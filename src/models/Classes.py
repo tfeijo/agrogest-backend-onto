@@ -148,7 +148,6 @@ with onto:
 
 # Convertions to json
 def farm_to_json(instance):
-
   attributes = {}
   for attribute in instance.has_attribute:
     attributes[attribute_to_json(attribute)["name"]] = True
@@ -175,7 +174,7 @@ def farm_to_json(instance):
     },
     "documents": documents,
     "productions": productions,
-    # "attributes": attributes
+    "attributes": attributes
   }
 
 def state_to_json(instance):

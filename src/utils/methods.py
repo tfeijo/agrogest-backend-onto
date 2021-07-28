@@ -63,8 +63,6 @@ def size_to_portuguese(obj):
     "medio": "Médio",
     "sem_especificacao": "Sem Especificação",
   }
-  print(obj)
-  print(get_name_to_onto(obj))
   return str(json[get_name_to_onto(obj)])
   
 def size_to_name_onto(obj):

@@ -12,20 +12,24 @@ class FullontoController():
     interlink = default_world.get_ontology("./src/ontology/interlink.owl").load()
     sustainability = list(interlink.imported_ontologies)[0]
     ontogest = list(interlink.imported_ontologies)[1]
-       
-    list_onto = list(ontogest.classes())
-    list_sust = list(sustainability.classes())
+
+    farms_json = []
+    try:
+      farms = ontogest.search(is_a=ontogest.Farm)
+      for farm in farms:
+        farms_json.append(farm_to_json(farm))
+      return jsonify(farms_json)
+
+    except OwlReadyError as e:
+      print(f'Something went wrong in query: {e}')
+      return jsonify({"Error": "Something went wrong in query"}), 400
+
+    finally:
+      ontogest.destroy()
+      interlink.destroy()
+      sustainability.destroy()
+      default_world.close()
     
-    sustainability.destroy()
-    ontogest.destroy()
-    interlink.destroy()
-    default_world.close()
-
-    return jsonify({
-      "ontogest": str(list_onto),
-      "sustainability": str(list_sust)
-      })
-
   def store(farm):
     default_world = World(filename = "./src/ontology/interlink.sqlite3", exclusive=False)
     interlink = default_world.get_ontology("./src/ontology/interlink.owl").load()
@@ -91,7 +95,6 @@ class FullontoController():
           else:
             new_prod.num_animals = [int(production["num_animals"])]
             new_prod.is_agricultura = [False]
-          print(name_prod)
         new.has_production.append(new_prod)
       except:
         print("Empty production")
