@@ -4,6 +4,7 @@ from src.models.Classes import *
 from src.models.Rules import *
 from src.utils.methods import Ontology
 from src.controllers.FullontoController import FullontoController
+import threading
 
 class AttributeController:
   def store(attributes):
@@ -67,6 +68,7 @@ class AttributeController:
       return jsonify(list_documents)
 
     finally:
-      FullontoController.store(farm_json)
+      t = threading.Thread(target=FullontoController.store(farm_json))
+      t.start()
       db.save()
       db.close()

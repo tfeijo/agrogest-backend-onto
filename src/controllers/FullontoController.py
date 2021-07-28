@@ -1,6 +1,6 @@
 import string
 from flask import jsonify
-from owlready2 import World, OwlReadyError
+from owlready2 import World, OwlReadyError, sync_reasoner_pellet
 from src.models.Classes import farm_to_json
 from src.utils.methods import Ontology, get_name_to_onto,\
 clear_string,size_to_name_onto,all_attributes
@@ -97,13 +97,16 @@ class FullontoController():
         print("Empty production")
         new.has_production = []
       
-      return jsonify({"Farm inserted": str(new)}), 200
+      return jsonify({"Farm inserted": farm_to_json(new)}), 200
     
     except OwlReadyError as e:
       print(f'Something went wrong in inserting: {e}')
       return jsonify({"Error": "Something went wrong in inserting"}), 400
 
     finally:
+      with interlink:
+        sync_reasoner_pellet(default_world, infer_property_values = True, infer_data_property_values = True)
+      
       ontogest.save()
       ontogest.destroy()
       interlink.save()
