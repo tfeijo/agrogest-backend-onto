@@ -130,6 +130,7 @@
 
     <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_104">
         <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2"/>
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
     </rdf:Description>
@@ -148,6 +149,7 @@
 
     <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_106">
         <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2"/>
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
     </rdf:Description>
@@ -808,6 +810,8 @@
     <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_80">
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
         <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portaria n.\260 007/06</onto:description>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portaria n.\\260 007/06</onto:description>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portaria n.\\\\260 007/06</onto:description>
     </rdf:Description>
     
 
@@ -974,10 +978,71 @@
     
 
 
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_78 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_78">
+        <onto:is_parameter_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_81 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_81">
+        <onto:is_parameter_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_11 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_11">
+        <onto:is_parameter_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_25 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_25">
+        <onto:is_parameter_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#alto -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#alto">
+        <onto:is_factor_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-1_suinocultura_1 -->
 
     <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-1_suinocultura_1">
         <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#DF_suinocultura_ciclo_completo_n_de_cabecas_89"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1">
+        <onto:has_factor_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#alto"/>
+        <onto:has_factor_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#medio"/>
+        <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_78"/>
+        <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_confinado_n_de_cabecas_81"/>
+        <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_11"/>
+        <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_25"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#medio -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#medio">
+        <onto:is_factor_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-2_bovinocultura_de_corte_1"/>
     </rdf:Description>
     
 
@@ -1001,6 +1066,26 @@
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
         <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
         <onto:fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</onto:fiscal_module>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_104"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_106"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+        <onto:fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</onto:fiscal_module>
     </rdf:Description>
     
 
@@ -1071,7 +1156,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fonte de energias renovévais</onto:description>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fonte de energias renováveis</onto:description>
     </owl:NamedIndividual>
     
 

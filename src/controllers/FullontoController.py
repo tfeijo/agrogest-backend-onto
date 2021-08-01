@@ -22,15 +22,24 @@ class FullontoController():
       with ontogest:
         for farm in ontogest.Farm.instances():
 
-          try:
-            indicators = []
-            for indicator in farm.has_indicator:
-              indicators.append(str(indicator.description[0]))
-          except:
-            indicators =[]
-
           farm_json = farm_to_json(farm)
-          farm_json['indicators'] = indicators
+          farm_json["indicators"] = {}
+          total = {
+            "Bioeconomia": 9,
+            "Conservação dos recursos hidrícos": 9,
+            "Emissão de carbono": 9,
+            "Fonte de energias renováveis": 8,
+            "Gestão de resíduos": 5,
+            "Métodos Naturais de Controle de Adversidades": 7,
+            "Proteção da biodiversidade": 10,
+            "Responsabilidade Corporativa": 18
+          }
+          for document in farm_json["documents"]:
+            for indicator in document["indicators"]:
+              if indicator not in farm_json["indicators"]:
+                farm_json["indicators"][indicator] = [1,total[indicator]]
+              else:
+                farm_json["indicators"][indicator] = [farm_json["indicators"][indicator][0] + 1, total[indicator]]
 
           farms_json.append(farm_json)
           
