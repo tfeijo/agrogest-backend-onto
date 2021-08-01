@@ -222,13 +222,20 @@ def production_to_json(instance):
   return response
 
 def document_to_json(instance):
+  try:
+    indicators = []
+    for indicator in instance.has_indicator:
+      indicators.append(str(indicator.description[0]))
+  except:
+    indicators =[]
   return {
     "id": instance.id[0],
     "url": instance.url[0],
     "question": instance.has_question[0].question_title[0],
     "category": get_name_to_api(instance.has_category[0]),
     "description": instance.description[0],
-    "is_file": instance.is_file[0]
+    "is_file": instance.is_file[0],
+    "indicators": indicators
   }
 
 def attribute_to_json(instance):

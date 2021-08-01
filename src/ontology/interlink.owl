@@ -5,9 +5,11 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:onto="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sust="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:owlready_ontology="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink">
@@ -65,11 +67,957 @@
     
 
 
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#DF_suinocultura_ciclo_completo_n_de_cabecas_89 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#DF_suinocultura_ciclo_completo_n_de_cabecas_89">
+        <onto:is_parameter_associated_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-1_suinocultura_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_1 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_1">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_10 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_10">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_100 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_100">
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_101 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_101">
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_102 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_102">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_103 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_103">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_104 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_104">
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_105 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_105">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_106 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_106">
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_107 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_107">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_108 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_108">
+        <onto:is_document_recommended_of rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_11 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_11">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_12 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_12">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_13 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_13">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_14 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_14">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_15 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_15">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_16 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_16">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_17 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_17">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_18 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_18">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_19 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_19">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_2 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_2">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_20 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_20">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_21 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_21">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_22 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_22">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_23 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_23">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_24 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_24">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_25 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_25">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_26 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_26">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_27 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_27">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_28 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_28">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_29 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_29">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_3 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_3">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_30 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_30">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_31 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_31">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_32 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_32">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_33 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_33">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_34 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_34">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_35 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_35">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_36 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_36">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_37 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_37">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_38 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_38">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_39 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_39">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_4 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_4">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_40 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_40">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_41 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_41">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_42 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_42">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_43 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_43">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_44 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_44">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_47 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_47">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_48 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_48">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_49 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_49">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_5 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_5">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_50 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_50">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_51 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_51">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_52 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_52">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_53 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_53">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_54 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_54">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_55 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_55">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_56 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_56">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_57 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_57">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_58 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_58">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_59 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_59">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_6 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_6">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_60 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_60">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_61 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_61">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_62 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_62">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_63 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_63">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_64 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_64">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_65 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_65">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_66 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_66">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_67 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_67">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_68 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_68">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_69 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_69">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_7 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_7">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_70 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_70">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_71 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_71">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_72 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_72">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_73 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_73">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_74 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_74">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_75 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_75">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_76 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_76">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_77 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_77">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_78 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_78">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_79 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_79">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_8 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_8">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_80 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_80">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portaria n.\260 007/06</onto:description>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_81 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_81">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_82 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_82">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_83 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_83">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_84 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_84">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_85 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_85">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_86 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_86">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_87 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_87">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_88 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_88">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_89 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_89">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_9 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_9">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_90 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_90">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_91 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_91">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_92 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_92">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_93 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_93">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_94 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_94">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_95 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_95">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_96 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_96">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_97 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_97">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_98 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_98">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_99 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_99">
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-1_suinocultura_1 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#farm-1_suinocultura_1">
+        <onto:has_parameter_associated rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#DF_suinocultura_ciclo_completo_n_de_cabecas_89"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_100"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_101"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_104"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_106"/>
+        <onto:has_recommended_document rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Document_108"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8"/>
+        <has_indicator rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9"/>
+        <onto:fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</onto:fiscal_module>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tfeijo/ontologies/2021/6/3%20Anonymous%20Individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/3%20Anonymous%20Individuals">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2020/5/ontogest#Factor"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator1">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Conservação dos recursos hidrícos</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conservação dos recursos hidrícos</onto:description>
     </owl:NamedIndividual>
     
 
@@ -78,7 +1026,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator2">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Responsabilidade Corporativa</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Responsabilidade Corporativa</onto:description>
     </owl:NamedIndividual>
     
 
@@ -87,7 +1035,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator3">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Proteção da biodiversidade</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proteção da biodiversidade</onto:description>
     </owl:NamedIndividual>
     
 
@@ -96,7 +1044,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator4">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Redução do desmatamento</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redução do desmatamento</onto:description>
     </owl:NamedIndividual>
     
 
@@ -105,7 +1053,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator5">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Métodos Naturais de Controle de Adversidades</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Métodos Naturais de Controle de Adversidades</onto:description>
     </owl:NamedIndividual>
     
 
@@ -114,7 +1062,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator6">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Gestão de resíduos</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gestão de resíduos</onto:description>
     </owl:NamedIndividual>
     
 
@@ -123,7 +1071,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator7">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Fonte de energias renovévais</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fonte de energias renovévais</onto:description>
     </owl:NamedIndividual>
     
 
@@ -132,7 +1080,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator8">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Bioeconomia</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioeconomia</onto:description>
     </owl:NamedIndividual>
     
 
@@ -141,7 +1089,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tfeijo/ontologies/2021/6/interlink#Indicator9">
         <rdf:type rdf:resource="http://www.semanticweb.org/tfeijo/ontologies/2021/6/sustainability#Indicator"/>
-        <name>Emissão de carbono</name>
+        <onto:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emissão de carbono</onto:description>
     </owl:NamedIndividual>
     
 
@@ -158,7 +1106,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S89</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -192,7 +1140,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S104</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -226,7 +1174,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S106</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -260,7 +1208,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S91</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -294,7 +1242,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S109</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -328,7 +1276,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S110</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -362,7 +1310,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S111</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -396,7 +1344,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S121</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -430,7 +1378,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S122</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -464,7 +1412,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S125</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -498,7 +1446,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S101</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -532,7 +1480,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S129</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -566,7 +1514,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S130</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -600,7 +1548,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S142</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -634,7 +1582,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S86</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -668,7 +1616,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S143</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -702,7 +1650,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S124</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -736,7 +1684,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S115</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -770,7 +1718,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S118</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -804,7 +1752,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S119</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -838,7 +1786,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S120</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -872,7 +1820,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S126</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -906,7 +1854,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S144</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -940,7 +1888,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S145</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -974,7 +1922,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S80</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1008,7 +1956,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S87</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1042,7 +1990,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S81</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1076,7 +2024,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S123</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1110,7 +2058,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S127</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1144,7 +2092,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S128</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1178,7 +2126,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S92</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1212,7 +2160,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S102</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1246,7 +2194,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S134</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1280,7 +2228,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S135</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1314,7 +2262,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S136</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1348,7 +2296,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S116</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1382,7 +2330,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S88</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1416,7 +2364,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S133</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1450,7 +2398,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S132</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1484,7 +2432,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S97</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1518,7 +2466,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S98</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1552,7 +2500,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S99</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1586,7 +2534,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S100</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1620,7 +2568,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S107</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1654,7 +2602,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S108</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1688,7 +2636,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S112</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1722,7 +2670,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S113</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1756,7 +2704,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S84</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1790,7 +2738,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S114</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1824,7 +2772,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S141</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1858,7 +2806,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S131</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1892,7 +2840,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S117</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1926,7 +2874,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S85</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1960,7 +2908,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S82</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1994,7 +2942,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S83</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2028,7 +2976,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S137</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2062,7 +3010,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S138</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2096,7 +3044,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S90</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2130,7 +3078,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S139</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2164,7 +3112,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S140</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2198,7 +3146,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S93</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2232,7 +3180,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S94</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2266,7 +3214,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S95</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2300,7 +3248,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S96</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2334,7 +3282,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S103</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -2368,7 +3316,7 @@
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S105</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
