@@ -21,7 +21,17 @@ class FullontoController():
     try:
       with ontogest:
         for farm in ontogest.Farm.instances():
-          farms_json.append(farm_to_json(farm))
+          try:
+            indicators =[]
+            for indicator in farm.has_indicator:
+              indicators.append(str(indicator.name))
+
+          except:
+            indicators =[]
+          farm_json = farm_to_json(farm)
+          farm_json['indicators'] = indicators
+          farms_json.append(farm_json)
+          
         return jsonify(farms_json)
 
     except OwlReadyError as e:
