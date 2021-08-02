@@ -85,6 +85,9 @@ def productions_delete(farm_id, id): return ProductionController.delete(farm_id,
 @app.route('/fullontology', methods=['GET']) 
 def fullontology_index(): return FullontoController.index()
 
+@app.route('/graphics', methods=['GET']) 
+def sustainability_index(): return SustainabilityController.index()
+
 ####################
 # Methods POST (store) not essencial
 
