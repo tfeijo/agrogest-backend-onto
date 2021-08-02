@@ -67,7 +67,8 @@ class AttributeController:
       return jsonify(list_documents)
 
     finally:
-      t = threading.Thread(target=FullontoController.store(farm_json))
-      t.start()
       db.save()
       db.close()
+      t = threading.Thread(target=FullontoController.store(farm_json))
+      t.start()
+       

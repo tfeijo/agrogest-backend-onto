@@ -22,6 +22,18 @@
   <owl:inverseOf rdf:resource="#is_document_recommended_of"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#has_biome_associated">
+  <owl:inverseOf rdf:resource="#is_biome_associated_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_biome_associated_of"/>
+
+<owl:ObjectProperty rdf:about="#has_factor_associated">
+  <owl:inverseOf rdf:resource="#is_factor_associated_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_factor_associated_of"/>
+
 <owl:ObjectProperty rdf:about="#has_attribute">
   <owl:inverseOf rdf:resource="#is_attribute_of"/>
 </owl:ObjectProperty>
@@ -55,12 +67,6 @@
   <rdfs:range rdf:resource="#City"/>
   <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_biome_of</owlr:python_name>
 </owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#has_biome_associated">
-  <owl:inverseOf rdf:resource="#is_biome_associated_of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#is_biome_associated_of"/>
 
 <owl:ObjectProperty rdf:about="#has_category">
   <owl:inverseOf rdf:resource="#is_category_of"/>
@@ -102,12 +108,6 @@
   <rdfs:domain rdf:resource="#Factor"/>
   <rdfs:range rdf:resource="#Parameter"/>
 </owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#has_factor_associated">
-  <owl:inverseOf rdf:resource="#is_factor_associated_of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#is_factor_associated_of"/>
 
 <owl:ObjectProperty rdf:about="#has_farm">
   <rdfs:domain rdf:resource="#City"/>
@@ -468,8 +468,8 @@
 
 <Production rdf:about="#farm-1_suinocultura_1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#suinocultura"/>
   <has_factor_associated rdf:resource="#alto"/>
+  <has_activity rdf:resource="#suinocultura"/>
   <has_handling rdf:resource="#ciclo_completo"/>
   <has_size rdf:resource="#Large"/>
   <has_state_associated rdf:resource="#Distrito_Federal"/>
@@ -534,6 +534,7 @@
   <has_recommended_document rdf:resource="#Document_40"/>
   <has_recommended_document rdf:resource="#Document_41"/>
   <has_recommended_document rdf:resource="#Document_44"/>
+  <has_biome_associated rdf:resource="#Cerrado"/>
   <has_attribute rdf:resource="#EnvironmentalLicensing"/>
   <has_attribute rdf:resource="#CAR"/>
   <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
@@ -574,7 +575,6 @@
   <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
   <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
   <has_attribute rdf:resource="#DeadCompostAnimals"/>
-  <has_biome_associated rdf:resource="#Cerrado"/>
   <has_city rdf:resource="#BRASILIA_DF"/>
   <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
   <has_production rdf:resource="#farm-1_suinocultura_1"/>
@@ -583,6 +583,261 @@
   <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600.0</hectare>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
   <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120.0</result_fm>
+</Farm>
+
+<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_recommended_document rdf:resource="#Document_1"/>
+  <has_recommended_document rdf:resource="#Document_107"/>
+  <has_recommended_document rdf:resource="#Document_12"/>
+  <has_recommended_document rdf:resource="#Document_2"/>
+  <has_recommended_document rdf:resource="#Document_27"/>
+  <has_recommended_document rdf:resource="#Document_28"/>
+  <has_recommended_document rdf:resource="#Document_29"/>
+  <has_recommended_document rdf:resource="#Document_3"/>
+  <has_recommended_document rdf:resource="#Document_30"/>
+  <has_recommended_document rdf:resource="#Document_31"/>
+  <has_recommended_document rdf:resource="#Document_32"/>
+  <has_recommended_document rdf:resource="#Document_33"/>
+  <has_recommended_document rdf:resource="#Document_34"/>
+  <has_recommended_document rdf:resource="#Document_35"/>
+  <has_recommended_document rdf:resource="#Document_36"/>
+  <has_recommended_document rdf:resource="#Document_4"/>
+  <has_recommended_document rdf:resource="#Document_44"/>
+  <has_recommended_document rdf:resource="#Document_47"/>
+  <has_recommended_document rdf:resource="#Document_48"/>
+  <has_recommended_document rdf:resource="#Document_49"/>
+  <has_recommended_document rdf:resource="#Document_5"/>
+  <has_recommended_document rdf:resource="#Document_50"/>
+  <has_recommended_document rdf:resource="#Document_51"/>
+  <has_recommended_document rdf:resource="#Document_52"/>
+  <has_recommended_document rdf:resource="#Document_53"/>
+  <has_recommended_document rdf:resource="#Document_54"/>
+  <has_recommended_document rdf:resource="#Document_6"/>
+  <has_recommended_document rdf:resource="#Document_97"/>
+  <has_recommended_document rdf:resource="#Document_98"/>
+  <has_recommended_document rdf:resource="#Document_99"/>
+  <has_biome_associated rdf:resource="#Mata Atlantica"/>
+  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
+  <has_attribute rdf:resource="#CAR"/>
+  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
+  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
+  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
+  <has_attribute rdf:resource="#IntegralVegetation"/>
+  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
+  <has_attribute rdf:resource="#AppHillside"/>
+  <has_attribute rdf:resource="#AppHillTop"/>
+  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
+  <has_attribute rdf:resource="#WaterGrant"/>
+  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
+  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
+  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
+  <has_attribute rdf:resource="#EarthwormInsects"/>
+  <has_attribute rdf:resource="#DiversifiedProduction"/>
+  <has_attribute rdf:resource="#CompactedArea"/>
+  <has_attribute rdf:resource="#Erosion"/>
+  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
+  <has_attribute rdf:resource="#NoTill"/>
+  <has_attribute rdf:resource="#MinimumCultivation"/>
+  <has_attribute rdf:resource="#ControlledBurning"/>
+  <has_attribute rdf:resource="#RegenerationArea"/>
+  <has_attribute rdf:resource="#NaturalRegeneration"/>
+  <has_attribute rdf:resource="#RegenerationWithHandling"/>
+  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
+  <has_attribute rdf:resource="#AgroforestrySystems"/>
+  <has_attribute rdf:resource="#RotatedHandling"/>
+  <has_attribute rdf:resource="#ConsortiumHandling"/>
+  <has_attribute rdf:resource="#ResidueComposting"/>
+  <has_attribute rdf:resource="#BovineCattle"/>
+  <has_attribute rdf:resource="#BovineDung"/>
+  <has_attribute rdf:resource="#BovineFertigation"/>
+  <has_attribute rdf:resource="#SwineCattle"/>
+  <has_attribute rdf:resource="#SwineDung"/>
+  <has_attribute rdf:resource="#SwineFertigation"/>
+  <has_attribute rdf:resource="#WaterControlProgram"/>
+  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
+  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
+  <has_attribute rdf:resource="#DeadCompostAnimals"/>
+  <has_city rdf:resource="#APIACA_ES"/>
+  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
+  <has_production rdf:resource="#farm-3_bovinocultura_de_leite_2"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</hectare>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</id>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.8666666666666667</result_fm>
+</Farm>
+
+<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_recommended_document rdf:resource="#Document_1"/>
+  <has_recommended_document rdf:resource="#Document_107"/>
+  <has_recommended_document rdf:resource="#Document_12"/>
+  <has_recommended_document rdf:resource="#Document_2"/>
+  <has_recommended_document rdf:resource="#Document_27"/>
+  <has_recommended_document rdf:resource="#Document_28"/>
+  <has_recommended_document rdf:resource="#Document_29"/>
+  <has_recommended_document rdf:resource="#Document_3"/>
+  <has_recommended_document rdf:resource="#Document_30"/>
+  <has_recommended_document rdf:resource="#Document_31"/>
+  <has_recommended_document rdf:resource="#Document_32"/>
+  <has_recommended_document rdf:resource="#Document_33"/>
+  <has_recommended_document rdf:resource="#Document_34"/>
+  <has_recommended_document rdf:resource="#Document_35"/>
+  <has_recommended_document rdf:resource="#Document_36"/>
+  <has_recommended_document rdf:resource="#Document_37"/>
+  <has_recommended_document rdf:resource="#Document_38"/>
+  <has_recommended_document rdf:resource="#Document_39"/>
+  <has_recommended_document rdf:resource="#Document_4"/>
+  <has_recommended_document rdf:resource="#Document_40"/>
+  <has_recommended_document rdf:resource="#Document_41"/>
+  <has_recommended_document rdf:resource="#Document_42"/>
+  <has_recommended_document rdf:resource="#Document_43"/>
+  <has_recommended_document rdf:resource="#Document_44"/>
+  <has_recommended_document rdf:resource="#Document_47"/>
+  <has_recommended_document rdf:resource="#Document_48"/>
+  <has_recommended_document rdf:resource="#Document_49"/>
+  <has_recommended_document rdf:resource="#Document_5"/>
+  <has_recommended_document rdf:resource="#Document_50"/>
+  <has_recommended_document rdf:resource="#Document_51"/>
+  <has_recommended_document rdf:resource="#Document_52"/>
+  <has_recommended_document rdf:resource="#Document_53"/>
+  <has_recommended_document rdf:resource="#Document_54"/>
+  <has_recommended_document rdf:resource="#Document_6"/>
+  <has_recommended_document rdf:resource="#Document_97"/>
+  <has_recommended_document rdf:resource="#Document_98"/>
+  <has_recommended_document rdf:resource="#Document_99"/>
+  <has_biome_associated rdf:resource="#Mata Atlantica"/>
+  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
+  <has_attribute rdf:resource="#CAR"/>
+  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
+  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
+  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
+  <has_attribute rdf:resource="#IntegralVegetation"/>
+  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
+  <has_attribute rdf:resource="#AppHillside"/>
+  <has_attribute rdf:resource="#AppHillTop"/>
+  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
+  <has_attribute rdf:resource="#WaterGrant"/>
+  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
+  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
+  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
+  <has_attribute rdf:resource="#EarthwormInsects"/>
+  <has_attribute rdf:resource="#DiversifiedProduction"/>
+  <has_attribute rdf:resource="#CompactedArea"/>
+  <has_attribute rdf:resource="#Erosion"/>
+  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
+  <has_attribute rdf:resource="#NoTill"/>
+  <has_attribute rdf:resource="#MinimumCultivation"/>
+  <has_attribute rdf:resource="#ControlledBurning"/>
+  <has_attribute rdf:resource="#RegenerationArea"/>
+  <has_attribute rdf:resource="#NaturalRegeneration"/>
+  <has_attribute rdf:resource="#RegenerationWithHandling"/>
+  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
+  <has_attribute rdf:resource="#AgroforestrySystems"/>
+  <has_attribute rdf:resource="#RotatedHandling"/>
+  <has_attribute rdf:resource="#ConsortiumHandling"/>
+  <has_attribute rdf:resource="#ResidueComposting"/>
+  <has_attribute rdf:resource="#BovineCattle"/>
+  <has_attribute rdf:resource="#BovineDung"/>
+  <has_attribute rdf:resource="#BovineFertigation"/>
+  <has_attribute rdf:resource="#SwineCattle"/>
+  <has_attribute rdf:resource="#SwineDung"/>
+  <has_attribute rdf:resource="#SwineFertigation"/>
+  <has_attribute rdf:resource="#WaterControlProgram"/>
+  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
+  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
+  <has_attribute rdf:resource="#DeadCompostAnimals"/>
+  <has_city rdf:resource="#ANCHIETA_ES"/>
+  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.0</hectare>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</id>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.375</result_fm>
+</Farm>
+
+<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_recommended_document rdf:resource="#Document_1"/>
+  <has_recommended_document rdf:resource="#Document_107"/>
+  <has_recommended_document rdf:resource="#Document_12"/>
+  <has_recommended_document rdf:resource="#Document_2"/>
+  <has_recommended_document rdf:resource="#Document_27"/>
+  <has_recommended_document rdf:resource="#Document_28"/>
+  <has_recommended_document rdf:resource="#Document_29"/>
+  <has_recommended_document rdf:resource="#Document_3"/>
+  <has_recommended_document rdf:resource="#Document_30"/>
+  <has_recommended_document rdf:resource="#Document_31"/>
+  <has_recommended_document rdf:resource="#Document_32"/>
+  <has_recommended_document rdf:resource="#Document_33"/>
+  <has_recommended_document rdf:resource="#Document_34"/>
+  <has_recommended_document rdf:resource="#Document_35"/>
+  <has_recommended_document rdf:resource="#Document_36"/>
+  <has_recommended_document rdf:resource="#Document_4"/>
+  <has_recommended_document rdf:resource="#Document_44"/>
+  <has_recommended_document rdf:resource="#Document_47"/>
+  <has_recommended_document rdf:resource="#Document_48"/>
+  <has_recommended_document rdf:resource="#Document_49"/>
+  <has_recommended_document rdf:resource="#Document_5"/>
+  <has_recommended_document rdf:resource="#Document_50"/>
+  <has_recommended_document rdf:resource="#Document_51"/>
+  <has_recommended_document rdf:resource="#Document_52"/>
+  <has_recommended_document rdf:resource="#Document_53"/>
+  <has_recommended_document rdf:resource="#Document_54"/>
+  <has_recommended_document rdf:resource="#Document_6"/>
+  <has_recommended_document rdf:resource="#Document_97"/>
+  <has_recommended_document rdf:resource="#Document_98"/>
+  <has_recommended_document rdf:resource="#Document_99"/>
+  <has_biome_associated rdf:resource="#Mata Atlantica"/>
+  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
+  <has_attribute rdf:resource="#CAR"/>
+  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
+  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
+  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
+  <has_attribute rdf:resource="#IntegralVegetation"/>
+  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
+  <has_attribute rdf:resource="#AppHillside"/>
+  <has_attribute rdf:resource="#AppHillTop"/>
+  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
+  <has_attribute rdf:resource="#WaterGrant"/>
+  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
+  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
+  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
+  <has_attribute rdf:resource="#EarthwormInsects"/>
+  <has_attribute rdf:resource="#DiversifiedProduction"/>
+  <has_attribute rdf:resource="#CompactedArea"/>
+  <has_attribute rdf:resource="#Erosion"/>
+  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
+  <has_attribute rdf:resource="#NoTill"/>
+  <has_attribute rdf:resource="#MinimumCultivation"/>
+  <has_attribute rdf:resource="#ControlledBurning"/>
+  <has_attribute rdf:resource="#RegenerationArea"/>
+  <has_attribute rdf:resource="#NaturalRegeneration"/>
+  <has_attribute rdf:resource="#RegenerationWithHandling"/>
+  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
+  <has_attribute rdf:resource="#AgroforestrySystems"/>
+  <has_attribute rdf:resource="#RotatedHandling"/>
+  <has_attribute rdf:resource="#ConsortiumHandling"/>
+  <has_attribute rdf:resource="#ResidueComposting"/>
+  <has_attribute rdf:resource="#BovineCattle"/>
+  <has_attribute rdf:resource="#BovineDung"/>
+  <has_attribute rdf:resource="#BovineFertigation"/>
+  <has_attribute rdf:resource="#SwineCattle"/>
+  <has_attribute rdf:resource="#SwineDung"/>
+  <has_attribute rdf:resource="#SwineFertigation"/>
+  <has_attribute rdf:resource="#WaterControlProgram"/>
+  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
+  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
+  <has_attribute rdf:resource="#DeadCompostAnimals"/>
+  <has_city rdf:resource="#ANCHIETA_ES"/>
+  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
+  <has_production rdf:resource="#farm-6_bovinocultura_de_leite_1"/>
+  <has_size rdf:resource="#Medium"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</hectare>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</id>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.375</result_fm>
 </Farm>
 
 <Document rdf:about="#Document_101">
@@ -641,6 +896,20 @@
   <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://j.mp/384V1ZM</url>
 </Document>
 
+<Document rdf:about="#Document_105">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_attribute rdf:resource="#RegenerationArea"/>
+  <has_activity rdf:resource="#any"/>
+  <has_category rdf:resource="#SoilVegetation"/>
+  <has_question rdf:resource="#Question_105"/>
+  <has_state_associated rdf:resource="#any"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sistemas Agroflorestais A agropecuária sustentável</description>
+  <answer rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</answer>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</id>
+  <is_file rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_file>
+  <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://j.mp/3mLigfq</url>
+</Document>
+
 <Document rdf:about="#Document_102">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_attribute rdf:resource="#NoTill"/>
@@ -669,19 +938,163 @@
   <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://j.mp/383m2N9</url>
 </Document>
 
-<Document rdf:about="#Document_105">
+<Biome rdf:about="#Mata_Atlantica">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</id>
+</Biome>
+
+<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_recommended_document rdf:resource="#Document_100"/>
+  <has_recommended_document rdf:resource="#Document_101"/>
+  <has_recommended_document rdf:resource="#Document_102"/>
+  <has_recommended_document rdf:resource="#Document_103"/>
+  <has_recommended_document rdf:resource="#Document_105"/>
+  <has_recommended_document rdf:resource="#Document_107"/>
+  <has_recommended_document rdf:resource="#Document_108"/>
+  <has_biome_associated rdf:resource="#Cerrado"/>
+  <has_biome_associated rdf:resource="#Pantanal"/>
+  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
+  <has_attribute rdf:resource="#CAR"/>
+  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
+  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
+  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
+  <has_attribute rdf:resource="#IntegralVegetation"/>
+  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
+  <has_attribute rdf:resource="#AppHillside"/>
+  <has_attribute rdf:resource="#AppHillTop"/>
+  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
+  <has_attribute rdf:resource="#WaterGrant"/>
+  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
+  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
+  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
+  <has_attribute rdf:resource="#EarthwormInsects"/>
+  <has_attribute rdf:resource="#DiversifiedProduction"/>
+  <has_attribute rdf:resource="#CompactedArea"/>
+  <has_attribute rdf:resource="#Erosion"/>
+  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
+  <has_attribute rdf:resource="#NoTill"/>
+  <has_attribute rdf:resource="#MinimumCultivation"/>
+  <has_attribute rdf:resource="#ControlledBurning"/>
   <has_attribute rdf:resource="#RegenerationArea"/>
-  <has_activity rdf:resource="#any"/>
-  <has_category rdf:resource="#SoilVegetation"/>
-  <has_question rdf:resource="#Question_105"/>
-  <has_state_associated rdf:resource="#any"/>
-  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sistemas Agroflorestais A agropecuária sustentável</description>
-  <answer rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</answer>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</id>
-  <is_file rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_file>
-  <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://j.mp/3mLigfq</url>
-</Document>
+  <has_attribute rdf:resource="#NaturalRegeneration"/>
+  <has_attribute rdf:resource="#RegenerationWithHandling"/>
+  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
+  <has_attribute rdf:resource="#AgroforestrySystems"/>
+  <has_attribute rdf:resource="#RotatedHandling"/>
+  <has_attribute rdf:resource="#ConsortiumHandling"/>
+  <has_attribute rdf:resource="#ResidueComposting"/>
+  <has_attribute rdf:resource="#BovineCattle"/>
+  <has_attribute rdf:resource="#BovineDung"/>
+  <has_attribute rdf:resource="#BovineFertigation"/>
+  <has_attribute rdf:resource="#SwineCattle"/>
+  <has_attribute rdf:resource="#SwineDung"/>
+  <has_attribute rdf:resource="#SwineFertigation"/>
+  <has_attribute rdf:resource="#WaterControlProgram"/>
+  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
+  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
+  <has_attribute rdf:resource="#DeadCompostAnimals"/>
+  <has_city rdf:resource="#AQUIDAUANA_MS"/>
+  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
+  <has_production rdf:resource="#farm-2_bovinocultura_de_corte_1"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</hectare>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</id>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8444444444444444</result_fm>
+</Farm>
+
+<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_recommended_document rdf:resource="#Document_1"/>
+  <has_recommended_document rdf:resource="#Document_100"/>
+  <has_recommended_document rdf:resource="#Document_101"/>
+  <has_recommended_document rdf:resource="#Document_107"/>
+  <has_recommended_document rdf:resource="#Document_2"/>
+  <has_recommended_document rdf:resource="#Document_27"/>
+  <has_recommended_document rdf:resource="#Document_28"/>
+  <has_recommended_document rdf:resource="#Document_29"/>
+  <has_recommended_document rdf:resource="#Document_3"/>
+  <has_recommended_document rdf:resource="#Document_30"/>
+  <has_recommended_document rdf:resource="#Document_31"/>
+  <has_recommended_document rdf:resource="#Document_32"/>
+  <has_recommended_document rdf:resource="#Document_33"/>
+  <has_recommended_document rdf:resource="#Document_34"/>
+  <has_recommended_document rdf:resource="#Document_35"/>
+  <has_recommended_document rdf:resource="#Document_36"/>
+  <has_recommended_document rdf:resource="#Document_37"/>
+  <has_recommended_document rdf:resource="#Document_38"/>
+  <has_recommended_document rdf:resource="#Document_39"/>
+  <has_recommended_document rdf:resource="#Document_4"/>
+  <has_recommended_document rdf:resource="#Document_40"/>
+  <has_recommended_document rdf:resource="#Document_41"/>
+  <has_recommended_document rdf:resource="#Document_42"/>
+  <has_recommended_document rdf:resource="#Document_43"/>
+  <has_recommended_document rdf:resource="#Document_44"/>
+  <has_recommended_document rdf:resource="#Document_47"/>
+  <has_recommended_document rdf:resource="#Document_48"/>
+  <has_recommended_document rdf:resource="#Document_49"/>
+  <has_recommended_document rdf:resource="#Document_5"/>
+  <has_recommended_document rdf:resource="#Document_50"/>
+  <has_recommended_document rdf:resource="#Document_51"/>
+  <has_recommended_document rdf:resource="#Document_52"/>
+  <has_recommended_document rdf:resource="#Document_53"/>
+  <has_recommended_document rdf:resource="#Document_54"/>
+  <has_recommended_document rdf:resource="#Document_59"/>
+  <has_recommended_document rdf:resource="#Document_6"/>
+  <has_recommended_document rdf:resource="#Document_97"/>
+  <has_recommended_document rdf:resource="#Document_98"/>
+  <has_recommended_document rdf:resource="#Document_99"/>
+  <has_biome_associated rdf:resource="#Cerrado"/>
+  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
+  <has_attribute rdf:resource="#CAR"/>
+  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
+  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
+  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
+  <has_attribute rdf:resource="#IntegralVegetation"/>
+  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
+  <has_attribute rdf:resource="#AppHillside"/>
+  <has_attribute rdf:resource="#AppHillTop"/>
+  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
+  <has_attribute rdf:resource="#WaterGrant"/>
+  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
+  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
+  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
+  <has_attribute rdf:resource="#EarthwormInsects"/>
+  <has_attribute rdf:resource="#DiversifiedProduction"/>
+  <has_attribute rdf:resource="#CompactedArea"/>
+  <has_attribute rdf:resource="#Erosion"/>
+  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
+  <has_attribute rdf:resource="#NoTill"/>
+  <has_attribute rdf:resource="#MinimumCultivation"/>
+  <has_attribute rdf:resource="#ControlledBurning"/>
+  <has_attribute rdf:resource="#RegenerationArea"/>
+  <has_attribute rdf:resource="#NaturalRegeneration"/>
+  <has_attribute rdf:resource="#RegenerationWithHandling"/>
+  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
+  <has_attribute rdf:resource="#AgroforestrySystems"/>
+  <has_attribute rdf:resource="#RotatedHandling"/>
+  <has_attribute rdf:resource="#ConsortiumHandling"/>
+  <has_attribute rdf:resource="#ResidueComposting"/>
+  <has_attribute rdf:resource="#BovineCattle"/>
+  <has_attribute rdf:resource="#BovineDung"/>
+  <has_attribute rdf:resource="#BovineFertigation"/>
+  <has_attribute rdf:resource="#SwineCattle"/>
+  <has_attribute rdf:resource="#SwineDung"/>
+  <has_attribute rdf:resource="#SwineFertigation"/>
+  <has_attribute rdf:resource="#WaterControlProgram"/>
+  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
+  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
+  <has_attribute rdf:resource="#DeadCompostAnimals"/>
+  <has_city rdf:resource="#ALTO_ALEGRE_DO_MARANHAO_MA"/>
+  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
+  <has_production rdf:resource="#farm-5_suinocultura_1"/>
+  <has_size rdf:resource="#Large"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8689.0</hectare>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</id>
+  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">124.12857142857143</result_fm>
+</Farm>
 
 <Document rdf:about="#Document_107">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2039,6 +2452,508 @@
   <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://j.mp/325brNG</url>
 </Document>
 
+<Parameter rdf:about="#MS_bovinocultura_de_corte_confinado_n_de_cabecas_78">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</top>
+</Parameter>
+
+<Production rdf:about="#farm-2_bovinocultura_de_corte_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#baixo"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.0</num_area>
+</Production>
+
+<Parameter rdf:about="#MS_bovinocultura_de_corte_confinado_n_de_cabecas_81">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#alto"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</top>
+</Parameter>
+
+<Parameter rdf:about="#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Parameter rdf:about="#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_25">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Factor rdf:about="#alto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Factor>
+
+<Factor rdf:about="#medio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Factor>
+
+<Production rdf:about="#farm-5_bovinocultura_de_leite_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#baixo"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</num_area>
+</Production>
+
+<Production rdf:about="#farm-5_bovinocultura_de_corte_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#baixo"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</num_area>
+</Production>
+
+<Parameter rdf:about="#MA_bovinocultura_de_leite_confinado_n_de_cabecas_208">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">208</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Parameter rdf:about="#MA_bovinocultura_de_leite_sem_especificacao_sem_especificacao_18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Parameter rdf:about="#MA_bovinocultura_de_leite_sem_especificacao_sem_especificacao_32">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Parameter rdf:about="#MA_bovinocultura_de_corte_sem_especificacao_sem_especificacao_10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Parameter rdf:about="#MA_bovinocultura_de_corte_confinado_n_de_cabecas_198">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">198</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Parameter rdf:about="#MA_bovinocultura_de_corte_sem_especificacao_sem_especificacao_6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#sem_especificacao"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
+</Parameter>
+
+<Parameter rdf:about="#ES_bovinocultura_de_corte_semiconfinado_area_de_producao_187">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#semiconfinado"/>
+  <has_measurement rdf:resource="#area_de_producao"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-3_bovinocultura_de_corte_3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_handling rdf:resource="#semiconfinado"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</num_area>
+</Production>
+
+<Parameter rdf:about="#ES_bovinocultura_de_leite_confinado_n_de_cabecas_80">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3500</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</top>
+</Parameter>
+
+<Production rdf:about="#farm-3_bovinocultura_de_leite_2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</num_area>
+</Production>
+
+<Production rdf:about="#farm-6_bovinocultura_de_leite_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</num_area>
+</Production>
+
+<Parameter rdf:about="#ES_avicultura_incubatorio_n_de_cabecas_223">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#avicultura"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#incubatorio"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">223</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-4_avicultura_9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#avicultura"/>
+  <has_handling rdf:resource="#incubatorio"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</num_area>
+</Production>
+
+<Parameter rdf:about="#ES_bovinocultura_de_corte_confinado_n_de_cabecas_197">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">197</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3500</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-4_bovinocultura_de_corte_8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#bovinocultura_de_corte"/>
+  <has_handling rdf:resource="#confinado"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</num_area>
+</Production>
+
+<Parameter rdf:about="#ES_bovinocultura_de_leite_a_pasto_area_de_producao_175">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#a_pasto"/>
+  <has_measurement rdf:resource="#area_de_producao"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-4_bovinocultura_de_leite_7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#bovinocultura_de_leite"/>
+  <has_handling rdf:resource="#a_pasto"/>
+  <has_size rdf:resource="#Minimum"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">568</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</num_area>
+</Production>
+
+<Parameter rdf:about="#ES_suinocultura_criacao_de_leitoes_n_de_cabecas_104">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#suinocultura"/>
+  <has_factor rdf:resource="#alto"/>
+  <has_handling rdf:resource="#criacao_de_leitoes"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-4_suinocultura_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#alto"/>
+  <has_activity rdf:resource="#suinocultura"/>
+  <has_handling rdf:resource="#criacao_de_leitoes"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</num_area>
+</Production>
+
+<Parameter rdf:about="#MA_agricultura_sem_especificacao_sem_especificacao_modulo_fiscal_169">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#agricultura"/>
+  <has_cultivation rdf:resource="#sem_especificacao"/>
+  <has_factor rdf:resource="#baixo"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#modulo_fiscal"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">169</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-5_agricultura_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#baixo"/>
+  <has_activity rdf:resource="#agricultura"/>
+  <has_cultivation rdf:resource="#fruticultura"/>
+  <has_handling rdf:resource="#com_queima"/>
+  <has_size rdf:resource="#Large"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</num_area>
+</Production>
+
+<Parameter rdf:about="#MA_avicultura_sem_especificacao_n_de_cabecas_244">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#avicultura"/>
+  <has_factor rdf:resource="#medio"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">244</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120000</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70000</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35000</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
+</Parameter>
+
+<Production rdf:about="#farm-5_avicultura_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#medio"/>
+  <has_activity rdf:resource="#avicultura"/>
+  <has_handling rdf:resource="#postura"/>
+  <has_size rdf:resource="#Small"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">857</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">686.0</num_area>
+</Production>
+
+<Parameter rdf:about="#MA_suinocultura_sem_especificacao_n_de_cabecas_49">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_activity rdf:resource="#suinocultura"/>
+  <has_factor rdf:resource="#alto"/>
+  <has_handling rdf:resource="#sem_especificacao"/>
+  <has_measurement rdf:resource="#n_de_cabecas"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
+  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</id>
+  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
+  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</medi>
+  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
+  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</sma>
+  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</top>
+</Parameter>
+
+<Production rdf:about="#farm-5_suinocultura_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_factor_associated rdf:resource="#alto"/>
+  <has_activity rdf:resource="#suinocultura"/>
+  <has_handling rdf:resource="#criacao_de_leitoes"/>
+  <has_size rdf:resource="#Medium"/>
+  <has_state_associated rdf:resource="#Maranhao"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
+  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">650.0</num_area>
+</Production>
+
 <Attribute rdf:about="#BovineDung">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </Attribute>
@@ -2175,10 +3090,6 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </ProductionActivity>
 
-<Factor rdf:about="#alto">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Factor>
-
 <ProductionHandling rdf:about="#ciclo_completo">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </ProductionHandling>
@@ -2234,6 +3145,11 @@
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presença de áreas compactadas</question_title>
 </Question>
 
+<Biome rdf:about="#Cerrado">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+</Biome>
+
 <Attribute rdf:about="#EnvironmentalLicensing">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </Attribute>
@@ -2266,11 +3182,6 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </Attribute>
 
-<Biome rdf:about="#Cerrado">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
-</Biome>
-
 <City rdf:about="#BRASILIA_DF">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Cerrado"/>
@@ -2283,10 +3194,68 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </Device>
 
+<Biome rdf:about="#Mata Atlantica">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Biome>
+
+<City rdf:about="#APIACA_ES">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_biome rdf:resource="#Mata_Atlantica"/>
+  <has_state rdf:resource="#Espirito_Santo"/>
+  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</fiscal_module>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">134</id>
+</City>
+
+<Size rdf:about="#Small">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Size>
+
+<State rdf:about="#Espirito_Santo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</id>
+  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ES</uf>
+</State>
+
+<City rdf:about="#ANCHIETA_ES">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_biome rdf:resource="#Mata_Atlantica"/>
+  <has_state rdf:resource="#Espirito_Santo"/>
+  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</fiscal_module>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4813</id>
+</City>
+
+<Size rdf:about="#Medium">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Size>
+
 <Question rdf:about="#Question_101">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101</id>
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presença de erosão</question_title>
+</Question>
+
+<Question rdf:about="#Question_104">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</id>
+  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presença e manutenção da vegetação em encostas e fundos de vale</question_title>
+</Question>
+
+<Question rdf:about="#Question_106">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">106</id>
+  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vegetação íntegra na margem dos rios</question_title>
+</Question>
+
+<Question rdf:about="#Question_108">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">108</id>
+  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manejo da pastagem</question_title>
+</Question>
+
+<Question rdf:about="#Question_105">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</id>
+  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Áreas em regeneração</question_title>
 </Question>
 
 <Question rdf:about="#Question_102">
@@ -2301,34 +3270,44 @@
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realizaçao da análise de solo e correção com orientação técnica</question_title>
 </Question>
 
-<Question rdf:about="#Question_104">
+<Biome rdf:about="#Pantanal">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</id>
-  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presença e manutenção da vegetação em encostas e fundos de vale</question_title>
-</Question>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</id>
+</Biome>
 
-<Question rdf:about="#Question_105">
+<City rdf:about="#AQUIDAUANA_MS">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</id>
-  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Áreas em regeneração</question_title>
-</Question>
+  <has_biome rdf:resource="#Cerrado"/>
+  <has_biome rdf:resource="#Pantanal"/>
+  <has_state rdf:resource="#Mato_Grosso_do_Sul"/>
+  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</fiscal_module>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</id>
+</City>
 
-<Question rdf:about="#Question_106">
+<State rdf:about="#Mato_Grosso_do_Sul">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">106</id>
-  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vegetação íntegra na margem dos rios</question_title>
-</Question>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</id>
+  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MS</uf>
+</State>
+
+<City rdf:about="#ALTO_ALEGRE_DO_MARANHAO_MA">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_biome rdf:resource="#Cerrado"/>
+  <has_state rdf:resource="#Maranhao"/>
+  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</fiscal_module>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</id>
+</City>
+
+<State rdf:about="#Maranhao">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</id>
+  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA</uf>
+</State>
 
 <Question rdf:about="#Question_107">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">107</id>
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vegetação íntegra na margem dos rios</question_title>
-</Question>
-
-<Question rdf:about="#Question_108">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">108</id>
-  <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manejo da pastagem</question_title>
 </Question>
 
 <Question rdf:about="#Question_11">
@@ -2342,12 +3321,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</id>
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outorga de uso da água</question_title>
 </Question>
-
-<State rdf:about="#Espirito_Santo">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</id>
-  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ES</uf>
-</State>
 
 <Question rdf:about="#Question_13">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2757,12 +3730,6 @@
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outorga de uso da água</question_title>
 </Question>
 
-<State rdf:about="#Maranhao">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</id>
-  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA</uf>
-</State>
-
 <Question rdf:about="#Question_6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</id>
@@ -2774,12 +3741,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</id>
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outorga de uso da água</question_title>
 </Question>
-
-<State rdf:about="#Mato_Grosso_do_Sul">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</id>
-  <uf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MS</uf>
-</State>
 
 <Question rdf:about="#Question_61">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -3075,6 +4036,62 @@
   <question_title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Produção diversificada</question_title>
 </Question>
 
+<ProductionHandling rdf:about="#confinado">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<Factor rdf:about="#baixo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Factor>
+
+<Factor rdf:about="#sem_especificacao">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Measurement"/>
+  <rdf:type rdf:resource="#Parameter"/>
+  <rdf:type rdf:resource="#ProductionHandling"/>
+  <rdf:type rdf:resource="#Size"/>
+</Factor>
+
+<Size rdf:about="#Minimum">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Size>
+
+<ProductionHandling rdf:about="#semiconfinado">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<Measurement rdf:about="#area_de_producao">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Measurement>
+
+<ProductionHandling rdf:about="#incubatorio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<ProductionHandling rdf:about="#a_pasto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<ProductionHandling rdf:about="#criacao_de_leitoes">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<Measurement rdf:about="#modulo_fiscal">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Measurement>
+
+<ProductionCultivation rdf:about="#fruticultura">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionCultivation>
+
+<ProductionHandling rdf:about="#com_queima">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
+<ProductionHandling rdf:about="#postura">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ProductionHandling>
+
 <City rdf:about="#ABADIANIA_GO">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Cerrado"/>
@@ -3156,11 +4173,6 @@
   <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</fiscal_module>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</id>
 </City>
-
-<Biome rdf:about="#Mata_Atlantica">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</id>
-</Biome>
 
 <City rdf:about="#ABDON_BATISTA_SC">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -3358,22 +4370,6 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </ProductionCultivation>
 
-<Factor rdf:about="#baixo">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Factor>
-
-<Factor rdf:about="#sem_especificacao">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Measurement"/>
-  <rdf:type rdf:resource="#Parameter"/>
-  <rdf:type rdf:resource="#ProductionHandling"/>
-  <rdf:type rdf:resource="#Size"/>
-</Factor>
-
-<Measurement rdf:about="#modulo_fiscal">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Measurement>
-
 <Parameter rdf:about="#AC_agricultura_culturas_permanentes_sem_especificacao_modulo_fiscal_46">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#agricultura"/>
@@ -3430,10 +4426,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</top>
 </Parameter>
 
-<ProductionHandling rdf:about="#a_pasto">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
-
 <Parameter rdf:about="#AC_bovinocultura_de_corte_confinado_n_de_cabecas_69">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#bovinocultura_de_corte"/>
@@ -3451,10 +4443,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</top>
 </Parameter>
 
-<ProductionHandling rdf:about="#confinado">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
-
 <Parameter rdf:about="#AC_bovinocultura_de_corte_semiconfinado_n_de_cabecas_52">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#bovinocultura_de_corte"/>
@@ -3471,10 +4459,6 @@
   <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</sma>
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</top>
 </Parameter>
-
-<ProductionHandling rdf:about="#semiconfinado">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
 
 <Parameter rdf:about="#AC_bovinocultura_de_leite_a_pasto_n_de_cabecas_51">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -3543,10 +4527,6 @@
   <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
 </Parameter>
-
-<Factor rdf:about="#medio">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Factor>
 
 <City rdf:about="#ADAMANTINA_SP">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -4465,14 +5445,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4742</id>
 </City>
 
-<City rdf:about="#ALTO_ALEGRE_DO_MARANHAO_MA">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_biome rdf:resource="#Cerrado"/>
-  <has_state rdf:resource="#Maranhao"/>
-  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</fiscal_module>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</id>
-</City>
-
 <City rdf:about="#ALTO_ALEGRE_DO_PARECIS_RO">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Amazonia"/>
@@ -4827,10 +5799,6 @@
 <ProductionHandling rdf:about="#com_irrigacao">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </ProductionHandling>
-
-<Measurement rdf:about="#area_de_producao">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Measurement>
 
 <Parameter rdf:about="#AL_agricultura_sem_especificacao_sem_irrigacao_area_de_producao_283">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -5338,14 +6306,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3002</id>
 </City>
 
-<City rdf:about="#ANCHIETA_ES">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_biome rdf:resource="#Mata_Atlantica"/>
-  <has_state rdf:resource="#Espirito_Santo"/>
-  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</fiscal_module>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4813</id>
-</City>
-
 <City rdf:about="#ANCHIETA_SC">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Mata_Atlantica"/>
@@ -5762,14 +6722,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2206</id>
 </City>
 
-<City rdf:about="#APIACA_ES">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_biome rdf:resource="#Mata_Atlantica"/>
-  <has_state rdf:resource="#Espirito_Santo"/>
-  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</fiscal_module>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">134</id>
-</City>
-
 <City rdf:about="#APIAI_SP">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Mata_Atlantica"/>
@@ -5905,10 +6857,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</top>
 </Parameter>
 
-<ProductionCultivation rdf:about="#fruticultura">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionCultivation>
-
 <Parameter rdf:about="#AP_agricultura_olericultura_sem_especificacao_area_de_producao_48">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#agricultura"/>
@@ -6007,20 +6955,6 @@
   <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</fiscal_module>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4607</id>
 </City>
-
-<City rdf:about="#AQUIDAUANA_MS">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_biome rdf:resource="#Cerrado"/>
-  <has_biome rdf:resource="#Pantanal"/>
-  <has_state rdf:resource="#Mato_Grosso_do_Sul"/>
-  <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</fiscal_module>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</id>
-</City>
-
-<Biome rdf:about="#Pantanal">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</id>
-</Biome>
 
 <City rdf:about="#AQUIRAZ_CE">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -16708,10 +17642,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
 
-<ProductionHandling rdf:about="#incubatorio">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
-
 <Parameter rdf:about="#DF_avicultura_postura_n_de_cabecas_148">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#avicultura"/>
@@ -16728,10 +17658,6 @@
   <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</sma>
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
-
-<ProductionHandling rdf:about="#postura">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
 
 <Parameter rdf:about="#DF_bovinocultura_de_corte_confinado_n_de_cabecas_139">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -16851,10 +17777,6 @@
   <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</sma>
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
-
-<ProductionHandling rdf:about="#criacao_de_leitoes">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
 
 <Parameter rdf:about="#DF_suinocultura_terminacao_n_de_cabecas_116">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -18396,23 +19318,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
 
-<Parameter rdf:about="#ES_avicultura_incubatorio_n_de_cabecas_223">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#avicultura"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#incubatorio"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">223</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
 <Parameter rdf:about="#ES_avicultura_postura_n_de_cabecas_225">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#avicultura"/>
@@ -18447,74 +19352,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
 
-<Parameter rdf:about="#ES_bovinocultura_de_corte_confinado_n_de_cabecas_197">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">197</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3500</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#ES_bovinocultura_de_corte_semiconfinado_area_de_producao_187">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#semiconfinado"/>
-  <has_measurement rdf:resource="#area_de_producao"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#ES_bovinocultura_de_leite_a_pasto_area_de_producao_175">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_leite"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#a_pasto"/>
-  <has_measurement rdf:resource="#area_de_producao"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#ES_bovinocultura_de_leite_confinado_n_de_cabecas_80">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_leite"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3500</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</top>
-</Parameter>
-
 <Parameter rdf:about="#ES_bovinocultura_de_leite_semiconfinado_area_de_producao_191">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#bovinocultura_de_leite"/>
@@ -18546,23 +19383,6 @@
   <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</medi>
   <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
   <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#ES_suinocultura_criacao_de_leitoes_n_de_cabecas_104">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#suinocultura"/>
-  <has_factor rdf:resource="#alto"/>
-  <has_handling rdf:resource="#criacao_de_leitoes"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Espirito_Santo"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</sma>
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
 </Parameter>
 
@@ -29424,160 +30244,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1216</id>
 </City>
 
-<Parameter rdf:about="#MA_agricultura_sem_especificacao_sem_especificacao_modulo_fiscal_169">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#agricultura"/>
-  <has_cultivation rdf:resource="#sem_especificacao"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#modulo_fiscal"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">169</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_avicultura_sem_especificacao_n_de_cabecas_244">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#avicultura"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">244</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120000</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35000</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_corte_confinado_n_de_cabecas_198">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">198</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_corte_sem_especificacao_sem_especificacao_10">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_corte_sem_especificacao_sem_especificacao_6">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_leite_confinado_n_de_cabecas_208">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_leite"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">208</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">999999</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_leite_sem_especificacao_sem_especificacao_18">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_leite"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_bovinocultura_de_leite_sem_especificacao_sem_especificacao_32">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_leite"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
-<Parameter rdf:about="#MA_suinocultura_sem_especificacao_n_de_cabecas_49">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#suinocultura"/>
-  <has_factor rdf:resource="#alto"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Maranhao"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</top>
-</Parameter>
-
 <City rdf:about="#MEDEIROS_MG">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Cerrado"/>
@@ -31187,74 +31853,6 @@
   <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</top>
 </Parameter>
 
-<Parameter rdf:about="#MS_bovinocultura_de_corte_confinado_n_de_cabecas_78">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#medio"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</top>
-</Parameter>
-
-<Parameter rdf:about="#MS_bovinocultura_de_corte_confinado_n_de_cabecas_81">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#alto"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_measurement rdf:resource="#n_de_cabecas"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</top>
-</Parameter>
-
-<Parameter rdf:about="#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_11">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
-<Parameter rdf:about="#MS_bovinocultura_de_corte_sem_especificacao_sem_especificacao_25">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#sem_especificacao"/>
-  <has_measurement rdf:resource="#sem_especificacao"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
-  <base rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</base>
-  <excep rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</excep>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</id>
-  <larg rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</larg>
-  <medi rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</medi>
-  <min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</min>
-  <sma rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</sma>
-  <top rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</top>
-</Parameter>
-
 <Parameter rdf:about="#MS_bovinocultura_de_leite_confinado_n_de_cabecas_79">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_activity rdf:resource="#bovinocultura_de_leite"/>
@@ -31399,10 +31997,6 @@
 <ProductionCultivation rdf:about="#cana_de_acucar">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </ProductionCultivation>
-
-<ProductionHandling rdf:about="#com_queima">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</ProductionHandling>
 
 <Parameter rdf:about="#MT_agricultura_culturas_anuais_sem_especificacao_area_de_producao_162">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -31901,14 +32495,6 @@
   <fiscal_module rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</fiscal_module>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4230</id>
 </City>
-
-<Size rdf:about="#Medium">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Size>
-
-<Size rdf:about="#Minimum">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Size>
 
 <City rdf:about="#NACIP_RAYDAN_MG">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -49717,10 +50303,6 @@
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5302</id>
 </City>
 
-<Size rdf:about="#Small">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Size>
-
 <City rdf:about="#TABAI_RS">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <has_biome rdf:resource="#Mata_Atlantica"/>
@@ -53740,78 +54322,13 @@
 
 <swrl:Variable rdf:about="urn:swrl#factor"/>
 
-<Farm rdf:about="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002_2">
+<Production rdf:about="#farm-4_agricultura_1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_recommended_document rdf:resource="#Document_100"/>
-  <has_recommended_document rdf:resource="#Document_101"/>
-  <has_recommended_document rdf:resource="#Document_102"/>
-  <has_recommended_document rdf:resource="#Document_103"/>
-  <has_recommended_document rdf:resource="#Document_105"/>
-  <has_recommended_document rdf:resource="#Document_107"/>
-  <has_recommended_document rdf:resource="#Document_108"/>
-  <has_attribute rdf:resource="#EnvironmentalLicensing"/>
-  <has_attribute rdf:resource="#CAR"/>
-  <has_attribute rdf:resource="#PresenceMaintenanceVegetation"/>
-  <has_attribute rdf:resource="#NativeVegetationLegalReserve"/>
-  <has_attribute rdf:resource="#AppAroundWaterCoursesWaterReservoirs"/>
-  <has_attribute rdf:resource="#IntegralVegetation"/>
-  <has_attribute rdf:resource="#AppAroundSpringsWaterEyes"/>
-  <has_attribute rdf:resource="#AppHillside"/>
-  <has_attribute rdf:resource="#AppHillTop"/>
-  <has_attribute rdf:resource="#EnvironmentalRegularizationPlan"/>
-  <has_attribute rdf:resource="#WaterGrant"/>
-  <has_attribute rdf:resource="#SourceProtectedWaterMine"/>
-  <has_attribute rdf:resource="#DomesticSewageTreatment"/>
-  <has_attribute rdf:resource="#WaterConsuptionTreatment"/>
-  <has_attribute rdf:resource="#EarthwormInsects"/>
-  <has_attribute rdf:resource="#DiversifiedProduction"/>
-  <has_attribute rdf:resource="#CompactedArea"/>
-  <has_attribute rdf:resource="#Erosion"/>
-  <has_attribute rdf:resource="#SoilAnalysisCorrection"/>
-  <has_attribute rdf:resource="#NoTill"/>
-  <has_attribute rdf:resource="#MinimumCultivation"/>
-  <has_attribute rdf:resource="#ControlledBurning"/>
-  <has_attribute rdf:resource="#RegenerationArea"/>
-  <has_attribute rdf:resource="#NaturalRegeneration"/>
-  <has_attribute rdf:resource="#RegenerationWithHandling"/>
-  <has_attribute rdf:resource="#RegenerationWithPlanting"/>
-  <has_attribute rdf:resource="#AgroforestrySystems"/>
-  <has_attribute rdf:resource="#RotatedHandling"/>
-  <has_attribute rdf:resource="#ConsortiumHandling"/>
-  <has_attribute rdf:resource="#ResidueComposting"/>
-  <has_attribute rdf:resource="#BovineCattle"/>
-  <has_attribute rdf:resource="#BovineDung"/>
-  <has_attribute rdf:resource="#BovineFertigation"/>
-  <has_attribute rdf:resource="#SwineCattle"/>
-  <has_attribute rdf:resource="#SwineDung"/>
-  <has_attribute rdf:resource="#SwineFertigation"/>
-  <has_attribute rdf:resource="#WaterControlProgram"/>
-  <has_attribute rdf:resource="#AviaryWastinAgriculture"/>
-  <has_attribute rdf:resource="#ReuseAgriculturalResidue"/>
-  <has_attribute rdf:resource="#DeadCompostAnimals"/>
-  <has_biome_associated rdf:resource="#Cerrado"/>
-  <has_biome_associated rdf:resource="#Pantanal"/>
-  <has_city rdf:resource="#AQUIDAUANA_MS"/>
-  <is_created_by rdf:resource="#983c65dc-ef1b-11eb-b1cf-0242ac1f0002"/>
-  <has_production rdf:resource="#farm-2_bovinocultura_de_corte_1"/>
-  <has_size rdf:resource="#Small"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
-  <hectare rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</hectare>
-  <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</id>
-  <result_fm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8444444444444444</result_fm>
-</Farm>
-
-<Production rdf:about="#farm-2_bovinocultura_de_corte_1">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <has_activity rdf:resource="#bovinocultura_de_corte"/>
-  <has_factor_associated rdf:resource="#baixo"/>
-  <has_handling rdf:resource="#confinado"/>
-  <has_size rdf:resource="#Small"/>
-  <has_state_associated rdf:resource="#Mato_Grosso_do_Sul"/>
+  <has_activity rdf:resource="#agricultura"/>
+  <has_handling rdf:resource="#com_queima"/>
+  <has_state_associated rdf:resource="#Espirito_Santo"/>
   <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
-  <is_agricultura rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_agricultura>
-  <num_animals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</num_animals>
-  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.0</num_area>
+  <num_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</num_area>
 </Production>
 
 <owl:AllDisjointClasses>

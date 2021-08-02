@@ -149,14 +149,27 @@ with onto:
 # Convertions to json
 def farm_to_json(instance):
   attributes = {}
-  for attribute in instance.has_attribute:
-    attributes[attribute_to_json(attribute)["name"]] = True
-  for attribute in instance.has_missing_attribute:
-    attributes[attribute_to_json(attribute)["name"]] = False
+  try:
+    for attribute in instance.has_attribute:
+      attributes[attribute_to_json(attribute)["name"]] = True
+  except:
+    pass
+
+  try:
+    for attribute in instance.has_missing_attribute:
+      attributes[attribute_to_json(attribute)["name"]] = False
+  except:
+    pass
 
   documents = []
   for document in instance.has_recommended_document:
-    documents.append(document_to_json(document))
+    document_json = document_to_json(document)
+
+    exist = False
+    for a in documents:
+      if a['url'] == document_json['url']: exist = True
+    
+    if not exist: documents.append(document_json)
   
   productions = []
   for production in instance.has_production:

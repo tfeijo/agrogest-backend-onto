@@ -2,12 +2,23 @@ import string
 from flask import json, jsonify
 from owlready2 import World, OwlReadyError, sync_reasoner_pellet
 from src.models.Classes import farm_to_json
+from src.controllers.FarmController import FarmController
 from src.utils.methods import Ontology, get_name_to_onto,\
 clear_string,size_to_name_onto,all_attributes
 
 class FullontoController():
   
   def index():
+    FarmController.index()
+    r = open('./src/ontology/static_farms.json', "r")
+    data = json.load(r)
+    last_id = data["last_id"]
+
+    r = open('./src/ontology/last_id_fullontology.json', "r")
+    data = json.load(r)
+    last_id_full = data["last_id"]
+    farms = data["farms"]
+
     default_world = World(filename = "./src/ontology/interlink.sqlite3", exclusive=False)
     interlink = default_world.get_ontology("./src/ontology/interlink.owl").load()
     sustainability = None
@@ -17,33 +28,43 @@ class FullontoController():
       if "ontogest" in str(ontology): ontogest = ontology
       if "sustainability" in str(ontology): sustainability = ontology
     
-    farms_json = []
     try:
-      with ontogest:
-        for farm in ontogest.Farm.instances():
+      if last_id > last_id_full:
+        w = open('./src/ontology/last_id_fullontology.json', "w")
 
-          farm_json = farm_to_json(farm)
-          farm_json["indicators"] = {}
-          total = {
-            "Bioeconomia": 9,
-            "Conservação dos recursos hidrícos": 9,
-            "Emissão de carbono": 9,
-            "Fonte de energias renováveis": 8,
-            "Gestão de resíduos": 5,
-            "Métodos Naturais de Controle de Adversidades": 7,
-            "Proteção da biodiversidade": 10,
-            "Responsabilidade Corporativa": 18
-          }
-          for document in farm_json["documents"]:
-            for indicator in document["indicators"]:
-              if indicator not in farm_json["indicators"]:
-                farm_json["indicators"][indicator] = [1,total[indicator]]
-              else:
-                farm_json["indicators"][indicator] = [farm_json["indicators"][indicator][0] + 1, total[indicator]]
+        farms = []
+        with ontogest:
+          for farm in ontogest.Farm.instances():
 
-          farms_json.append(farm_json)
-          
-        return jsonify(farms_json)
+            farm_json = farm_to_json(farm)
+            farm_json["indicators"] = {}
+            total = {
+              "Bioeconomia": 9,
+              "Conservação dos recursos hidrícos": 9,
+              "Emissão de carbono": 9,
+              "Fonte de energias renováveis": 8,
+              "Gestão de resíduos": 5,
+              "Métodos Naturais de Controle de Adversidades": 7,
+              "Proteção da biodiversidade": 12,
+              "Responsabilidade Corporativa": 18,
+              "Redução do desmatamento": 14
+            }
+
+            for document in farm_json["documents"]:
+              for indicator in document["indicators"]:
+                if indicator not in farm_json["indicators"]:
+                  farm_json["indicators"][indicator] = [1,total[indicator]]
+                else:
+                  farm_json["indicators"][indicator] = [farm_json["indicators"][indicator][0] + 1, total[indicator]]
+
+            farms.append(farm_json)
+
+          json.dump({
+            "last_id": last_id,
+            "farms": farms
+          }, w)
+
+      return jsonify(farms)
 
     except OwlReadyError as e:
       print(f'Something went wrong in query: {e}')
