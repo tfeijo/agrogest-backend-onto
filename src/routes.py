@@ -83,10 +83,17 @@ def productions_index(): return ProductionController.index()
 def productions_delete(farm_id, id): return ProductionController.delete(farm_id, id)
 
 @app.route('/fullontology', methods=['GET']) 
-def fullontology_index(): return FullontoController.index()
+def fullontology_index():
+  production_type = request.args.get('production_type')
+  return FullontoController.index(production_type)
+
+@app.route('/fullontology/<int:id>', methods=['GET']) 
+def fullontology_index_id(id): return FullontoController.index_id(id)
 
 @app.route('/graphics', methods=['GET']) 
-def sustainability_index(): return SustainabilityController.index()
+def sustainability_index(): 
+  production_type = request.args.get('production_type')
+  return SustainabilityController.index(production_type)
 
 ####################
 # Methods POST (store) not essencial

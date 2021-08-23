@@ -8,7 +8,13 @@ clear_string,size_to_name_onto,all_attributes
 
 class FullontoController():
   
-  def index():
+  def index(production_type = None):
+    # Bovinocultura De Leite
+    # Bovinocultura de Corte
+    # Avicultura
+    # Suinocultura
+    # Agricultura
+
     FarmController.index()
     r = open('./src/ontology/static_farms.json', "r")
     data = json.load(r)
@@ -63,6 +69,18 @@ class FullontoController():
             "last_id": last_id,
             "farms": farms
           }, w)
+      if production_type != None:
+        farms_filtered = []
+        for farm in farms:
+          insert = False
+          for production in farm["productions"]:
+            if production['activity'].upper() == production_type.upper():
+              insert = True
+              break
+          if insert:
+            farms_filtered.append(farm)
+          
+        return jsonify(farms_filtered)
 
       return jsonify(farms)
 
@@ -75,7 +93,20 @@ class FullontoController():
       interlink.destroy()
       sustainability.destroy()
       default_world.close()
-    
+
+  def index_id(id):
+    r = open('./src/ontology/last_id_fullontology.json', "r")
+    data = json.load(r)
+    last_id_full = data["last_id"]
+    farms = data["farms"]
+
+    for farm in farms:
+      if farm['id'] == id:
+        return jsonify(farm)
+      
+    return jsonify({"Error": "Not found"})
+
+  
   def store(farm):
     default_world = World(filename = "./src/ontology/interlink.sqlite3", exclusive=False)
     interlink = default_world.get_ontology("./src/ontology/interlink.owl").load()
