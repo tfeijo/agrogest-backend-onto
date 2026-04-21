@@ -1,0 +1,26 @@
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+extend-exclude = ["src/ontology/temp", "src/ontology/clean_ontology"]
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # isort
+  "B",  # flake8-bugbear
+  "UP", # pyupgrade
+]
+ignore = [
+  "E501", # line length handled by black
+  "B008", # function call in default argument (flask patterns)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/routes.py" = ["F401", "F403"]  # re-exports via *
+"src/models/*.py" = ["F821"]        # owlready2 class metaclass tricks
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+extend-exclude = "(src/ontology/temp|src/ontology/clean_ontology)"

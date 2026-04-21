@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main, 'claude/**']
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+      - name: Install ruff
+        run: pip install ruff==0.6.9
+      - name: Lint
+        run: ruff check .
+      - name: Format check
+        run: ruff format --check .
+
+  import-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+      - name: Install system deps for reasoner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y default-jre-headless
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+      - name: Byte-compile to catch syntax/import errors
+        run: python -m compileall -q src app.py wsgi.py

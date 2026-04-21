@@ -1,12 +1,38 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
 .venv/
-**/__pycache__/
-**.sqlite3**
-**.xml
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime artifacts
 src/ontology/temp/*.owl
-.idea/.gitignore
-.idea/backend.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/inspectionProfiles/Project_Default.xml
+src/ontology/temp/*.sqlite3
+!src/ontology/temp/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Backups
+*.bak
+*.bkp
+*.save
+*.orig
+
+# Local env
+.env
+.env.*
+!.env.example
