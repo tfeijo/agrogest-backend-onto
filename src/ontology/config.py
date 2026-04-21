@@ -1,38 +1,41 @@
-from owlready2 import *
-from src.utils.methods import Ontology
 import json
-# To change memory on reasoning
-#reasoning.JAVA_MEMORY = 15000  
+import logging
+import threading
 
-onto_path.append("src/ontology/")
-onto = get_ontology("db.owl").load()
-sustainability = get_ontology("sustainability.owl").load()
+from owlready2 import get_ontology, onto_path
 
-def increase_id(obj):
-  
-  data = {}
-  
-  r = open('./src/ontology/id.json', "r")
-  data = json.load(r)
 
-  if obj in data: data[obj] += 1
-  else: data[obj] = 1
+logger = logging.getLogger(__name__)
 
-  w = open('./src/ontology/id.json', "w")
-  json.dump(data, w)
+onto_path.append('src/ontology/')
+onto = get_ontology('db.owl').load()
+sustainability = get_ontology('sustainability.owl').load()
 
-  return data[obj]
+_ID_FILE = './src/ontology/id.json'
+_id_lock = threading.Lock()
 
-def decrease_id(obj):
-  data = {}
 
-  r = open('./src/ontology/id.json', "r")
-  data = json.load(r)
+def _read_ids() -> dict:
+  with open(_ID_FILE, 'r') as fh:
+    return json.load(fh)
 
-  if obj in data: data[obj] -= 1
-  else: data[obj] = 0
 
-  w = open('./src/ontology/id.json', "w")
-  json.dump(data, w)
+def _write_ids(data: dict) -> None:
+  with open(_ID_FILE, 'w') as fh:
+    json.dump(data, fh)
 
-  return data[obj]
+
+def increase_id(obj: str) -> int:
+  with _id_lock:
+    data = _read_ids()
+    data[obj] = data.get(obj, 0) + 1
+    _write_ids(data)
+    return data[obj]
+
+
+def decrease_id(obj: str) -> int:
+  with _id_lock:
+    data = _read_ids()
+    data[obj] = max(0, data.get(obj, 0) - 1)
+    _write_ids(data)
+    return data[obj]
