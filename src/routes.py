@@ -1,7 +1,7 @@
 import os
 
 import markdown
-from flask import jsonify, request
+from flask import request
 
 from app import app
 from src.controllers.AttributeController import AttributeController
@@ -18,7 +18,8 @@ from src.controllers.SustainabilityController import SustainabilityController
 
 @app.route('/', methods=['GET'])
 def readme():
-  readme_path = os.path.join(os.path.dirname(app.root_path), 'README.md')
+  # README.md lives alongside app.py, so app.root_path is the correct base.
+  readme_path = os.path.join(app.root_path, 'README.md')
   with open(readme_path, 'r') as readme_file:
     content = readme_file.read()
   return markdown.markdown(content), 200

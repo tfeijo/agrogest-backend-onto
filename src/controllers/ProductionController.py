@@ -1,5 +1,5 @@
 from flask import jsonify
-from owlready2 import World, OwlReadyError, sync_reasoner_pellet, destroy_entity
+from owlready2 import OwlReadyError, World, destroy_entity, sync_reasoner_pellet
 
 from src.models.Classes import production_to_json
 from src.ontology.config import decrease_id, increase_id, onto
@@ -12,13 +12,19 @@ class ProductionController:
     db = Ontology(f'./src/ontology/temp/{productions["farm_id"]}')
     db.load()
 
+    created_ids = []
+
     try:
       new_list = []
 
       with db.onto:
         farm = db.onto.search_one(is_a=db.onto.Farm, id=productions['farm_id'])
+        if farm is None:
+          return jsonify({'error': 'Farm not found'}), 404
+
         for production in productions['productions']:
           new_id = increase_id('Production')
+          created_ids.append(new_id)
           name = f'farm-{farm.id[0]}_{clear_string(production["activity"])}_{new_id}'
 
           new = db.onto.Production(
@@ -57,16 +63,16 @@ class ProductionController:
             item.has_factor_associated = [param]
       db.save()
 
-    except OwlReadyError as e:
-      decrease_id('Production')
-      return jsonify({'error': 'Something went wrong in inserting', 'msg': str(e)}), 400
-
-    try:
       query_prod = db.onto.search(is_a=db.onto.Production, is_production_of=farm)
       result = [production_to_json(prod) for prod in query_prod]
       return jsonify(result), 200
+
     except OwlReadyError as e:
-      return jsonify({'error': 'Inserted but not queried', 'msg': str(e)}), 400
+      # Roll back every id we consumed, not just the last one.
+      for _ in created_ids:
+        decrease_id('Production')
+      return jsonify({'error': 'Something went wrong in inserting', 'msg': str(e)}), 400
+
     finally:
       db.save()
       db.close()

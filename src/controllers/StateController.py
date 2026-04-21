@@ -1,10 +1,9 @@
 import json
 
 from flask import jsonify
-from owlready2 import OwlReadyError
 
-from src.models.Classes import State, state_to_json
-from src.ontology.config import increase_id, onto
+from src.models.Classes import State
+from src.ontology.config import onto
 from src.utils.methods import clear_string
 
 
@@ -16,10 +15,7 @@ class StateController:
 
   @staticmethod
   def index():
-    try:
-      return jsonify(_static_states)
-    except OwlReadyError as e:
-      return jsonify({'error': str(e)}), 500
+    return jsonify(_static_states)
 
   @staticmethod
   def show(id):

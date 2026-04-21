@@ -1,6 +1,7 @@
 from flask import jsonify
+
 from src.models.Classes import Biome
-from src.ontology.config import onto, increase_id
+from src.ontology.config import onto
 from src.utils.methods import clear_string
 
 

@@ -8,14 +8,12 @@ Provides:
   each reasoning phase (load, classify, save). Used by controllers that
   call sync_reasoner_pellet.
 """
-from __future__ import annotations
-
 import json
 import logging
 import os
 import time
 from contextlib import contextmanager
-from typing import Iterator
+from typing import Iterator, Optional
 
 
 class _JsonFormatter(logging.Formatter):
@@ -60,7 +58,7 @@ def configure_logging() -> None:
 
 
 @contextmanager
-def time_reasoner(stage: str, logger: logging.Logger | None = None) -> Iterator[None]:
+def time_reasoner(stage: str, logger: Optional[logging.Logger] = None) -> Iterator[None]:
   log = logger or logging.getLogger('agrogest.reasoner')
   start = time.perf_counter()
   try:

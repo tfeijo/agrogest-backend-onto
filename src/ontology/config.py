@@ -1,11 +1,8 @@
 import json
-import logging
 import threading
 
 from owlready2 import get_ontology, onto_path
 
-
-logger = logging.getLogger(__name__)
 
 onto_path.append('src/ontology/')
 onto = get_ontology('db.owl').load()

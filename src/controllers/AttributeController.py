@@ -1,7 +1,7 @@
 import threading
 
 from flask import jsonify
-from owlready2 import sync_reasoner_pellet
+from owlready2 import OwlReadyError, sync_reasoner_pellet
 
 from src.controllers.FullontoController import FullontoController
 from src.models.Classes import document_to_json, farm_to_json
@@ -14,9 +14,16 @@ class AttributeController:
     db = Ontology(f'./src/ontology/temp/{attributes["farm_id"]}')
     db.load()
 
+    # Predeclare so the finally block is safe even if we error out before
+    # populating it.
+    farm_json = None
+
     try:
       with db.onto:
         farm = db.onto.search_one(is_a=db.onto.Farm, id=attributes['farm_id'])
+        if farm is None:
+          return jsonify({'error': 'Farm not found'}), 404
+
         farm.has_attribute = []
         farm.has_missing_attribute = []
         farm.has_recommended_document = []
@@ -67,14 +74,19 @@ class AttributeController:
 
       return jsonify(list_documents)
 
+    except OwlReadyError as e:
+      return jsonify({'error': 'Something went wrong computing attributes', 'msg': str(e)}), 400
+
     finally:
       db.save()
       db.close()
-      # Kick off fullontology update in background; must pass target+args,
-      # not an already-invoked callable (previous code executed store() synchronously).
-      t = threading.Thread(
-        target=FullontoController.store,
-        args=(farm_json,),
-        daemon=True,
-      )
-      t.start()
+      # Kick off fullontology update in background only if we have data to
+      # ship; previous code passed an already-invoked callable to Thread and
+      # could NameError on farm_json if the try branch had failed early.
+      if farm_json is not None:
+        t = threading.Thread(
+          target=FullontoController.store,
+          args=(farm_json,),
+          daemon=True,
+        )
+        t.start()
