@@ -1,27 +1,28 @@
 from flask import jsonify
-from src.models.Classes import *
-from src.ontology.config import increase_id
+
+from src.models.Classes import Biome
+from src.ontology.config import onto
+from src.utils.methods import clear_string
+
 
 class BiomeController:
+  @staticmethod
   def index():
-    onto = get_ontology(f'./src/ontology/temp/{productions["farm_id"]}.owl').load()
-
-    biomes_query = onto.Biome.instances()
-    biomes = []
-    for query in biomes_query: biomes.append(query.to_json())
+    biomes = [query.to_json() for query in onto.Biome.instances()]
     return jsonify(biomes)
-  
+
+  @staticmethod
   def show(id):
-    biome = onto.search_one(is_a=Biome, id=id) 
+    biome = onto.search_one(is_a=onto.Biome, id=id)
+    if biome is None:
+      return jsonify({'error': 'Biome not found'}), 404
     return jsonify(biome.to_json())
-  
+
+  @staticmethod
   def store(biome):
-    id = increase_id('Biome')
     new = Biome(
       clear_string(biome['name']),
-      id = [biome['id']],
-      # id = [id]
+      id=[biome['id']],
     )
     onto.save()
-    
     return jsonify(new.to_json())
